@@ -1,0 +1,263 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Theme */
+
+/* Header */
+@media (min-width: 576px)
+{
+  .hamburger
+  {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 575px)
+{
+  .hamburger
+  {
+    display: none;
+  }
+}
+/* Footer */
+.submit-box
+{
+  height: 55px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.submit-mail-left
+{
+  background-color: black;
+  color: white;
+  width: 100px;
+  display: inline;
+}
+.submit-mail-left:focus
+{
+  background-color: black;
+  color: white;
+}
+.submit-mail-right
+{
+  background-color: white;
+  width: 72px;
+  border: 1px solid white;
+  border-radius: 5px;;
+}
+
+ul.footer-links li
+{
+  margin-bottom: 30px;
+  text-align: left;
+  list-style-type: none;
+}
+ul.footer-links a
+{
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+ul.footer-links a:hover
+{
+  text-decoration: underline;
+}
+.font-36
+{
+  font-size: 36px;
+}
+.text-light
+{
+  color: #A0A0A0 !important;
+}
+.social-icon
+{
+  background-color: white;
+  height: 42px;
+  width: 42px;
+  padding: 1px;
+  border-radius: 20px;
+}
+
+/* Home */
+
+.marquee {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  font-weight: 200;
+  font-size: 20px;
+  animation: marquee 18s linear infinite;
+}
+
+.marquee2 span {
+  animation-delay: 6s;
+}
+
+.marquee3 span {
+  animation-delay: 12s;
+}
+
+.marquee-transform span {
+  animation: marquee 18s linear infinite;
+}
+
+.marquee2-transform span {
+  animation-delay: 0s;
+}
+
+.marquee3-transform span {
+  animation-delay: 6s;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+.SectionFiveStripeAngle
+{
+  transform: rotate(-6.36deg);
+  width: calc(100vw + 10px);
+  margin-left: -10px;
+  margin-top: 80px;
+}
+
+.svg-icon 
+{
+  display: inline-block;
+  background-size: cover;
+}
+.svg-icon-min 
+{
+  width: 32px;
+  height: 32px;
+}
+.svg-line
+{
+  width: 175px;
+  height: 3px;
+}
+.svg-icon-min:hover 
+{
+  width: 35px;
+  height: 35px;
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+.svg-line:hover 
+{
+  width: 175px;
+  height: 3px;
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+.svg-icon-nohover:hover 
+{
+  width: 32px;
+  height: 32px;
+  filter: inherit;
+}
+.svg-line-nohover:hover 
+{
+  width: 175px;
+  height: 3px;
+  filter: inherit;
+}
+.svg-icon-menu
+{
+  background-image: url('../public/svgs/menu.svg');
+}
+.svg-icon-cart
+{
+  background-image: url('../public/svgs/cart.svg');
+}
+.svg-icon-notification
+{
+  background-image: url('../public/svgs/notification.svg');
+}
+.svg-icon-chevrons-right
+{
+  background-image: url('../public/svgs/chevrons-right.svg');
+}
+.svg-icon-chevron-down
+{
+  background-image: url('../public/svgs/chevron-down.svg');
+}
+.svg-icon-check-circle
+{
+  background-image: url('../public/svgs/check-circle.svg');
+}
+.svg-icon-chevron-left
+{
+  background-image: url('../public/svgs/arrow-left.svg');
+}
+.svg-icon-chevron-right
+{
+  background-image: url('../public/svgs/arrow-right.svg');
+}
+.svg-icon-line-active
+{
+  background-image: url('../public/svgs/Line\ 82.svg');
+}
+.svg-icon-line
+{
+  background-image: url('../public/svgs/Line\ 81.svg');
+}
+.ul-check-circle li
+{
+  /* border: 1px solid black; */
+  font-weight: Lato;
+  font-weight: 600;
+  font-size: 24px;
+  text-align: left;
+  margin: 16px;
+  list-style-image: url('../public/svgs/check-circle.svg');
+}
+.section-four-product-image
+{
+  width: 288px;
+  height: 260px;
+}

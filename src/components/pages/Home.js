@@ -33,12 +33,12 @@ const Home = () => {
                 <p className="marquee w-100">
                     <span>We are currently avaliable at delhi, to know more Click here..</span>
                 </p>
-                <p className="marquee marquee2 w-100">
+                {/* <p className="marquee marquee2 w-100">
                     <span>We are currently avaliable at delhi, to know more Click here..</span>
                 </p>
                 <p className="marquee marquee3 w-100">
                     <span>We are currently avaliable at delhi, to know more Click here..</span>
-                </p>
+                </p> */}
             </SectionOneStripe>
 
             <MinDiv>
@@ -46,7 +46,7 @@ const Home = () => {
                 {/* Section One */}
                 <SectionOne>
                     <SectionOneOverlay className="d-flex justify-content-center">
-                        <SectionOneText className="mt-auto mb-5">
+                        <SectionOneText className="mt-auto mb-5 SectionOneText">
                             Culinary delights beyond<br />Spacetime
                         </SectionOneText>
                     </SectionOneOverlay>
@@ -73,7 +73,7 @@ const Home = () => {
                             <br />
                         </div>
                     </div>
-                    <SectionTwoImage />
+                    <SectionTwoImage className="SectionTwoImage" />
 
                     {/* Two */}
                     <SectionTwoTitle className="mt-5 pt-5">
@@ -90,7 +90,7 @@ const Home = () => {
                     <SectionThreeImage />
 
                     <SectionThreeTitleBox>
-                        <SectionThreeTitle>
+                        <SectionThreeTitle className="SectionThreeTitle">
                             <span className="text-white" style={{fontFamily: 'Poppins Bold'}}>Close Encounters of the</span>
                             <br /> 
                             <span className="text-black" style={{fontFamily: 'Poppins Bold'}}>Hungry Kind</span>
@@ -103,14 +103,14 @@ const Home = () => {
 
                     <div className="container">
                         <div className="row">
-                            <div className="col-6 pt-5">
+                            <div className="col-12 col-md-6 pt-5">
                                 <ul className="ul-check-circle ">
                                     <li>Save upto 15% on every purchase</li>
                                     <li>Free Products, Limited Releases & Pre-Orders</li>
                                     <li>No committments and No extra Fees</li>
                                 </ul>
                             </div>
-                            <div className="col-6 pt-5">
+                            <div className="col-12 col-md-6 pt-5">
                                 <ul className="ul-check-circle ">
                                     <li>A community that takes you back to a happier future</li>
                                     <li>Access Exclusive Content & Uncrowded Events</li>
@@ -179,12 +179,12 @@ const Home = () => {
                             <p className="marquee marquee-transform w-100">
                                 <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
                             </p>
-                            <p className="marquee marquee2-transform marquee2 w-100">
+                            {/* <p className="marquee marquee2-transform marquee2 w-100">
                                 <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
                             </p>
                             <p className="marquee marquee3-transform marquee3 w-100">
                                 <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
-                            </p>
+                            </p> */}
                         </SectionOneStripe>
                         <SectionFiveStarImage className="d-flex justify-content-center align-items-center mt-auto mb-5">
                             <div>
@@ -206,27 +206,27 @@ const Home = () => {
                     <div className="container pt-5 pb-5">
                         <div className="d-flex justify-content-between align-items-center">
                             <SectionFiveFaqText>How does Flying Saucer work?</SectionFiveFaqText>
-                            <span className="svg-icon svg-icon-min svg-icon-chevron-down"></span>
+                            <div style={{minHeight: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
                         </div>
                         <hr style={{opacity: '1'}} />
                         <div className="d-flex justify-content-between align-items-center">
                             <SectionFiveFaqText>What products do you have?</SectionFiveFaqText>
-                            <span className="svg-icon svg-icon-min svg-icon-chevron-down"></span>
+                            <div style={{minHeight: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
                         </div>
                         <hr style={{opacity: '1'}} />
                         <div className="d-flex justify-content-between align-items-center">
                             <SectionFiveFaqText>Does it cost money to sign up?</SectionFiveFaqText>
-                            <span className="svg-icon svg-icon-min svg-icon-chevron-down"></span>
+                            <div style={{minHeight: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
                         </div>
                         <hr style={{opacity: '1'}} />
                         <div className="d-flex justify-content-between align-items-center">
                             <SectionFiveFaqText>Where can I find your recipes?</SectionFiveFaqText>
-                            <span className="svg-icon svg-icon-min svg-icon-chevron-down"></span>
+                            <div style={{minHeight: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
                         </div>
                         <hr style={{opacity: '1'}} />
                         <div className="d-flex justify-content-between align-items-center">
                             <SectionFiveFaqText>Can I buy a gift card for a friend?</SectionFiveFaqText>
-                            <span className="svg-icon svg-icon-min svg-icon-chevron-down"></span>
+                            <div style={{minHeight: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
                         </div>
                         <hr style={{opacity: '1'}} />
                     </div>
@@ -252,7 +252,7 @@ const SectionOne = styled.div`
 
 const SectionOneOverlay = styled.div`
     position: absolute;
-    min-width: calc(100vw - 90px);
+    min-width: calc(100% - 90px);
     max-height: 950px;
     min-height: calc(100vw / 2.21);
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%);
@@ -260,7 +260,6 @@ const SectionOneOverlay = styled.div`
 
 const SectionOneText = styled.div`
     font-weight: 600;
-    font-size: 56px;
     line-height: 70px;
     text-align: center;
     color: #FFFFFF;
@@ -306,8 +305,6 @@ const SectionTwoDescription = styled.div`
 `;
 
 const SectionTwoImage = styled.div`
-    height: 534px;
-    width: 820px;
     display: inline-block;
     background: url('images/jamaicansnacks1.jpg');
     background-size: contain;
@@ -375,7 +372,6 @@ const SectionThreeTitleBox = styled.div`
 `;
 
 const SectionThreeTitle = styled.div`
-    margin-top: -85px;
     font-weight: 700;
     font-size: 56px;
     line-height: 84px;

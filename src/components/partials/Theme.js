@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 function Header() {
     return ( 
-        <HeaderDiv>
+        <HeaderDiv className="HeaderDiv">
             {/* Header */}
             <div className="container">
                 {/* Header section */}
@@ -37,7 +37,7 @@ function Footer() {
         <FooterDiv>
             <div className="container">
                 <div className="row pt-4">
-                    <div className="col-5 text-start">
+                    <div className="col-12 col-xl-5 text-start">
                         <label className="font-36 mb-4">Get in Touch</label>
                         <div className="input-group submit-box">
                             <input type="text" className="form-control submit-mail-left" placeholder="Enter your mail" />
@@ -48,9 +48,9 @@ function Footer() {
                         <p className="mt-4">Get your first meal box for free</p>
                         <p className="mt-5 pt-5 text-light">Copyright@floe All Rights Reserved</p>
                     </div>
-                    <div className="col-7">
+                    <div className="col-12 col-xl-7">
                         <div className="row">
-                            <div className="col-6">
+                            <div className="col-12 col-lg-6">
                                 <ul className="footer-links">
                                     <li>
                                         <a href="*">Order Tracking</a>
@@ -77,7 +77,7 @@ function Footer() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="col-6">
+                            <div className="col-12 col-xl-6">
                                 <ul className="footer-links">
                                     <li>
                                         <a href="*">FAQ's</a>
@@ -108,7 +108,6 @@ const HeaderDiv = styled.div`
     color: white;
     background: #000000;
     box-shadow: 0px -4px 12px rgba(165, 165, 165, 0.25);
-    padding: 40px 100px;
     overflow: hidden;
 `;
 
@@ -141,9 +140,8 @@ const NavbarDiv = styled.div`
 // Footer
 const FooterDiv = styled.div`
     width: 100%;
-    height: 397px;
+    min-height: 397px;
     color: white;
     background: #000000;
     box-shadow: 0px -4px 12px rgba(165, 165, 165, 0.25);
-    padding: 40px 100px;
 `;

@@ -116,6 +116,9 @@ ul.footer-links a:hover
 
 /* Home */
 
+
+
+
 .marquee {
   margin: 0 auto;
   white-space: nowrap;
@@ -131,6 +134,7 @@ ul.footer-links a:hover
   animation: marquee 18s linear infinite;
 }
 
+  
 .marquee2 span {
   animation-delay: 6s;
 }
@@ -164,7 +168,6 @@ ul.footer-links a:hover
   transform: rotate(-6.36deg);
   width: calc(100vw + 10px);
   margin-left: -10px;
-  margin-top: 80px;
 }
 
 .svg-icon 
@@ -260,4 +263,70 @@ ul.footer-links a:hover
 {
   width: 288px;
   height: 260px;
+}
+
+@media screen and (max-width: 799px) 
+{
+  .SectionOneText
+  {
+    font-size: 32px;
+  }
+  .SectionTwoImage
+  {
+    height: 300px;
+    width: 450px;
+  }
+  .HeaderDiv
+  {
+    padding: 40px 50px;
+  }
+}
+@media (min-width: 800px) 
+{
+  .SectionOneText
+  {
+    font-size: 56px;
+  }
+  .SectionTwoImage
+  {
+    height: 534px;
+    width: 800px;
+  }
+  .SectionFiveStripeAngle
+  {
+    margin-top: 80px;
+  }
+  .HeaderDiv
+  {
+    padding: 40px 100px;
+  }
+  .FooterDiv
+  {
+    padding: 40px 100px;
+  }
+}
+.SectionFiveImage
+{
+  overflow: hidden !important;
+}
+@media screen and (max-width: 588px) 
+{
+  .SectionThreeTitle
+  {
+    margin-top: -245px;
+  }
+}
+@media (min-width: 589px) and (max-width: 763px) 
+{
+  .SectionThreeTitle
+  {
+    margin-top: -165px;
+  }
+}
+@media (min-width: 764px) 
+{
+  .SectionThreeTitle
+  {
+    margin-top: -85px;
+  }
 }

@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { MinDiv } from "../partials/Sections";
 import Header, { Footer, Navbar } from "../partials/Theme";
 
 const Home = () => {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        getProducts();
+      }, []);
+
+    function getProducts() {
+        fetch(`${process.env.REACT_APP_BACKEND}api/products`)
+          .then(res => res.json())
+          .then(data => {
+            console.log(data.data);
+            setProducts(data.data);
+          })
+      }
+
     return (
         <div>
 
@@ -14,13 +30,13 @@ const Home = () => {
 
             {/* Marquee stripe */}
             <SectionOneStripe className="d-flex align-items-center">
-                <p class="marquee w-100">
+                <p className="marquee w-100">
                     <span>We are currently avaliable at delhi, to know more Click here..</span>
                 </p>
-                <p class="marquee marquee2 w-100">
+                <p className="marquee marquee2 w-100">
                     <span>We are currently avaliable at delhi, to know more Click here..</span>
                 </p>
-                <p class="marquee marquee3 w-100">
+                <p className="marquee marquee3 w-100">
                     <span>We are currently avaliable at delhi, to know more Click here..</span>
                 </p>
             </SectionOneStripe>
@@ -119,11 +135,16 @@ const Home = () => {
 
                     <div className="row my-5">
                         <div className="d-flex justify-content-center align-items-center">
-                            <SectionFourRectangle>
-                                <img className="section-four-product-image" src="images/products/Rectangle 1.png"></img>
-                                <SectionFourRectangleText>The Australian Outback</SectionFourRectangleText>
-                            </SectionFourRectangle>
-                            <SectionFourRectangle>
+                            {products &&
+                                products.map(p => (
+                                        <SectionFourRectangle key={p.id.toString()}>
+                                            <img className="section-four-product-image" src={p.attributes.path}></img>
+                                            <SectionFourRectangleText>{p.attributes.name}</SectionFourRectangleText>
+                                        </SectionFourRectangle>
+                                    )
+                                )
+                            }
+                            {/* <SectionFourRectangle>
                                 <img className="section-four-product-image" src="images/products/Rectangle 2.png"></img>
                                 <SectionFourRectangleText>The Snacks</SectionFourRectangleText>
                             </SectionFourRectangle>
@@ -138,7 +159,7 @@ const Home = () => {
                             <SectionFourRectangle>
                                 <img className="section-four-product-image" src="images/products/Rectangle 5.png"></img>
                                 <SectionFourRectangleText>Raw Meat</SectionFourRectangleText>
-                            </SectionFourRectangle>
+                            </SectionFourRectangle> */}
                         </div>
                     </div>
 
@@ -155,13 +176,13 @@ const Home = () => {
 
                     <SectionFiveImage className="d-flex justify-content-center mt-5 pt-5">
                         <SectionOneStripe className="d-flex align-items-center SectionFiveStripeAngle">
-                            <p class="marquee marquee-transform w-100">
+                            <p className="marquee marquee-transform w-100">
                                 <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
                             </p>
-                            <p class="marquee marquee2-transform marquee2 w-100">
+                            <p className="marquee marquee2-transform marquee2 w-100">
                                 <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
                             </p>
-                            <p class="marquee marquee3-transform marquee3 w-100">
+                            <p className="marquee marquee3-transform marquee3 w-100">
                                 <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
                             </p>
                         </SectionOneStripe>

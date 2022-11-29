@@ -12,8 +12,7 @@ function App() {
       <Router>
         <Routes>
           {/* Guest routes */}
-          <Route path="/" exact={true} element={<Navigate replace to="/home" />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" exact={true} element={<Home />} />
           <Route path='*' element={<NotFound />} />
           {/* Guest routes, Not logged in */}
           

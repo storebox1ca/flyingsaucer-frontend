@@ -39,9 +39,9 @@ function Footer() {
                 <div className="row pt-4">
                     <div className="col-5 text-start">
                         <label className="font-36 mb-4">Get in Touch</label>
-                        <div class="input-group submit-box">
-                            <input type="text" class="form-control submit-mail-left" placeholder="Enter your mail" />
-                            <div class="input-group-append submit-mail-right d-flex justify-content-center align-items-center">
+                        <div className="input-group submit-box">
+                            <input type="text" className="form-control submit-mail-left" placeholder="Enter your mail" />
+                            <div className="input-group-append submit-mail-right d-flex justify-content-center align-items-center">
                                 <svg className="svg-icon svg-icon-min svg-icon-chevrons-right"></svg>
                             </div>
                         </div>

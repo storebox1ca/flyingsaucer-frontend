@@ -1,413 +1,466 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import { FunctionComponent } from "react";
+import styles from "../../pages/Home.module.css";
 
-import Header, { Footer, Navbar } from "../partials/Theme";
-
-const Home = () => {
-
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        getProducts();
-      }, []);
-
-    function getProducts() {
-        fetch(`${process.env.REACT_APP_BACKEND}api/products`)
-          .then(res => res.json())
-          .then(data => {
-            console.log(data.data);
-            setProducts(data.data);
-          })
-      }
-
-    return (
-        <div>
-
-            {/* Homepage */}
-            <Navbar />
-            <Header />
-
-            {/* Marquee stripe */}
-            <SectionOneStripe className="d-flex align-items-center">
-                <p className="marquee w-100">
-                    <span>We are currently avaliable at delhi, to know more Click here..</span>
-                </p>
-                {/* <p className="marquee marquee2 w-100">
-                    <span>We are currently avaliable at delhi, to know more Click here..</span>
-                </p>
-                <p className="marquee marquee3 w-100">
-                    <span>We are currently avaliable at delhi, to know more Click here..</span>
-                </p> */}
-            </SectionOneStripe>
-
-            <div className="MinDiv">
-
-                {/* Section One */}
-                <SectionOne>
-                    <div className="SectionOneOverlay d-flex justify-content-center">
-                        <div className="mt-auto mb-3 mb-sm-5 SectionOneText">
-                            Culinary delights beyond<br />Spacetime
-                        </div>
-                    </div>
-                </SectionOne>
-
-                {/* Section Two */}
-                <SectionTwo className="pt-5">
-                    {/* One */}
-                    <SectionTwoTitle className="pt-5">
-                        Good Food, always
-                    </SectionTwoTitle>
-                    <SectionTwoDescription className="px-2">
-                        As we have declassified the best that Frozen Food has<br />food to offer
-                    </SectionTwoDescription>
-
-                    <div className="d-inline-block w-auto">
-                        <div className="ml-3">
-                            <SectionTwoTextActive>The Snacks</SectionTwoTextActive>
-                            <SectionTwoText>The Ice Creams</SectionTwoText>
-                            <SectionTwoText>Raw Meat</SectionTwoText>
-                            <SectionTwoText>Quick & Easy Meals</SectionTwoText>
-                            <SectionTwoText>and more</SectionTwoText>
-                            <SectionTwoButton className="mt-5">See all foods</SectionTwoButton>
-                            <br />
-                        </div>
-                    </div>
-                    <SectionTwoImage className="SectionTwoImage" />
-
-                    {/* Two */}
-                    <SectionTwoTitle className="mt-sm-5 pt-sm-5">
-                        Why go sub-zero?
-                    </SectionTwoTitle>
-                    <SectionTwoDescription className="px-2">
-                        Properly Frozen Food at -18° C helps fight food wastage & locks in more<br /> nutrition. Without the need for any preservatives or loss of flavour
-                    </SectionTwoDescription>
-                    <div className="d-flex justify-content-center mb-3">
-                        <SectionThreeButton>Show me the evidence</SectionThreeButton>
-                    </div>
-
-                    {/* Three */}
-                    <SectionThreeImage />
-
-                    <SectionThreeTitleBox>
-                        <SectionThreeTitle className="SectionThreeTitle">
-                            <span className="text-white" style={{fontFamily: 'Poppins Bold'}}>Close Encounters of the</span>
-                            <br /> 
-                            <span className="text-black" style={{fontFamily: 'Poppins Bold'}}>Hungry Kind</span>
-                        </SectionThreeTitle>
-                    </SectionThreeTitleBox>
-
-                    <SectionTwoDescription className="px-2">
-                        Subscriptions help us estimate demand better, fight food waste and grow<br /> this community meaningfully, Buying even one product every week<br /> automatically gives you all the benefits!
-                    </SectionTwoDescription>
-
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-12 col-md-6 pt-5">
-                                <ul className="ul-check-circle ">
-                                    <li>Save upto 15% on every purchase</li>
-                                    <li>Free Products, Limited Releases & Pre-Orders</li>
-                                    <li>No committments and No extra Fees</li>
-                                </ul>
-                            </div>
-                            <div className="col-12 col-md-6 pt-5">
-                                <ul className="ul-check-circle ">
-                                    <li>A community that takes you back to a happier future</li>
-                                    <li>Access Exclusive Content & Uncrowded Events</li>
-                                    <li>Have a say in where we go and what we bring</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="d-flex justify-content-center mt-3">
-                        <SectionTwoButton>
-                            <span style={{marginLeft: '10px'}}>Lets Shop!</span>
-                        </SectionTwoButton>
-                    </div>
-
-                    {/* Four */}
-                    
-                    
-                    <SectionTwoTitle className="mt-5 pt-5">
-                        Saucers that are taking off...
-                    </SectionTwoTitle>
-
-                    <div className="row my-5">
-                        <div className="d-flex justify-content-center align-items-center">
-                            {products &&
-                                products.map(p => (
-                                        <SectionFourRectangle key={p.id.toString()}>
-                                            <img className="section-four-product-image" src={p.attributes.path}></img>
-                                            <SectionFourRectangleText>{p.attributes.name}</SectionFourRectangleText>
-                                        </SectionFourRectangle>
-                                    )
-                                )
-                            }
-                        </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="d-flex justify-content-center align-items-center mb-5" style={{height: '35px'}}>
-                            <span className="svg-icon svg-icon-min svg-icon-chevron-left"></span>
-                            <span className="svg-icon svg-line svg-icon-line-active svg-line-nohover"></span>
-                            <span className="svg-icon svg-line svg-icon-line"></span>
-                            <span className="svg-icon svg-icon-min svg-icon-chevron-right"></span>
-                        </div>
-                    </div>
-
-                    {/* Five */}
-
-                    <SectionFiveImage className="d-flex justify-content-center mt-5 pt-5">
-                        <SectionOneStripe className="d-flex align-items-center SectionFiveStripeAngle">
-                            <p className="marquee marquee-transform w-100">
-                                <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
-                            </p>
-                            {/* <p className="marquee marquee2-transform marquee2 w-100">
-                                <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
-                            </p>
-                            <p className="marquee marquee3-transform marquee3 w-100">
-                                <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
-                            </p> */}
-                        </SectionOneStripe>
-                        <SectionFiveStarImage className="d-flex justify-content-center align-items-center mt-auto mb-5">
-                            <div>
-                                <SectionFiveStarTitle>JOIN US!</SectionFiveStarTitle>
-                                <SectionFiveStarDescription>Let’s have a<br />chat!</SectionFiveStarDescription>
-                            </div>
-                        </SectionFiveStarImage>
-                    </SectionFiveImage>
-
-                    {/* Six */}
-                    
-                    <SectionTwoTitle className="mt-5 pt-5">
-                        FAQ’s
-                    </SectionTwoTitle>
-                    <SectionTwoDescription className="mt-3">
-                        Have a question, we are here to help.
-                    </SectionTwoDescription>
-
-                    <div className="container pt-5 pb-5">
-                        <div className="d-flex justify-content-between align-items-center">
-                            <SectionFiveFaqText>How does Flying Saucer work?</SectionFiveFaqText>
-                            <div style={{minWidth: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
-                        </div>
-                        <hr style={{opacity: '1'}} />
-                        <div className="d-flex justify-content-between align-items-center">
-                            <SectionFiveFaqText>What products do you have?</SectionFiveFaqText>
-                            <div style={{minWidth: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
-                        </div>
-                        <hr style={{opacity: '1'}} />
-                        <div className="d-flex justify-content-between align-items-center">
-                            <SectionFiveFaqText>Does it cost money to sign up?</SectionFiveFaqText>
-                            <div style={{minWidth: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
-                        </div>
-                        <hr style={{opacity: '1'}} />
-                        <div className="d-flex justify-content-between align-items-center">
-                            <SectionFiveFaqText>Where can I find your recipes?</SectionFiveFaqText>
-                            <div style={{minWidth: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
-                        </div>
-                        <hr style={{opacity: '1'}} />
-                        <div className="d-flex justify-content-between align-items-center">
-                            <SectionFiveFaqText>Can I buy a gift card for a friend?</SectionFiveFaqText>
-                            <div style={{minHeight: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
-                        </div>
-                        <hr style={{opacity: '1'}} />
-                    </div>
-
-                </SectionTwo>
-
-            <Footer />
-            </div>
+const Home: FunctionComponent = () => {
+  return (
+    <div className={styles.homeDiv}>
+      <div className={styles.rectangleDiv} />
+      <div className={styles.groupDiv}>
+        <img
+          className={styles.rectangleIcon}
+          alt=""
+          src="../rectangle-3038@2x.png"
+        />
+        <div className={styles.rectangleDiv1} />
+      </div>
+      <img
+        className={styles.jamaicanSnacks1Icon}
+        alt=""
+        src="../1741747559-jamaicansnacks-1@2x.png"
+      />
+      <div className={styles.haveAQuestionWeAreHereT}>
+        Have a question, we are here to help.
+      </div>
+      <div className={styles.subscriptionsHelpUsEstimate}>
+        <p className={styles.subscriptionsHelpUs}>
+          Subscriptions help us estimate demand better, fight food waste and
+          grow this community meaningfully, Buying even one product every week
+          automatically gives you all the benefits!
+        </p>
+        <p className={styles.blankLineP}>&nbsp;</p>
+      </div>
+      <div className={styles.whyGoSubZero}>
+        <p className={styles.subscriptionsHelpUs}>{`Why go `}</p>
+        <p className={styles.blankLineP}>Sub-Zero?</p>
+      </div>
+      <div className={styles.fAQsDiv}>FAQ’s</div>
+      <div className={styles.saucersThatAreTakingOff}>
+        Saucers that are taking off...
+      </div>
+      <div className={styles.frameDiv}>
+        <div className={styles.andBuiltALaunchpadForAll}>
+          And built a launchpad for all the good food from around the world
         </div>
-    );
-}
+      </div>
+      <div className={styles.itCanInvadeFoodWasteMaln}>
+        It can invade food waste, malnutrition and keep things superfresh
+      </div>
+      <div className={styles.soWeveDeclassifiedFrozenF}>
+        So we’ve declassified Frozen Food
+      </div>
+      <div className={styles.yourFreezerIsASpecialPlac}>
+        Your freezer is a special place
+      </div>
+      <div className={styles.groupDiv1}>
+        <img
+          className={styles.rectangleIcon1}
+          alt=""
+          src="../rectangle-3057@2x.png"
+        />
+        <div className={styles.rectangleDiv2} />
+      </div>
+      <div className={styles.closeEncountersOfTheHungry}>
+        <p className={styles.subscriptionsHelpUs}>
+          <span>
+            <span>Close Encounters of the</span>
+            <b className={styles.b}>{` `}</b>
+          </span>
+        </p>
+        <p className={styles.hungryKindP}>
+          <span>Hungry Kind</span>
+        </p>
+      </div>
+      <div className={styles.getInTouch}>Get in Touch</div>
+      <div className={styles.frameDiv1}>
+        <div className={styles.frameDiv2}>
+          <div className={styles.orderTrackingDiv}>Order Tracking</div>
+          <div className={styles.orderTrackingDiv}>Our story</div>
+          <div className={styles.orderTrackingDiv}>Help</div>
+        </div>
+        <div className={styles.frameDiv3}>
+          <div className={styles.orderTrackingDiv}>FAQ’s</div>
+          <div className={styles.orderTrackingDiv}>Terms</div>
+          <div className={styles.orderTrackingDiv}>Privacy</div>
+        </div>
+      </div>
+      <div className={styles.frameDiv4}>
+        <div className={styles.groupDiv2}>
+          <img className={styles.ellipseIcon} alt="" src="../ellipse-628.svg" />
+          <img
+            className={styles.facebook1Icon}
+            alt=""
+            src="../facebook-1@2x.png"
+          />
+        </div>
+        <div className={styles.groupDiv2}>
+          <img className={styles.ellipseIcon} alt="" src="../ellipse-628.svg" />
+          <img
+            className={styles.facebook1Icon}
+            alt=""
+            src="../instagram-1@2x.png"
+          />
+        </div>
+        <div className={styles.groupDiv2}>
+          <img className={styles.ellipseIcon} alt="" src="../ellipse-628.svg" />
+          <img
+            className={styles.facebook1Icon}
+            alt=""
+            src="../linkedin-1@2x.png"
+          />
+        </div>
+        <div className={styles.groupDiv2}>
+          <img className={styles.ellipseIcon} alt="" src="../ellipse-628.svg" />
+          <img
+            className={styles.facebook1Icon}
+            alt=""
+            src="../twitter-1@2x.png"
+          />
+        </div>
+      </div>
+      <div className={styles.flyingsaucergmailcomDiv}>
+        flyingsaucer@gmail.com
+      </div>
+      <div className={styles.frameDiv5}>
+        <div className={styles.frameDiv6}>
+          <div className={styles.frameDiv7}>
+            <div className={styles.howDoesFlyingSaucerWork}>
+              How does Flying Saucer work?
+            </div>
+            <img
+              className={styles.chevronDownIcon}
+              alt=""
+              src="../chevrondown.svg"
+            />
+          </div>
+          <div className={styles.lineDiv} />
+        </div>
+        <div className={styles.frameDiv6}>
+          <div className={styles.frameDiv9}>
+            <div className={styles.howDoesFlyingSaucerWork}>
+              What products do you have?
+            </div>
+            <img
+              className={styles.chevronDownIcon}
+              alt=""
+              src="../chevrondown.svg"
+            />
+          </div>
+          <div className={styles.lineDiv} />
+        </div>
+        <div className={styles.frameDiv6}>
+          <div className={styles.frameDiv11}>
+            <div className={styles.howDoesFlyingSaucerWork}>
+              Does it cost money to sign up?
+            </div>
+            <img
+              className={styles.chevronDownIcon}
+              alt=""
+              src="../chevrondown.svg"
+            />
+          </div>
+          <div className={styles.lineDiv} />
+        </div>
+        <div className={styles.frameDiv6}>
+          <div className={styles.frameDiv13}>
+            <div className={styles.howDoesFlyingSaucerWork}>
+              Where can I find your recipes?
+            </div>
+            <img
+              className={styles.chevronDownIcon}
+              alt=""
+              src="../chevrondown.svg"
+            />
+          </div>
+          <div className={styles.lineDiv} />
+        </div>
+        <div className={styles.frameDiv14}>
+          <div className={styles.howDoesFlyingSaucerWork}>
+            Can I buy a gift card for a friend?
+          </div>
+          <img
+            className={styles.chevronDownIcon}
+            alt=""
+            src="../chevrondown.svg"
+          />
+        </div>
+      </div>
+      <div className={styles.frameDiv15}>
+        <img className={styles.chevronDownIcon} alt="" src="../arrowleft.svg" />
+        <img className={styles.groupIcon} alt="" src="../group-146173.svg" />
+        <img
+          className={styles.chevronDownIcon}
+          alt=""
+          src="../arrowright.svg"
+        />
+      </div>
+      <img
+        className={styles.dALLE2022112212531}
+        alt=""
+        src="../dalle-20221122-1253-1@2x.png"
+      />
+      <div className={styles.rectangleDiv3} />
+      <div className={styles.groupDiv6}>
+        <div className={styles.rectangleDiv4} />
+        <div
+          className={styles.enterYourMobileNu}
+        >{`HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious `}</div>
+        <img className={styles.crossIcon} alt="" src="../cross.svg" />
+      </div>
+      <div className={styles.frameDiv16}>
+        <div className={styles.orderTrackingDiv}>Let’s Shop!</div>
+      </div>
+      <div className={styles.frameDiv17}>
+        <div className={styles.groupDiv7}>
+          <div className={styles.rectangleDiv5} />
+          <div className={styles.theAustralianOutback}>
+            The Australian Outback
+          </div>
+          <img
+            className={styles.rectangleIcon2}
+            alt=""
+            src="../rectangle-138@2x.png"
+          />
+        </div>
+        <div className={styles.groupDiv7}>
+          <div className={styles.rectangleDiv5} />
+          <div className={styles.theSnacksDiv}>The Snacks</div>
+          <img
+            className={styles.rectangleIcon3}
+            alt=""
+            src="../rectangle-1381@2x.png"
+          />
+        </div>
+        <div className={styles.groupDiv7}>
+          <div className={styles.rectangleDiv5} />
+          <div className={styles.theIceCreams}>The Ice Creams</div>
+          <img
+            className={styles.rectangleIcon3}
+            alt=""
+            src="../rectangle-1382@2x.png"
+          />
+        </div>
+        <div className={styles.groupDiv7}>
+          <div className={styles.rectangleDiv5} />
+          <div className={styles.quickEasyMeals}>{`Quick & Easy Meals`}</div>
+          <img
+            className={styles.rectangleIcon3}
+            alt=""
+            src="../rectangle-1383@2x.png"
+          />
+        </div>
+        <div className={styles.groupDiv7}>
+          <div className={styles.rectangleDiv5} />
+          <div className={styles.theSnacksDiv}>Raw Meat</div>
+          <img
+            className={styles.rectangleIcon3}
+            alt=""
+            src="../rectangle-1384@2x.png"
+          />
+        </div>
+      </div>
+      <div className={styles.frameDiv18}>
+        <div className={styles.theSnacksDiv1}>The Snacks</div>
+        <div className={styles.orderTrackingDiv}>The Ice Creams</div>
+        <div className={styles.orderTrackingDiv}>Ingredients</div>
+        <div className={styles.orderTrackingDiv}>{`Quick & Easy Meals`}</div>
+        <div className={styles.orderTrackingDiv}>and more...</div>
+        <div className={styles.frameDiv19}>
+          <div className={styles.orderTrackingDiv}>See all foods</div>
+        </div>
+      </div>
+      <div className={styles.groupDiv12}>
+        <div className={styles.starDiv} />
+        <div className={styles.frameDiv20}>
+          <b className={styles.orderTrackingDiv}>JOIN US!</b>
+          <div className={styles.letsHaveAChat}>
+            <p className={styles.subscriptionsHelpUs}>Let’s have a</p>
+            <p className={styles.blankLineP}>chat!</p>
+          </div>
+        </div>
+      </div>
+      <img
+        className={styles.flyingSaucerLogo1Icon}
+        alt=""
+        src="../flying-saucer-logo-1@2x.png"
+      />
+      <div className={styles.frameDiv21}>
+        <div className={styles.orderTrackingDiv}>Enter Pincode</div>
+      </div>
+      <div className={styles.frameDiv22}>
+        <div className={styles.frameDiv23}>
+          <img
+            className={styles.chevronDownIcon}
+            alt=""
+            src="../frame-146618.svg"
+          />
+          <img
+            className={styles.chevronDownIcon}
+            alt=""
+            src="../frame-146619.svg"
+          />
+          <img
+            className={styles.chevronDownIcon}
+            alt=""
+            src="../frame-146620.svg"
+          />
+          <img className={styles.image6Icon} alt="" src="../image-6@2x.png" />
+          <div className={styles.orderTrackingDiv}>FAQs</div>
+        </div>
+      </div>
+      <div className={styles.lineDiv4} />
+      <div className={styles.lineDiv5} />
+      <div className={styles.frameDiv24}>
+        <div className={styles.frameDiv25}>
+          <div className={styles.frameDiv26}>
+            <img
+              className={styles.nounSaveMoney36735441Icon}
+              alt=""
+              src="../nounsavemoney3673544-1.svg"
+            />
+            <div
+              className={styles.saveUpto15OnEveryPurchas}
+            >{`Save upto 15% on every purchase `}</div>
+          </div>
+          <div className={styles.frameDiv26}>
+            <img
+              className={styles.nounSaveMoney36735441Icon}
+              alt=""
+              src="../nounbakeryproducts3186142-1.svg"
+            />
+            <div className={styles.saveUpto15OnEveryPurchas}>
+              <p
+                className={styles.subscriptionsHelpUs}
+              >{`Free Products, Limited Releases &`}</p>
+              <p className={styles.blankLineP}>Pre-Orders</p>
+            </div>
+          </div>
+          <div className={styles.frameDiv26}>
+            <img
+              className={styles.nounSaveMoney36735441Icon}
+              alt=""
+              src="../nounno4214038-1.svg"
+            />
+            <div className={styles.saveUpto15OnEveryPurchas}>
+              <p
+                className={styles.subscriptionsHelpUs}
+              >{`No committments and No extra `}</p>
+              <p className={styles.blankLineP}>{`Fees `}</p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.frameDiv29}>
+          <div className={styles.frameDiv26}>
+            <img
+              className={styles.nounSaveMoney36735441Icon}
+              alt=""
+              src="../nouncommunity1887831.svg"
+            />
+            <div className={styles.saveUpto15OnEveryPurchas}>
+              <p
+                className={styles.subscriptionsHelpUs}
+              >{`A community that takes you back to a `}</p>
+              <p className={styles.blankLineP}>happier future</p>
+            </div>
+          </div>
+          <div className={styles.frameDiv26}>
+            <img
+              className={styles.nounSaveMoney36735441Icon}
+              alt=""
+              src="../nounevent1487952-1.svg"
+            />
+            <div className={styles.saveUpto15OnEveryPurchas}>
+              <p
+                className={styles.subscriptionsHelpUs}
+              >{`Access Exclusive Content & Uncrowded `}</p>
+              <p className={styles.blankLineP}>Events</p>
+            </div>
+          </div>
+          <div className={styles.frameDiv26}>
+            <img
+              className={styles.nounSaveMoney36735441Icon}
+              alt=""
+              src="../nounspeech1384212-1.svg"
+            />
+            <div className={styles.saveUpto15OnEveryPurchas}>
+              <p
+                className={styles.subscriptionsHelpUs}
+              >{`Have a say in where we go and what we `}</p>
+              <p className={styles.blankLineP}>bring</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.rectangleDiv10} />
+      <div className={styles.rectangleDiv11} />
+      <div className={styles.stayConnectedDiv}>Stay connected</div>
+      <div className={styles.groupDiv13}>
+        <div className={styles.enterYourMail}>Enter your mail</div>
+        <div className={styles.rectangleDiv12} />
+        <div className={styles.rectangleDiv13} />
+        <img
+          className={styles.nounArrow15699171Icon}
+          alt=""
+          src="../nounarrow1569917-1.svg"
+        />
+      </div>
+      <img
+        className={styles.nounArrow15699172Icon}
+        alt=""
+        src="../nounarrow1569917-2.svg"
+      />
+      <div className={styles.andCuratedAllTheGoodStuff}>
+        <p
+          className={styles.subscriptionsHelpUs}
+        >{`And curated all the good stuff in food, `}</p>
+        <p
+          className={styles.subscriptionsHelpUs}
+        >{`culture and what we’re doing, things we `}</p>
+        <p
+          className={styles.subscriptionsHelpUs}
+        >{`believe are too good to be `}</p>
+        <p className={styles.blankLineP}>true but no one will tell you.</p>
+      </div>
+      <div className={styles.lineDiv6} />
+      <div className={styles.lineDiv7} />
+      <div className={styles.lineDiv8} />
+      <div className={styles.lineDiv9} />
+      <div className={styles.lineDiv10} />
+      <div className={styles.lineDiv11} />
+      <img
+        className={styles.flyingSaucerLogo2Icon}
+        alt=""
+        src="../flying-saucer-logo-1@2x.png"
+      />
+      <div className={styles.copyrightAllRightsReserved}>
+        Copyright All Rights Reserved
+      </div>
+      <div className={styles.groupDiv14}>
+        <div className={styles.rectangleDiv14} />
+        <div className={styles.enterYourMobileNu2}>
+          We are currently avaliable at delhi, to know more Click here..
+        </div>
+        <div className={styles.enterYourMobileNu3}>
+          We are currently avaliable at delhi, to know more Click here..
+        </div>
+        <div className={styles.enterYourMobileNu4}>
+          We are currently avaliable at delhi, to know more Click here..
+        </div>
+        <img className={styles.crossIcon1} alt="" src="../cross1.svg" />
+      </div>
+      <div className={styles.properlyFrozenFoodCanStay}>
+        <p
+          className={styles.subscriptionsHelpUs}
+        >{`Properly Frozen Food can stay fresh beyond space & time`}</p>
+        <p className={styles.subscriptionsHelpUs}>&nbsp;</p>
+        <p
+          className={styles.blankLineP}
+        >{`It also helps the world fight food waste & locks in more nutrition `}</p>
+      </div>
+      <div className={styles.frameDiv33}>
+        <div className={styles.orderTrackingDiv}>{`More evidence? ->`}</div>
+      </div>
+    </div>
+  );
+};
 
 export default Home;
-
-// Section One
-const SectionOne = styled.div`
-    min-width: 100%;
-    min-Height: 250px;
-    max-height: 950px;
-    height: calc(100vw / 2.21);
-    background-image: url('images/Rectangle 3038.png');
-    background-size: cover;
-    background-position: center;
-`;
-
-const SectionOneStripe = styled.div`
-    position: absolute;
-    min-width: 100%;
-    height: 42px;
-    background: #FFFFFF;
-    z-index: 110;
-    border: 1px solid lightgrey;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-
-`;
-
-// Section Two
-const SectionTwo = styled.div`
-    width: 100%;
-    background: #F6F6F6;
-`;
-
-// Section Two 1
-const SectionTwoTitle = styled.div`
-    width: 100%;
-    text-align: center;
-    font-family: Poppins Bold;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 72px;
-    color: #000000;
-`;
-
-const SectionTwoDescription = styled.div`
-    width: 100%;
-    text-align: center;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 48px;
-    color: #464646;
-`;
-
-const SectionTwoImage = styled.div`
-    display: inline-block;
-    background: url('images/jamaicansnacks1.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-bottom: 50px;
-    max-width: calc(100vw - 90px);
-`;
-
-const SectionTwoTextActive = styled.div`
-    font-weight: 600;
-    margin: 24px;
-    font-size: 48px;
-    text-align: left;
-    line-height:72px;
-    color: #777777;
-`;
-
-const SectionTwoText = styled.div`
-    font-weight: 600;
-    margin: 24px;
-    font-size: 48px;
-    text-align: left;
-    line-height:72px;
-    color: #000000;
-`;
-
-const SectionTwoButton = styled.button`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-between;
-    padding: 12px 45px;
-    font-size: 16px;
-    color: #ffffff;
-    width: 200px;
-    height: 48px;
-    margin: 24px;
-    background: #000000;
-    border-radius: 4px;
-`;
-
-const SectionThreeButton = styled.button`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-between;
-    padding: 12px 45px;
-    font-size: 16px;
-    color: #ffffff;
-    width: 281px;
-    height: 48px;
-    margin: 48px;
-    background: #000000;
-    border-radius: 4px;
-`;
-
-// Three
-const SectionThreeImage = styled.div`
-    min-width: 100%;
-    min-Height: 250px;
-    max-height: 950px;
-    height: calc(100vw / 2.21);
-    background-image: url('images/Rectangle 3057.png');
-    background-size: cover;
-    background-position: center;
-`;
-
-const SectionThreeTitleBox = styled.div`
-
-`;
-
-const SectionThreeTitle = styled.div`
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 84px;
-    text-align: center;
-    margin-bottom: 60px;
-`;
-
-// Four
-const SectionFourRectangle = styled.div`
-    width: 288px;
-    height: 317px;
-    background: #ffffff;
-    margin: 10px;
-`;
-const SectionFourRectangleText = styled.p`
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
-    color: #000000;
-    margin: 10px;
-`;
-
-// Five
-const SectionFiveImage = styled.div`
-    min-width: 100%;
-    max-height: 950px;
-    min-height: calc(100vw / 2.21);
-    background-image: url('images/Rectangle 3078.png');
-    background-size: cover;
-`;
-
-const SectionFiveStarImage = styled.div`
-    width: 310px;
-    height: 310px;
-    background-image: url('images/Star 1.png');
-    background-size: cover;
-`;
-
-const SectionFiveStarTitle = styled.div`
-    width: 100%;
-    font-family: Poppins Bold;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 48px;
-
-    text-align: center;
-
-    color: #000000;
-`;
-
-const SectionFiveStarDescription = styled.div`
-    width: 100%;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 48px;
-    text-align: center;
-    text-decoration-line: underline;
-
-    color: #000000;
-`;
-
-const SectionFiveFaqText = styled.div`
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 52px;
-`;

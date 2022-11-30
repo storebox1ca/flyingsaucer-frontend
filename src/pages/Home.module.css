@@ -1,0 +1,850 @@
+.rectangleDiv {
+  position: absolute;
+  top: -11px;
+  left: 0;
+  background-color: var(--color-gray-100);
+  width: 1440px;
+  height: 6888px;
+}
+.rectangleIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1339px;
+  height: 692px;
+  object-fit: cover;
+}
+.groupDiv,
+.rectangleDiv1 {
+  position: absolute;
+  left: 0;
+  width: 1339px;
+  height: 693px;
+}
+.rectangleDiv1 {
+  top: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.5));
+}
+.groupDiv {
+  top: 100px;
+}
+.jamaicanSnacks1Icon {
+  position: absolute;
+  top: 1125px;
+  left: 520px;
+  width: 733px;
+  height: 477px;
+  object-fit: cover;
+}
+.haveAQuestionWeAreHereT {
+  position: absolute;
+  top: 5228px;
+  left: 371px;
+  line-height: 52px;
+  color: var(--color-gray-400);
+  text-align: center;
+  display: inline-block;
+}
+.subscriptionsHelpUs {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.blankLineP {
+  margin: 0;
+}
+.subscriptionsHelpUsEstimate {
+  position: absolute;
+  top: 2810px;
+  left: 50px;
+  line-height: 56px;
+  color: var(--color-gray-400);
+  text-align: center;
+  display: inline-block;
+  width: 1240px;
+  height: 155px;
+}
+.fAQsDiv,
+.saucersThatAreTakingOff,
+.whyGoSubZero {
+  position: absolute;
+  font-size: var(--font-size-2xl);
+  display: inline-block;
+}
+.whyGoSubZero {
+  top: 1794px;
+  left: 881px;
+  text-align: right;
+  width: 339px;
+}
+.fAQsDiv,
+.saucersThatAreTakingOff {
+  top: 5132px;
+  left: 604px;
+  text-align: center;
+}
+.saucersThatAreTakingOff {
+  top: 3857px;
+  left: 363px;
+}
+.andBuiltALaunchpadForAll {
+  position: relative;
+  line-height: 48px;
+  display: inline-block;
+  width: 1104px;
+}
+.frameDiv {
+  position: absolute;
+  top: 976px;
+  left: 106px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--color-gray-400);
+}
+.itCanInvadeFoodWasteMaln {
+  position: absolute;
+  top: 694px;
+  left: 90px;
+  line-height: 48px;
+  color: var(--color-white);
+  display: inline-block;
+  width: 1104px;
+}
+.soWeveDeclassifiedFrozenF,
+.yourFreezerIsASpecialPlac {
+  position: absolute;
+  top: 891px;
+  left: 102px;
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  display: inline-block;
+}
+.yourFreezerIsASpecialPlac {
+  top: 621px;
+  left: 86px;
+  color: var(--color-white);
+  width: 949px;
+}
+.rectangleIcon1 {
+  top: 0;
+  object-fit: cover;
+}
+.groupDiv1,
+.rectangleDiv2,
+.rectangleIcon1 {
+  position: absolute;
+  left: 0;
+  width: 1340px;
+  height: 500px;
+}
+.rectangleDiv2 {
+  top: 0;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.6));
+}
+.groupDiv1 {
+  top: 2156px;
+}
+.b {
+  font-size: var(--font-size-2xl);
+  font-family: var(--font-poppins);
+}
+.hungryKindP {
+  margin: 0;
+  font-size: 64px;
+  color: var(--color-black);
+}
+.closeEncountersOfTheHungry {
+  position: absolute;
+  top: 2566px;
+  left: 333px;
+  text-align: center;
+  display: inline-block;
+  font-size: 56px;
+  color: var(--color-white);
+}
+.getInTouch {
+  position: absolute;
+  top: 6120px;
+  left: 729px;
+  font-size: var(--font-size-lg);
+  display: inline-block;
+}
+.orderTrackingDiv {
+  position: relative;
+  display: inline-block;
+}
+.frameDiv1,
+.frameDiv2,
+.frameDiv3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.frameDiv1,
+.frameDiv3 {
+  gap: 35px;
+}
+.frameDiv1 {
+  position: absolute;
+  top: 6546px;
+  left: 619px;
+  flex-direction: row;
+  gap: 210px;
+  font-size: var(--font-size-xs);
+}
+.ellipseIcon,
+.facebook1Icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+}
+.facebook1Icon {
+  top: 2px;
+  left: 2px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  opacity: 0.75;
+}
+.groupDiv2 {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+.frameDiv4 {
+  position: absolute;
+  top: 6672px;
+  left: 101px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-md);
+}
+.flyingsaucergmailcomDiv {
+  position: absolute;
+  top: 6612px;
+  left: 100px;
+  font-size: var(--font-size-2xs);
+  display: inline-block;
+}
+.howDoesFlyingSaucerWork {
+  position: relative;
+  line-height: 52px;
+  display: inline-block;
+}
+.chevronDownIcon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.frameDiv7 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 615px;
+}
+.lineDiv {
+  position: relative;
+  border-top: 1px solid var(--color-gray-500);
+  box-sizing: border-box;
+  width: 1140px;
+  height: 1px;
+  flex-shrink: 0;
+}
+.frameDiv6,
+.frameDiv9 {
+  display: flex;
+  justify-content: flex-start;
+}
+.frameDiv6 {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-md);
+}
+.frameDiv9 {
+  gap: 635px;
+}
+.frameDiv11,
+.frameDiv13,
+.frameDiv9 {
+  flex-direction: row;
+  align-items: center;
+}
+.frameDiv11 {
+  display: flex;
+  justify-content: flex-start;
+  gap: 608px;
+}
+.frameDiv13 {
+  gap: 613px;
+}
+.frameDiv13,
+.frameDiv14,
+.frameDiv5 {
+  display: flex;
+  justify-content: flex-start;
+}
+.frameDiv14 {
+  flex-direction: row;
+  align-items: center;
+  gap: 569px;
+}
+.frameDiv5 {
+  position: absolute;
+  top: 5360px;
+  left: 100px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-lg);
+  text-align: center;
+}
+.groupIcon {
+  position: relative;
+  width: 236px;
+  height: 2.5px;
+  flex-shrink: 0;
+}
+.frameDiv15 {
+  position: absolute;
+  top: 4342px;
+  left: 473px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-lg);
+}
+.dALLE2022112212531,
+.rectangleDiv3 {
+  position: absolute;
+  top: 4454px;
+  left: 0;
+  width: 1339px;
+  height: 550px;
+}
+.dALLE2022112212531 {
+  object-fit: cover;
+}
+.rectangleDiv3 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.enterYourMobileNu,
+.rectangleDiv4 {
+  position: absolute;
+  transform: rotate(-6.36deg);
+  transform-origin: 0 0;
+}
+.rectangleDiv4 {
+  top: -5.15px;
+  left: 46.21px;
+  background-color: var(--color-white);
+  box-shadow: 0-4px 12px rgba(194, 194, 194, 0.25);
+  width: 1359.83px;
+  height: 65.26px;
+}
+.enterYourMobileNu {
+  top: 8.01px;
+  left: 0.89px;
+  display: inline-block;
+}
+.crossIcon {
+  position: absolute;
+  top: -136.18px;
+  left: 1326.05px;
+  width: 33.58px;
+  height: 35.15px;
+  overflow: hidden;
+}
+.groupDiv6 {
+  position: absolute;
+  top: 4621.84px;
+  left: -58.21px;
+  width: 1406.33px;
+  height: 65.26px;
+  transform: rotate(-6.36deg);
+  transform-origin: 0 0;
+  text-align: center;
+}
+.frameDiv16 {
+  position: absolute;
+  top: 3649px;
+  left: 580px;
+  border-radius: var(--br-md);
+  background-color: var(--color-black);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-sm) var(--padding-lg);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: var(--font-size-2xs);
+  color: var(--color-white);
+}
+.rectangleDiv5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gray-200);
+  width: 288px;
+  height: 317px;
+}
+.theAustralianOutback {
+  position: absolute;
+  top: 84.86%;
+  left: 8.33%;
+  font-weight: 500;
+  display: inline-block;
+}
+.rectangleIcon2 {
+  position: absolute;
+  top: 1px;
+  left: 165px;
+  width: 288px;
+  height: 259px;
+  object-fit: cover;
+}
+.groupDiv7 {
+  position: relative;
+  width: 288px;
+  height: 317px;
+  flex-shrink: 0;
+}
+.theSnacksDiv {
+  position: absolute;
+  height: 9.46%;
+  width: 51.39%;
+  top: 84.86%;
+  left: 8.33%;
+  font-weight: 500;
+  display: inline-block;
+}
+.rectangleIcon3 {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 288px;
+  height: 259px;
+  object-fit: cover;
+}
+.quickEasyMeals,
+.theIceCreams {
+  position: absolute;
+  height: 9.46%;
+  width: 69.79%;
+  top: 84.86%;
+  left: 8.33%;
+  font-weight: 500;
+  display: inline-block;
+}
+.quickEasyMeals {
+  width: 70.14%;
+  left: 14.93%;
+}
+.frameDiv17 {
+  position: absolute;
+  top: 3977px;
+  left: -165px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-md);
+  font-size: var(--font-size-xs);
+}
+.theSnacksDiv1 {
+  position: relative;
+  color: #777;
+  display: inline-block;
+}
+.frameDiv18,
+.frameDiv19 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameDiv19 {
+  border-radius: var(--br-md);
+  background-color: var(--color-black);
+  flex-direction: row;
+  padding: var(--padding-sm) var(--padding-lg);
+  box-sizing: border-box;
+  font-size: var(--font-size-2xs);
+  color: var(--color-white);
+}
+.frameDiv18 {
+  position: absolute;
+  top: 1125px;
+  left: 100px;
+  flex-direction: column;
+  gap: 24px;
+  font-size: var(--font-size-xl);
+}
+.starDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f6f6f6;
+  width: 310px;
+  height: 310px;
+}
+.letsHaveAChat {
+  position: relative;
+  text-decoration: underline;
+  font-weight: 500;
+  display: inline-block;
+}
+.frameDiv20 {
+  position: absolute;
+  top: 75px;
+  left: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-md);
+}
+.groupDiv12 {
+  position: absolute;
+  top: 4634px;
+  left: 565px;
+  width: 310px;
+  height: 310px;
+  text-align: center;
+}
+.flyingSaucerLogo1Icon {
+  position: absolute;
+  top: 26px;
+  left: 100px;
+  width: 170px;
+  height: 48px;
+  object-fit: cover;
+}
+.frameDiv21 {
+  position: absolute;
+  top: 26px;
+  left: 1198px;
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-sm) var(--padding-md);
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-2xs);
+}
+.image6Icon {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.frameDiv22,
+.frameDiv23 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frameDiv23 {
+  flex-direction: column;
+  gap: 27px;
+}
+.frameDiv22 {
+  top: 100px;
+  left: 1339px;
+  background-color: var(--color-gray-100);
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  width: 101px;
+  height: 693px;
+  flex-direction: row;
+  padding: var(--padding-md) var(--padding-md) 63px;
+  text-align: center;
+  font-size: var(--font-size-xs);
+}
+.frameDiv22,
+.lineDiv4,
+.lineDiv5 {
+  position: absolute;
+  box-sizing: border-box;
+}
+.lineDiv4 {
+  top: 99.5px;
+  left: -0.5px;
+  border-top: 1px solid var(--color-black);
+  width: 1441px;
+  height: 1px;
+}
+.lineDiv5 {
+  top: 791.5px;
+  left: 1338.5px;
+  border-right: 1px solid var(--color-black);
+  width: 1px;
+  height: 6086px;
+}
+.nounSaveMoney36735441Icon {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.saveUpto15OnEveryPurchas {
+  position: relative;
+  line-height: 42px;
+  display: inline-block;
+}
+.frameDiv26 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-0);
+}
+.frameDiv25 {
+  flex-direction: column;
+  gap: 69px;
+}
+.frameDiv24,
+.frameDiv25,
+.frameDiv29 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frameDiv29 {
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+.frameDiv24 {
+  position: absolute;
+  top: 3025px;
+  left: 148px;
+  flex-direction: row;
+  gap: 150px;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+.rectangleDiv10,
+.rectangleDiv11 {
+  position: absolute;
+  top: 6030px;
+  left: 100px;
+  height: 358px;
+}
+.rectangleDiv10 {
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 1139px;
+}
+.rectangleDiv11 {
+  background-color: var(--color-gray-300);
+  width: 569px;
+}
+.enterYourMail,
+.stayConnectedDiv {
+  position: absolute;
+  display: inline-block;
+}
+.stayConnectedDiv {
+  top: 6110px;
+  left: 140px;
+  font-size: var(--font-size-lg);
+  line-height: 52px;
+  color: var(--color-white);
+  text-align: center;
+}
+.enterYourMail {
+  top: 13px;
+  left: 20px;
+}
+.rectangleDiv12 {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  border: 1px solid #030303;
+  box-sizing: border-box;
+  width: 450px;
+  height: 56px;
+}
+.nounArrow15699171Icon,
+.rectangleDiv13 {
+  position: absolute;
+  top: 1px;
+  width: 72px;
+  height: 55px;
+}
+.rectangleDiv13 {
+  left: 450px;
+  background-color: var(--color-gray-300);
+  transform: rotate(-180deg);
+  transform-origin: 0 0;
+}
+.nounArrow15699171Icon {
+  left: 378px;
+  overflow: hidden;
+}
+.groupDiv13 {
+  position: absolute;
+  top: 6252px;
+  left: 729px;
+  width: 450px;
+  height: 56px;
+  font-size: var(--font-size-xs);
+}
+.nounArrow15699172Icon {
+  position: absolute;
+  top: 6287px;
+  left: 569px;
+  width: 60px;
+  height: 45.83px;
+  overflow: hidden;
+}
+.andCuratedAllTheGoodStuff {
+  position: absolute;
+  top: 6213px;
+  left: 140px;
+  font-size: var(--font-size-xs);
+  line-height: 30px;
+  color: var(--color-white);
+  display: inline-block;
+}
+.lineDiv10,
+.lineDiv11,
+.lineDiv6,
+.lineDiv7,
+.lineDiv8,
+.lineDiv9 {
+  position: absolute;
+  top: 5955.5px;
+  left: 99.5px;
+  border-top: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 1240px;
+  height: 1px;
+}
+.lineDiv10,
+.lineDiv11,
+.lineDiv7,
+.lineDiv8,
+.lineDiv9 {
+  top: 6467.5px;
+}
+.lineDiv10,
+.lineDiv11,
+.lineDiv8,
+.lineDiv9 {
+  top: 6775.5px;
+}
+.lineDiv10,
+.lineDiv11,
+.lineDiv9 {
+  top: 5063.5px;
+}
+.lineDiv10,
+.lineDiv11 {
+  top: 3776.5px;
+}
+.lineDiv11 {
+  top: 1731.5px;
+}
+.flyingSaucerLogo2Icon {
+  position: absolute;
+  top: 6528px;
+  left: 101px;
+  width: 170px;
+  height: 48px;
+  object-fit: cover;
+}
+.copyrightAllRightsReserved {
+  position: absolute;
+  top: 6808px;
+  left: 578px;
+  font-size: var(--font-size-2xs);
+  display: inline-block;
+}
+.rectangleDiv14 {
+  position: absolute;
+  top: 0;
+  left: 537px;
+  background-color: var(--color-gray-100);
+  width: 1440px;
+  height: 42px;
+}
+.enterYourMobileNu2,
+.enterYourMobileNu3,
+.enterYourMobileNu4 {
+  position: absolute;
+  top: 5px;
+  left: 643px;
+  display: inline-block;
+  width: 623px;
+}
+.enterYourMobileNu3,
+.enterYourMobileNu4 {
+  left: 0;
+}
+.enterYourMobileNu4 {
+  left: 1286px;
+}
+.crossIcon1 {
+  position: absolute;
+  top: 5px;
+  left: 1929px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+}
+.groupDiv14 {
+  position: absolute;
+  top: 101px;
+  left: -537px;
+  width: 1977px;
+  height: 42px;
+  text-align: center;
+  font-size: var(--font-size-xs);
+}
+.properlyFrozenFoodCanStay {
+  position: absolute;
+  top: 1777px;
+  left: 89px;
+  line-height: 52px;
+  color: var(--color-gray-400);
+  display: inline-block;
+  width: 557px;
+}
+.frameDiv33 {
+  position: absolute;
+  top: 1970px;
+  left: 976px;
+  border-radius: var(--br-md);
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-sm) var(--padding-lg);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+  mix-blend-mode: normal;
+  font-size: var(--font-size-2xs);
+}
+.homeDiv {
+  position: relative;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 6877px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}

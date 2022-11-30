@@ -7,11 +7,14 @@ function Header() {
             {/* Header */}
             <div className="container">
                 {/* Header section */}
-                <div className="d-flex justify-content-between">
+                <div className="d-flex justify-content-between align-items-center">
                     {/* Company logo */}
                     <HeaderLogo />
                     {/* Hamburger button */}
-                    <HamBurger className="hamburger">Our Plans</HamBurger>
+                    <HamBurger className="hamburger d-none d-sm-inline-block">Our Plans</HamBurger>
+                    <div className="d-inline-block d-sm-none pt-2">
+                        <span className="svg-icon svg-icon-min-white svg-icon-menu"></span>
+                    </div>
                 </div>
             </div>
         </HeaderDiv>
@@ -20,7 +23,7 @@ function Header() {
 
 function Navbar() {
     return ( 
-        <NavbarDiv className="d-flex justify-content-center align-items-center">
+        <NavbarDiv className="d-none d-sm-flex justify-content-center align-items-center">
             {/* Navbar */}
             <div className="text-black p-2">
                 <span className="svg-icon svg-icon-min svg-icon-menu"></span>
@@ -45,12 +48,11 @@ function Footer() {
                                 <svg className="svg-icon svg-icon-min svg-icon-chevrons-right"></svg>
                             </div>
                         </div>
-                        <p className="mt-4">Get your first meal box for free</p>
-                        <p className="mt-5 pt-5 text-light">Copyright@floe All Rights Reserved</p>
+                        <p className="mt-4 mb-5">Get your first meal box for free</p>
                     </div>
                     <div className="col-12 col-xl-7">
                         <div className="row">
-                            <div className="col-12 col-lg-6">
+                            <div className="col-12 col-md-6">
                                 <ul className="footer-links">
                                     <li>
                                         <a href="*">Order Tracking</a>
@@ -61,23 +63,9 @@ function Footer() {
                                     <li>
                                         <a href="*">Help</a>
                                     </li>
-                                    <li className="pt-5">
-                                        <div className="social-icon d-inline-block m-2">
-                                            <img className="text-white" src="svgs/facebook 1.png" />
-                                        </div>
-                                        <div className="social-icon d-inline-block m-2">
-                                            <img className="text-white" src="svgs/instagram 1.png" />
-                                        </div>
-                                        <div className="social-icon d-inline-block m-2">
-                                            <img className="text-white" src="svgs/linkedin 1.png" />
-                                        </div>
-                                        <div className="social-icon d-inline-block m-2">
-                                            <img className="text-white" src="svgs/twitter 1.png" />
-                                        </div>
-                                    </li>
                                 </ul>
                             </div>
-                            <div className="col-12 col-xl-6">
+                            <div className="col-12 col-md-6">
                                 <ul className="footer-links">
                                     <li>
                                         <a href="*">FAQ's</a>
@@ -89,6 +77,30 @@ function Footer() {
                                         <a href="*">Privacy</a>
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-12">
+                        <div className="w-100 d-flex">
+                            <div className="float-left d-sm-inline-block">
+                                <p className="text-light mt-3 pt-3">Copyright@floe All Rights Reserved</p>
+                            </div>
+                            <div className="mx-auto"></div>
+                            <div className="float-right d-inline-block">
+                                <div className="social-icon d-inline-block m-2">
+                                    <img className="text-white" src="svgs/facebook 1.png" />
+                                </div>
+                                <div className="social-icon d-inline-block m-2">
+                                    <img className="text-white" src="svgs/instagram 1.png" />
+                                </div>
+                                <div className="social-icon d-inline-block m-2">
+                                    <img className="text-white" src="svgs/linkedin 1.png" />
+                                </div>
+                                <div className="social-icon d-inline-block m-2">
+                                    <img className="text-white" src="svgs/twitter 1.png" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -132,7 +144,8 @@ const HamBurger = styled.div`
 const NavbarDiv = styled.div`
     position: fixed;
     right: 0;
-    width: 75px;
+    width: 90px;
+    padding: 8px;
     height: 100vh;
     z-index: 100;
 `;

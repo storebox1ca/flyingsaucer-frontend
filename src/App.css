@@ -37,23 +37,36 @@
   }
 }
 
+
 /* Theme */
 
-/* Header */
-@media (min-width: 576px)
+.MinDiv
 {
-  .hamburger
-  {
-    display: inline-block;
-  }
+  min-height: calc(100vh - 143px - 397px);
+  left: 0;
+  border: 1px solid lightgrey;
+  border-left: 0;
+  border-bottom: 0;
+  border-top: 0;
+  overflow: hidden;
 }
 @media screen and (max-width: 575px)
 {
-  .hamburger
+  .MinDiv
   {
-    display: none;
+    max-width: 100%;
   }
 }
+@media (min-width: 576px)
+{
+  .MinDiv
+  {
+    max-width: calc(100vw - 90px);
+  }
+}
+
+
+/* Header */
 /* Footer */
 .submit-box
 {
@@ -175,6 +188,12 @@ ul.footer-links a:hover
   display: inline-block;
   background-size: cover;
 }
+.svg-icon-min-white
+{
+  width: 32px;
+  height: 32px;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
 .svg-icon-min 
 {
   width: 32px;
@@ -264,16 +283,43 @@ ul.footer-links a:hover
   width: 288px;
   height: 260px;
 }
-
+.SectionOneOverlay
+{
+  position: absolute;
+  min-Height: 250px;
+  max-height: 950px;
+  height: calc(100vw / 2.21);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+.SectionOneText
+{
+  font-weight: 600;
+  text-align: center;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 575px) 
+{
+  .SectionOneOverlay
+  {
+    min-width: 100%;
+  }
+}
+@media (min-width: 576px) 
+{
+  .SectionOneOverlay
+  {
+    min-width: calc(100% - 90px);    
+  }
+}
 @media screen and (max-width: 799px) 
 {
   .SectionOneText
   {
-    font-size: 32px;
-  }
+    font-size: 36px;
+  } 
   .SectionTwoImage
   {
-    height: 300px;
+    min-height: 300px;
     width: 450px;
   }
   .HeaderDiv
@@ -289,7 +335,7 @@ ul.footer-links a:hover
   }
   .SectionTwoImage
   {
-    height: 534px;
+    min-height: 534px;
     width: 800px;
   }
   .SectionFiveStripeAngle

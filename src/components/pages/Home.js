@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { MinDiv } from "../partials/Sections";
 import Header, { Footer, Navbar } from "../partials/Theme";
 
 const Home = () => {
@@ -41,15 +40,15 @@ const Home = () => {
                 </p> */}
             </SectionOneStripe>
 
-            <MinDiv>
+            <div className="MinDiv">
 
                 {/* Section One */}
                 <SectionOne>
-                    <SectionOneOverlay className="d-flex justify-content-center">
-                        <SectionOneText className="mt-auto mb-5 SectionOneText">
+                    <div className="SectionOneOverlay d-flex justify-content-center">
+                        <div className="mt-auto mb-3 mb-sm-5 SectionOneText">
                             Culinary delights beyond<br />Spacetime
-                        </SectionOneText>
-                    </SectionOneOverlay>
+                        </div>
+                    </div>
                 </SectionOne>
 
                 {/* Section Two */}
@@ -58,7 +57,7 @@ const Home = () => {
                     <SectionTwoTitle className="pt-5">
                         Good Food, always
                     </SectionTwoTitle>
-                    <SectionTwoDescription>
+                    <SectionTwoDescription className="px-2">
                         As we have declassified the best that Frozen Food has<br />food to offer
                     </SectionTwoDescription>
 
@@ -76,10 +75,10 @@ const Home = () => {
                     <SectionTwoImage className="SectionTwoImage" />
 
                     {/* Two */}
-                    <SectionTwoTitle className="mt-5 pt-5">
+                    <SectionTwoTitle className="mt-sm-5 pt-sm-5">
                         Why go sub-zero?
                     </SectionTwoTitle>
-                    <SectionTwoDescription>
+                    <SectionTwoDescription className="px-2">
                         Properly Frozen Food at -18° C helps fight food wastage & locks in more<br /> nutrition. Without the need for any preservatives or loss of flavour
                     </SectionTwoDescription>
                     <div className="d-flex justify-content-center mb-3">
@@ -97,7 +96,7 @@ const Home = () => {
                         </SectionThreeTitle>
                     </SectionThreeTitleBox>
 
-                    <SectionTwoDescription>
+                    <SectionTwoDescription className="px-2">
                         Subscriptions help us estimate demand better, fight food waste and grow<br /> this community meaningfully, Buying even one product every week<br /> automatically gives you all the benefits!
                     </SectionTwoDescription>
 
@@ -144,22 +143,6 @@ const Home = () => {
                                     )
                                 )
                             }
-                            {/* <SectionFourRectangle>
-                                <img className="section-four-product-image" src="images/products/Rectangle 2.png"></img>
-                                <SectionFourRectangleText>The Snacks</SectionFourRectangleText>
-                            </SectionFourRectangle>
-                            <SectionFourRectangle>
-                                <img className="section-four-product-image" src="images/products/Rectangle 3.png"></img>
-                                <SectionFourRectangleText>The Ice Creams</SectionFourRectangleText>
-                            </SectionFourRectangle>
-                            <SectionFourRectangle>
-                                <img className="section-four-product-image" src="images/products/Rectangle 4.png"></img>
-                                <SectionFourRectangleText>Quick & Easy Meals</SectionFourRectangleText>
-                            </SectionFourRectangle>
-                            <SectionFourRectangle>
-                                <img className="section-four-product-image" src="images/products/Rectangle 5.png"></img>
-                                <SectionFourRectangleText>Raw Meat</SectionFourRectangleText>
-                            </SectionFourRectangle> */}
                         </div>
                     </div>
 
@@ -206,22 +189,22 @@ const Home = () => {
                     <div className="container pt-5 pb-5">
                         <div className="d-flex justify-content-between align-items-center">
                             <SectionFiveFaqText>How does Flying Saucer work?</SectionFiveFaqText>
-                            <div style={{minHeight: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
+                            <div style={{minWidth: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
                         </div>
                         <hr style={{opacity: '1'}} />
                         <div className="d-flex justify-content-between align-items-center">
                             <SectionFiveFaqText>What products do you have?</SectionFiveFaqText>
-                            <div style={{minHeight: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
+                            <div style={{minWidth: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
                         </div>
                         <hr style={{opacity: '1'}} />
                         <div className="d-flex justify-content-between align-items-center">
                             <SectionFiveFaqText>Does it cost money to sign up?</SectionFiveFaqText>
-                            <div style={{minHeight: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
+                            <div style={{minWidth: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
                         </div>
                         <hr style={{opacity: '1'}} />
                         <div className="d-flex justify-content-between align-items-center">
                             <SectionFiveFaqText>Where can I find your recipes?</SectionFiveFaqText>
-                            <div style={{minHeight: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
+                            <div style={{minWidth: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
                         </div>
                         <hr style={{opacity: '1'}} />
                         <div className="d-flex justify-content-between align-items-center">
@@ -234,7 +217,7 @@ const Home = () => {
                 </SectionTwo>
 
             <Footer />
-            </MinDiv>
+            </div>
         </div>
     );
 }
@@ -244,25 +227,12 @@ export default Home;
 // Section One
 const SectionOne = styled.div`
     min-width: 100%;
+    min-Height: 250px;
     max-height: 950px;
-    min-height: calc(100vw / 2.21);
+    height: calc(100vw / 2.21);
     background-image: url('images/Rectangle 3038.png');
     background-size: cover;
-`;
-
-const SectionOneOverlay = styled.div`
-    position: absolute;
-    min-width: calc(100% - 90px);
-    max-height: 950px;
-    min-height: calc(100vw / 2.21);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%);
-`;
-
-const SectionOneText = styled.div`
-    font-weight: 600;
-    line-height: 70px;
-    text-align: center;
-    color: #FFFFFF;
+    background-position: center;
 `;
 
 const SectionOneStripe = styled.div`
@@ -310,6 +280,7 @@ const SectionTwoImage = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
     margin-bottom: 50px;
+    max-width: calc(100vw - 90px);
 `;
 
 const SectionTwoTextActive = styled.div`
@@ -361,10 +332,12 @@ const SectionThreeButton = styled.button`
 // Three
 const SectionThreeImage = styled.div`
     min-width: 100%;
+    min-Height: 250px;
     max-height: 950px;
-    min-height: calc(100vw / 2.21);
+    height: calc(100vw / 2.21);
     background-image: url('images/Rectangle 3057.png');
     background-size: cover;
+    background-position: center;
 `;
 
 const SectionThreeTitleBox = styled.div`

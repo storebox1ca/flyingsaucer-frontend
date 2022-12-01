@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { MinDivBorder } from "../partials/Sections";
 
 import Header, { Footer, Navbar } from "../partials/Theme";
 
@@ -40,49 +41,68 @@ const Home = () => {
                 </p> */}
             </SectionOneStripe>
 
-            <div className="MinDiv">
+            <div className="MinDiv" style={{backgroundColor: '#EEEBE6'}}>
 
                 {/* Section One */}
                 <SectionOne>
-                    <div className="SectionOneOverlay d-flex justify-content-center">
-                        <div className="mt-auto mb-3 mb-sm-5 SectionOneText">
-                            Culinary delights beyond<br />Spacetime
+                    <div className="SectionOneOverlay">
+                        <div className="d-flex align-items-end SectionOneTextBox">
+                            <div className="my-5 my-md-5 pt-3 py-md-3">
+                                <div className="SectionOneText minDiv-text">
+                                    Your freezer is a special place
+                                </div>
+                                <SectionOneDescription className="mt-auto minDiv-text">
+                                    It can invade food waste, malnutrition and keep things superfresh
+                                </SectionOneDescription>
+                            </div>
                         </div>
                     </div>
                 </SectionOne>
 
                 {/* Section Two */}
-                <SectionTwo className="pt-5">
+                <SectionTwo>
                     {/* One */}
-                    <SectionTwoTitle className="pt-5">
-                        Good Food, always
+                    <SectionTwoTitle className="pt-5 minDiv-text">
+                        So we’ve declassified Frozen Food
                     </SectionTwoTitle>
-                    <SectionTwoDescription className="px-2">
-                        As we have declassified the best that Frozen Food has<br />food to offer
+                    <SectionTwoDescription className="minDiv-text">
+                        And built a launchpad for all the good food from around the world
                     </SectionTwoDescription>
 
-                    <div className="d-inline-block w-auto">
-                        <div className="ml-3">
-                            <SectionTwoTextActive>The Snacks</SectionTwoTextActive>
+                    <div className="row minDiv-text mb-5 pb-5">
+                        <div className="col-12 col-xl-5">
+                            <SectionTwoText style={{color: '#777777'}}>The Snacks</SectionTwoText>
                             <SectionTwoText>The Ice Creams</SectionTwoText>
-                            <SectionTwoText>Raw Meat</SectionTwoText>
+                            <SectionTwoText>Ingredients</SectionTwoText>
                             <SectionTwoText>Quick & Easy Meals</SectionTwoText>
-                            <SectionTwoText>and more</SectionTwoText>
-                            <SectionTwoButton className="mt-5">See all foods</SectionTwoButton>
-                            <br />
+                            <SectionTwoText>and more...</SectionTwoText>
+                            <SectionTwoButton className="mt-2">See all foods</SectionTwoButton>
+                        </div>
+                        <div className="col-12 col-xl-7 pt-4">
+                            <img src="images/jamaicansnacks1.jpg" alt="" className="w-100" style={{maxHeight: '500px', maxWidth: '800px'}} />
                         </div>
                     </div>
-                    <SectionTwoImage className="SectionTwoImage" />
 
                     {/* Two */}
-                    <SectionTwoTitle className="mt-sm-5 pt-sm-5">
-                        Why go sub-zero?
-                    </SectionTwoTitle>
-                    <SectionTwoDescription className="px-2">
-                        Properly Frozen Food at -18° C helps fight food wastage & locks in more<br /> nutrition. Without the need for any preservatives or loss of flavour
-                    </SectionTwoDescription>
-                    <div className="d-flex justify-content-center mb-3">
-                        <SectionThreeButton>Show me the evidence</SectionThreeButton>
+                    <MinDivBorder />
+
+                    <div className="d-xl-flex pt-5 pb-5 mb-5">
+                        <div className="float-xl-left">
+                            <SectionTwoDescription className=" minDiv-text">
+                                Properly Frozen Food can stay fresh beyond space & time
+                                <br />
+                                <br />
+                                It also helps the world fight food waste & locks in more nutrition 
+                            </SectionTwoDescription>
+                        </div>
+                        <div className="float-xl-right" style={{minWidth: '450px'}}>
+                            <SectionTwoThreeTitle className="minDiv-text mb-5">
+                                Why go <br />Sub-Zero?
+                            </SectionTwoThreeTitle>
+                            <div className="d-flex justify-content-end mb-5" style={{marginRight: '100px'}}>
+                                <SectionTwoThreeButton>{'More evidence? ->'}</SectionTwoThreeButton>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Three */}
@@ -90,14 +110,14 @@ const Home = () => {
 
                     <SectionThreeTitleBox>
                         <SectionThreeTitle className="SectionThreeTitle">
-                            <span className="text-white" style={{fontFamily: 'Poppins Bold'}}>Close Encounters of the</span>
+                            <span className="text-white">Close Encounters of the</span>
                             <br /> 
-                            <span className="text-black" style={{fontFamily: 'Poppins Bold'}}>Hungry Kind</span>
+                            <span className="text-black">Hungry Kind</span>
                         </SectionThreeTitle>
                     </SectionThreeTitleBox>
 
-                    <SectionTwoDescription className="px-2">
-                        Subscriptions help us estimate demand better, fight food waste and grow<br /> this community meaningfully, Buying even one product every week<br /> automatically gives you all the benefits!
+                    <SectionTwoDescription className=" minDiv-text text-center">
+                        Subscriptions help us estimate demand better, fight food waste and grow this community meaningfully, Buying even one product every week automatically gives you all the benefits!
                     </SectionTwoDescription>
 
                     <div className="container">
@@ -119,18 +139,20 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <div className="d-flex justify-content-center mt-3">
+                    <div className="d-flex justify-content-center mt-3 pb-5">
                         <SectionTwoButton>
                             <span style={{marginLeft: '10px'}}>Lets Shop!</span>
                         </SectionTwoButton>
                     </div>
 
+                    <MinDivBorder className="mt-5"/>
+
                     {/* Four */}
                     
                     
-                    <SectionTwoTitle className="mt-5 pt-5">
+                    <SectionFourTitle className="mt-5 pt-5 text-center" >
                         Saucers that are taking off...
-                    </SectionTwoTitle>
+                    </SectionFourTitle>
 
                     <div className="row my-5">
                         <div className="d-flex justify-content-center align-items-center">
@@ -179,14 +201,14 @@ const Home = () => {
 
                     {/* Six */}
                     
-                    <SectionTwoTitle className="mt-5 pt-5">
+                    <SectionTwoTitle className="mt-5 pt-5 text-center">
                         FAQ’s
                     </SectionTwoTitle>
-                    <SectionTwoDescription className="mt-3">
+                    <SectionTwoDescription className="mt-3 text-center">
                         Have a question, we are here to help.
                     </SectionTwoDescription>
 
-                    <div className="container pt-5 pb-5">
+                    <SectionFAQ className="pt-5 pb-5">
                         <div className="d-flex justify-content-between align-items-center">
                             <SectionFiveFaqText>How does Flying Saucer work?</SectionFiveFaqText>
                             <div style={{minWidth: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
@@ -212,7 +234,7 @@ const Home = () => {
                             <div style={{minHeight: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
                         </div>
                         <hr style={{opacity: '1'}} />
-                    </div>
+                    </SectionFAQ>
 
                 </SectionTwo>
 
@@ -227,9 +249,8 @@ export default Home;
 // Section One
 const SectionOne = styled.div`
     min-width: 100%;
-    min-Height: 250px;
     max-height: 950px;
-    height: calc(100vw / 2.21);
+    min-height: calc(100vw / 2.21);
     background-image: url('images/Rectangle 3038.png');
     background-size: cover;
     background-position: center;
@@ -248,18 +269,25 @@ const SectionOneStripe = styled.div`
 
 `;
 
+const SectionOneDescription = styled.div`
+    font-weight: 400;
+    font-size: 32px;
+    color: #ffffff;
+    line-height: 48px;
+    text-align: left;
+    z-index:101;
+`;
+
 // Section Two
 const SectionTwo = styled.div`
     width: 100%;
-    background: #F6F6F6;
 `;
 
 // Section Two 1
 const SectionTwoTitle = styled.div`
     width: 100%;
-    text-align: center;
     font-family: Poppins Bold;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 48px;
     line-height: 72px;
     color: #000000;
@@ -267,11 +295,18 @@ const SectionTwoTitle = styled.div`
 
 const SectionTwoDescription = styled.div`
     width: 100%;
-    text-align: center;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 32px;
-    line-height: 48px;
+    line-height: 52px;
     color: #464646;
+`;
+
+const SectionTwoThreeTitle = styled.div`
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 72px;
+    text-align: right;
+    color: #000000;
 `;
 
 const SectionTwoImage = styled.div`
@@ -280,53 +315,39 @@ const SectionTwoImage = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
     margin-bottom: 50px;
-    max-width: calc(100vw - 90px);
-`;
-
-const SectionTwoTextActive = styled.div`
-    font-weight: 600;
-    margin: 24px;
-    font-size: 48px;
-    text-align: left;
-    line-height:72px;
-    color: #777777;
+    max-width: calc(100vw - 100px);
 `;
 
 const SectionTwoText = styled.div`
-    font-weight: 600;
-    margin: 24px;
-    font-size: 48px;
-    text-align: left;
-    line-height:72px;
+    font-weight: 400;
+    margin: 24px 0;
+    font-size: 40px;
+    line-height: 60px;
     color: #000000;
 `;
 
 const SectionTwoButton = styled.button`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-between;
     padding: 12px 45px;
     font-size: 16px;
     color: #ffffff;
     width: 200px;
     height: 48px;
-    margin: 24px;
+    margin: 24px 0;
     background: #000000;
     border-radius: 4px;
 `;
 
-const SectionThreeButton = styled.button`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-between;
-    padding: 12px 45px;
+const SectionTwoThreeButton = styled.div`
+    padding: 12px 48px;
     font-size: 16px;
     color: #ffffff;
-    width: 281px;
+    width: 244px;
     height: 48px;
-    margin: 48px;
-    background: #000000;
+    background: rgba(0, 0, 0, 0.1);
     border-radius: 4px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000000
 `;
 
 // Three
@@ -345,7 +366,8 @@ const SectionThreeTitleBox = styled.div`
 `;
 
 const SectionThreeTitle = styled.div`
-    font-weight: 700;
+    font-family: Poppins Bold;
+    font-weight: 400;
     font-size: 56px;
     line-height: 84px;
     text-align: center;
@@ -353,6 +375,12 @@ const SectionThreeTitle = styled.div`
 `;
 
 // Four
+const SectionFourTitle = styled.div`
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 72px;
+`;
+
 const SectionFourRectangle = styled.div`
     width: 288px;
     height: 317px;
@@ -410,4 +438,17 @@ const SectionFiveFaqText = styled.div`
     font-weight: 600;
     font-size: 32px;
     line-height: 52px;
+`;
+
+const SectionFAQ = styled.div`
+    padding: 0 25px;
+
+    @media (min-width: 575px) and (max-width: 849px)
+    {
+        padding: 0 50px;
+    }
+    @media (min-width: 850px)
+    {
+        padding: 0 100px;
+    }
 `;

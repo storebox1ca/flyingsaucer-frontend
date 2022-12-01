@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { MinDivBorder } from "../partials/Sections";
 
 function Header() {
     return ( 
@@ -11,7 +12,7 @@ function Header() {
                     {/* Company logo */}
                     <HeaderLogo />
                     {/* Hamburger button */}
-                    <HamBurger className="hamburger d-none d-sm-inline-block">Our Plans</HamBurger>
+                    <HamBurger className="hamburger d-none d-sm-inline-block">Enter Pincode</HamBurger>
                     <div className="d-inline-block d-sm-none pt-2">
                         <span className="svg-icon svg-icon-min-white svg-icon-menu"></span>
                     </div>
@@ -25,10 +26,12 @@ function Navbar() {
     return ( 
         <NavbarDiv className="d-none d-sm-flex justify-content-center align-items-center">
             {/* Navbar */}
-            <div className="text-black p-2">
+            <div className="text-black text-center p-2">
                 <span className="svg-icon svg-icon-min svg-icon-menu"></span>
                 <span className="svg-icon svg-icon-min svg-icon-cart"></span>
                 <span className="svg-icon svg-icon-min svg-icon-notification"></span>
+                <span className="svg-icon svg-icon-mid svg-icon-aqua" style={{ marginBottom: '15px'}}></span>
+                <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
             </div>
         </NavbarDiv>
     );
@@ -38,17 +41,33 @@ function Navbar() {
 function Footer() {
     return ( 
         <FooterDiv>
-            <div className="container">
-                <div className="row pt-4">
+            <MinDivBorder className="mt-5"/>
+            <div className="minDiv-text">
+                <div className="row pt-5 pb-4">
                     <div className="col-12 col-xl-5 text-start">
-                        <label className="font-36 mb-4">Get in Touch</label>
-                        <div className="input-group submit-box">
+                        <HeaderLogo className="mb-3" />
+                        {/* <div className="input-group submit-box">
                             <input type="text" className="form-control submit-mail-left" placeholder="Enter your mail" />
                             <div className="input-group-append submit-mail-right d-flex justify-content-center align-items-center">
                                 <svg className="svg-icon svg-icon-min svg-icon-chevrons-right"></svg>
                             </div>
+                        </div> */}
+                        <SectionEmailText>flyingsaucer@gmail.com</SectionEmailText>
+                        
+                        <div className="mt-4">
+                            <div className="social-icon d-inline-block mr-2">
+                                <img className="text-white" src="svgs/facebook 1.png" />
+                            </div>
+                            <div className="social-icon d-inline-block m-2">
+                                <img className="text-white" src="svgs/instagram 1.png" />
+                            </div>
+                            <div className="social-icon d-inline-block m-2">
+                                <img className="text-white" src="svgs/linkedin 1.png" />
+                            </div>
+                            <div className="social-icon d-inline-block m-2">
+                                <img className="text-white" src="svgs/twitter 1.png" />
+                            </div>
                         </div>
-                        <p className="mt-4 mb-5">Get your first meal box for free</p>
                     </div>
                     <div className="col-12 col-xl-7">
                         <div className="row">
@@ -81,30 +100,10 @@ function Footer() {
                         </div>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-12">
-                        <div className="w-100 d-flex">
-                            <div className="float-left d-sm-inline-block">
-                                <p className="text-light mt-3 pt-3">Copyright@floe All Rights Reserved</p>
-                            </div>
-                            <div className="mx-auto"></div>
-                            <div className="float-right d-inline-block">
-                                <div className="social-icon d-inline-block m-2">
-                                    <img className="text-white" src="svgs/facebook 1.png" />
-                                </div>
-                                <div className="social-icon d-inline-block m-2">
-                                    <img className="text-white" src="svgs/instagram 1.png" />
-                                </div>
-                                <div className="social-icon d-inline-block m-2">
-                                    <img className="text-white" src="svgs/linkedin 1.png" />
-                                </div>
-                                <div className="social-icon d-inline-block m-2">
-                                    <img className="text-white" src="svgs/twitter 1.png" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <MinDivBorder className="mb-2" />
+            <div className="py-4">
+                <SectionCopyRightText className="mb-3 text-center">Copyright@floe All Rights Reserved</SectionCopyRightText>
             </div>
         </FooterDiv>
     );
@@ -115,46 +114,70 @@ export { Footer, Navbar };
 
 // Header
 const HeaderDiv = styled.div`
+    position: relative;
     width: 100%;
-    height: 143px;
+    height: 100px;
     color: white;
-    background: #000000;
+    background: #EEEBE6;
     box-shadow: 0px -4px 12px rgba(165, 165, 165, 0.25);
     overflow: hidden;
+    border-bottom: 1px solid #000000;
 `;
 
 const HeaderLogo = styled.div`
-    width: 221px;
-    height: 63px;
+    width: 170px;
+    height: 48px;
     display: inline-block;
     background: url(Flying_saucer_logo.png);
+    background-size: 170px 48px;
 `;
 
 const HamBurger = styled.div`
     margin: 10px 0;
     font-weight: 500;
     font-size: 16px;
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 10px 15px;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 12px 32px;
     z-index: 110;
 `;
 
 // Navbar
 const NavbarDiv = styled.div`
+    background: #EEEBE6;
     position: fixed;
     right: 0;
-    width: 90px;
-    padding: 8px;
+    width: 100px;
+    padding: 32px;
     height: 100vh;
-    z-index: 100;
+    border-left: 1px solid #000000;
+
+    span 
+    {
+        margin-top: 13px;
+        margin-bottom: 10px;
+        font-weight: 400;
+    }
 `;
 
 // Footer
 const FooterDiv = styled.div`
     width: 100%;
-    min-height: 397px;
-    color: white;
-    background: #000000;
-    box-shadow: 0px -4px 12px rgba(165, 165, 165, 0.25);
+    min-height: 330px;
+    background: #EEEBE6;
+`;
+
+const SectionCopyRightText = styled.div`
+    color: #000000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+`;
+
+const SectionEmailText = styled.div`
+    font-family: Poppins;
+    color: #000000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
 `;

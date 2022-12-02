@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import Marquee from "react-fast-marquee";
 import { MinDivBorder } from "../partials/Sections";
 
 import Header, { Footer, Navbar } from "../partials/Theme";
@@ -29,16 +30,34 @@ const Home = () => {
             <Header />
 
             {/* Marquee stripe */}
-            <SectionOneStripe className="d-flex align-items-center">
-                <p className="marquee w-100">
+            <SectionOneStripe className="d-flex align-items-center" style={{width: '100w', overflow: 'hidden'}}>
+                {/* <p className="marquee w-100">
                     <span>We are currently avaliable at delhi, to know more Click here..</span>
-                </p>
+                </p> */}
                 {/* <p className="marquee marquee2 w-100">
                     <span>We are currently avaliable at delhi, to know more Click here..</span>
                 </p>
                 <p className="marquee marquee3 w-100">
                     <span>We are currently avaliable at delhi, to know more Click here..</span>
                 </p> */}
+                <Marquee style={{height: '42px'}} loop={0} speed={50} gradientColor={'none'}>
+                    <div className="mt-2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        We are currently avaliable at delhi, to know more Click here.. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    </div>
+                    <div className="mt-2">
+                        It can invade food waste, malnutrition and keep things superfresh. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    </div>
+                    <div className="mt-2">
+                        It can invade food waste, malnutrition and keep things superfresh. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    </div>
+                    <div className="mt-2">
+                        It can invade food waste, malnutrition and keep things superfresh. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    </div>
+                    <div className="mt-2">
+                        It can invade food waste, malnutrition and keep things superfresh.
+                    </div>
+                </Marquee>
+                
             </SectionOneStripe>
 
             <div className="MinDiv" style={{backgroundColor: '#EEEBE6'}}>
@@ -96,12 +115,12 @@ const Home = () => {
                             </SectionTwoDescription>
                         </div>
                         <div className="float-xl-right" style={{minWidth: '450px'}}>
-                            <SectionTwoThreeTitle className="minDiv-text mb-5">
+                            <SectionTwoThreeTitle className="minDiv-text mt-5 mt-xl-0 mb-5">
                                 Why go <br />Sub-Zero?
                             </SectionTwoThreeTitle>
-                            <div className="d-flex justify-content-end mb-5" style={{marginRight: '100px'}}>
+                            <SectionMoreEvidence className="mb-5">
                                 <SectionTwoThreeButton>{'More evidence? ->'}</SectionTwoThreeButton>
-                            </div>
+                            </SectionMoreEvidence>
                         </div>
                     </div>
 
@@ -156,40 +175,83 @@ const Home = () => {
 
                     <div className="row my-5">
                         <div className="d-flex justify-content-center align-items-center">
-                            {products &&
-                                products.map(p => (
-                                        <SectionFourRectangle key={p.id.toString()}>
-                                            <img className="section-four-product-image" src={p.attributes.path}></img>
-                                            <SectionFourRectangleText>{p.attributes.name}</SectionFourRectangleText>
-                                        </SectionFourRectangle>
-                                    )
-                                )
-                            }
+                            <div className="slider">
+                                <div className="slides">
+                                    {products &&
+                                        products.map(p => 
+                                            (
+                                                <SectionFourRectangle key={p.id.toString()}>
+                                                    <img className="section-four-product-image" src={p.attributes.path}></img>
+                                                    <SectionFourRectangleText>{p.attributes.name}</SectionFourRectangleText>
+                                                </SectionFourRectangle>
+                                            )
+                                        )
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div className="d-flex justify-content-center align-items-center">
+                            <div className="d-flex align-items-center" style={{marginTop: '23px', height: '35px'}}>
+                                <span className="svg-icon svg-icon-min svg-icon-chevron-left"></span>
+                            </div>
+                            <div className="bottom-slider">
+                                <div className="bottom-slides">
+                                    {products &&
+                                        products.map(p => 
+                                            (
+                                                <div className="d-inline-block invisible">@</div>
+                                            )
+                                        )
+                                    }
+                                </div>
+                            </div>
+                            <div className="d-flex align-items-center" style={{marginTop: '23px', height: '35px'}}>
+                                <span className="svg-icon svg-icon-min svg-icon-chevron-right"></span>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="row">
+                    {/* <div className="row">
                         <div className="d-flex justify-content-center align-items-center mb-5" style={{height: '35px'}}>
                             <span className="svg-icon svg-icon-min svg-icon-chevron-left"></span>
                             <span className="svg-icon svg-line svg-icon-line-active svg-line-nohover"></span>
                             <span className="svg-icon svg-line svg-icon-line"></span>
                             <span className="svg-icon svg-icon-min svg-icon-chevron-right"></span>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Five */}
 
                     <SectionFiveImage className="d-flex justify-content-center mt-5 pt-5">
                         <SectionOneStripe className="d-flex align-items-center SectionFiveStripeAngle">
-                            <p className="marquee marquee-transform w-100">
+                            {/* <p className="marquee marquee-transform w-100">
                                 <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
-                            </p>
+                            </p> */}
                             {/* <p className="marquee marquee2-transform marquee2 w-100">
                                 <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
                             </p>
                             <p className="marquee marquee3-transform marquee3 w-100">
                                 <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
                             </p> */}
+                            
+                            <Marquee style={{height: '42px'}} loop={0} speed={50} gradientColor={'none'}>
+                                <div className="mt-2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                </div>
+                                <div className="mt-2">
+                                    HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                </div>
+                                <div className="mt-2">
+                                    HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                </div>
+                                <div className="mt-2">
+                                    HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                </div>
+                                <div className="mt-2">
+                                    It can invade food waste, malnutrition and keep things superfresh.
+                                </div>
+                            </Marquee>
                         </SectionOneStripe>
                         <SectionFiveStarImage className="d-flex justify-content-center align-items-center mt-auto mb-5">
                             <div>
@@ -305,8 +367,13 @@ const SectionTwoThreeTitle = styled.div`
     font-weight: 400;
     font-size: 48px;
     line-height: 72px;
-    text-align: right;
+    text-align: left;
     color: #000000;
+
+    @media (min-width: 1200px)
+    {
+        text-align: right;
+    }
 `;
 
 const SectionTwoImage = styled.div`
@@ -397,6 +464,7 @@ const SectionFourRectangleText = styled.p`
 
 // Five
 const SectionFiveImage = styled.div`
+    position: relative;
     min-width: 100%;
     max-height: 950px;
     min-height: calc(100vw / 2.21);
@@ -450,5 +518,25 @@ const SectionFAQ = styled.div`
     @media (min-width: 850px)
     {
         padding: 0 100px;
+    }
+`;
+
+const SectionMoreEvidence = styled.div`
+    margin: 0 30px;
+    display: flex;
+    justify-content: flex-start;
+    
+    @media (min-width: 576px) and (max-width: 991px)
+    {
+        margin: 0 50px;
+    }
+    @media (min-width: 992px)
+    {
+        margin: 0 100px;
+    }
+
+    @media (min-width: 1200px)
+    {
+        justify-content: flex-end;
     }
 `;

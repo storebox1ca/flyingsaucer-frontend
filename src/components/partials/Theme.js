@@ -44,7 +44,7 @@ function Footer() {
             <MinDivBorder className="mt-5"/>
             <div className="minDiv-text">
                 <div className="row pt-5 pb-4">
-                    <div className="col-12 col-xl-5 text-start">
+                    <div className="col-12 col-lg-4 col-xl-5 text-start mb-4 m-md-0">
                         <HeaderLogo className="mb-3" />
                         {/* <div className="input-group submit-box">
                             <input type="text" className="form-control submit-mail-left" placeholder="Enter your mail" />
@@ -55,21 +55,21 @@ function Footer() {
                         <SectionEmailText>flyingsaucer@gmail.com</SectionEmailText>
                         
                         <div className="mt-4">
-                            <div className="social-icon d-inline-block mr-2">
+                            <div className="social-icon d-inline-block" style={{marginRight: '5px'}}>
                                 <img className="text-white" src="svgs/facebook 1.png" />
                             </div>
-                            <div className="social-icon d-inline-block m-2">
+                            <div className="social-icon d-inline-block mx-1">
                                 <img className="text-white" src="svgs/instagram 1.png" />
                             </div>
-                            <div className="social-icon d-inline-block m-2">
+                            <div className="social-icon d-inline-block mx-1">
                                 <img className="text-white" src="svgs/linkedin 1.png" />
                             </div>
-                            <div className="social-icon d-inline-block m-2">
+                            <div className="social-icon d-inline-block mx-1">
                                 <img className="text-white" src="svgs/twitter 1.png" />
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-xl-7">
+                    <div className="col-12 col-lg-8 col-xl-7">
                         <div className="row">
                             <div className="col-12 col-md-6">
                                 <ul className="footer-links">

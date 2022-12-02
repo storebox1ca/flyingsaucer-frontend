@@ -12,8 +12,21 @@ const MinDiv = styled.main`
 `;
 
 const MinDivBorder = styled.div`
-    margin-left: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
     border-top: 1px solid #000000;
+
+    @media (min-width: 576px) and (max-width: 991px)
+    {
+        margin-left: 50px;
+        margin-right: 0;
+    }
+    @media (min-width: 992px)
+    {
+        margin-left: 100px;
+        margin-right: 0;
+    }
+
 `;
 
 export { MinDivBorder };

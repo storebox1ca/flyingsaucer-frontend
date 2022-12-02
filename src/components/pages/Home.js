@@ -141,19 +141,57 @@ const Home = () => {
 
                     <div className="container">
                         <div className="row">
-                            <div className="col-12 col-md-6 pt-5">
-                                <ul className="ul-check-circle ">
-                                    <li>Save upto 15% on every purchase</li>
-                                    <li>Free Products, Limited Releases & Pre-Orders</li>
-                                    <li>No committments and No extra Fees</li>
-                                </ul>
-                            </div>
-                            <div className="col-12 col-md-6 pt-5">
-                                <ul className="ul-check-circle ">
-                                    <li>A community that takes you back to a happier future</li>
-                                    <li>Access Exclusive Content & Uncrowded Events</li>
-                                    <li>Have a say in where we go and what we bring</li>
-                                </ul>
+                            <div className="col-12 pt-5">
+                                <div className="row ul-check-circle ">
+                                    <div className="col-12 col-md-6 mb-3">
+                                        <div style={{height: '60px'}}>
+                                            <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-save-energy"></span>
+                                        </div>
+                                        <div>
+                                            Save upto 15% on every purchase
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 mb-3">
+                                        <div style={{height: '60px'}}>
+                                            <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-community"></span>
+                                        </div>
+                                        <div>
+                                            A community that takes you back to a happier future
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 mb-3">
+                                        <div style={{height: '60px'}}>
+                                            <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-bakery-products"></span>
+                                        </div>
+                                        <div>
+                                            Free Products, Limited Releases & Pre-Orders
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 mb-3">
+                                        <div style={{height: '60px'}}>
+                                            <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-event"></span>
+                                        </div>
+                                        <div>
+                                            Access Exclusive Content & Uncrowded Events
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 mb-3">
+                                        <div style={{height: '60px'}}>
+                                            <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-noun-no"></span>
+                                        </div>
+                                        <div>
+                                            No committments and No extra Fees
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-6 mb-3">
+                                        <div style={{height: '60px'}}>
+                                            <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-speech"></span>
+                                        </div>
+                                        <div>
+                                            Have a say in where we go and what we bring
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

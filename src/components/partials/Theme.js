@@ -4,18 +4,15 @@ import { MinDivBorder } from "../partials/Sections";
 
 function Header() {
     return ( 
-        <HeaderDiv className="HeaderDiv">
+        <HeaderDiv>
             {/* Header */}
-            <div className="container">
-                {/* Header section */}
-                <div className="d-flex justify-content-between align-items-center">
-                    {/* Company logo */}
-                    <HeaderLogo />
-                    {/* Hamburger button */}
-                    <HamBurger className="hamburger d-none d-sm-inline-block">Enter Pincode</HamBurger>
-                    <div className="d-inline-block d-sm-none pt-2">
-                        <span className="svg-icon svg-icon-min-white svg-icon-menu"></span>
-                    </div>
+            <div className="d-flex justify-content-between align-items-center" style={{height: '70px'}}>
+                {/* Company logo */}
+                <HeaderLogo />
+                {/* Hamburger button */}
+                <HamBurger className="hamburger d-none d-sm-inline-block">Enter Pincode</HamBurger>
+                <div className="d-inline-block d-sm-none pt-2">
+                    <span className="svg-icon svg-icon-min-white svg-icon-menu"></span>
                 </div>
             </div>
         </HeaderDiv>
@@ -116,12 +113,24 @@ export { Footer, Navbar };
 const HeaderDiv = styled.div`
     position: relative;
     width: 100%;
-    height: 100px;
     color: white;
     background: #EEEBE6;
     box-shadow: 0px -4px 12px rgba(165, 165, 165, 0.25);
     overflow: hidden;
     border-bottom: 1px solid #000000;
+
+    @media screen and (max-width: 575px)
+    {
+        padding: 15px 30px;
+    }
+    @media (min-width: 576px) and (max-width: 991px)
+    {
+        padding: 15px 50px;
+    }
+    @media (min-width: 992px)
+    {
+        padding: 15px 100px;
+    }
 `;
 
 const HeaderLogo = styled.div`

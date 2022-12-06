@@ -88,44 +88,26 @@
 .submit-box
 {
   height: 55px;
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 5px;
 }
 .submit-mail-left
 {
-  background-color: black;
-  color: white;
+  background-color: #EEEBE6;
+  color: black;
   width: 100px;
   display: inline;
 }
 .submit-mail-left:focus
 {
-  background-color: black;
-  color: white;
+  background-color: #EEEBE6;
+  color: black;
 }
 .submit-mail-right
 {
-  background-color: white;
+  background-color: #565656;;
   width: 72px;
-  border: 1px solid white;
   border-radius: 5px;;
-}
-
-ul.footer-links li
-{
-  margin-bottom: 30px;
-  text-align: left;
-  list-style-type: none;
-}
-ul.footer-links a
-{
-  font-size: 24px;
-  color: #000000;
-  text-decoration: none;
-}
-ul.footer-links a:hover
-{
-  text-decoration: underline;
 }
 @media (max-width: 767px)
 {
@@ -161,8 +143,6 @@ ul.footer-links a:hover
 }
 
 /* Home */
-
-
 
 
 .marquee {
@@ -216,147 +196,6 @@ ul.footer-links a:hover
   margin-left: -10px;
 }
 
-.svg-icon 
-{
-  display: inline-block;
-  background-size: cover;
-}
-.svg-icon-min-white
-{
-  width: 32px;
-  height: 32px;
-  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
-}
-.svg-icon-min 
-{
-  width: 32px;
-  height: 32px;
-}
-.svg-icon-min:hover 
-{
-  width: 35px;
-  height: 35px;
-  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
-}
-.svg-icon-mid 
-{
-  width: 45px;
-  height: 45px;
-}
-.svg-icon-large
-{
-  width: 72px;
-  height: 72px;
-}
-.svg-icon-mid:hover 
-{
-  width: 48px;
-  height: 48px;
-  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
-}
-.svg-line
-{
-  width: 175px;
-  height: 3px;
-}
-.svg-line:hover 
-{
-  width: 175px;
-  height: 3px;
-  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
-}
-.svg-icon-nohover:hover 
-{
-  width: 32px;
-  height: 32px;
-  filter: inherit;
-}
-.svg-icon-mid-nohover:hover 
-{
-  width: 45px;
-  height: 45px;
-  filter: inherit;
-}
-.svg-icon-large-nohover:hover 
-{
-  width: 72px;
-  height: 72px;
-  filter: inherit;
-}
-.svg-line-nohover:hover 
-{
-  width: 175px;
-  height: 3px;
-  filter: inherit;
-}
-.svg-icon-menu
-{
-  background-image: url('../public/svgs/menu.svg');
-}
-.svg-icon-cart
-{
-  background-image: url('../public/svgs/cart.svg');
-}
-.svg-icon-notification
-{
-  background-image: url('../public/svgs/notification.svg');
-}
-.svg-icon-aqua
-{
-  background-image: url('../public/svgs/image-6@2x.png');
-}
-.svg-icon-chevrons-right
-{
-  background-image: url('../public/svgs/chevrons-right.svg');
-}
-.svg-icon-chevron-down
-{
-  background-image: url('../public/svgs/chevron-down.svg');
-}
-.svg-icon-check-circle
-{
-  background-image: url('../public/svgs/check-circle.svg');
-}
-.svg-icon-chevron-left
-{
-  background-image: url('../public/svgs/arrow-left.svg');
-}
-.svg-icon-chevron-right
-{
-  background-image: url('../public/svgs/arrow-right.svg');
-}
-.svg-icon-save-energy
-{
-  background-image: url('../public/svgs/nounsavemoney.svg');
-}
-.svg-icon-bakery-products
-{
-  background-image: url('../public/svgs/nounbakeryproducts.svg');
-}
-.svg-icon-noun-no
-{
-  background-image: url('../public/svgs/nounno.svg');
-}
-.svg-icon-community
-{
-  background-image: url('../public/svgs/nouncommunity.svg');
-}
-.svg-icon-event
-{
-  background-image: url('../public/svgs/nounevent.svg');
-}
-.svg-icon-speech
-{
-  background-image: url('../public/svgs/nounspeech.svg');
-}
-.svg-icon-line-active
-{
-  background-image: url('../public/svgs/Line\ 82.svg');
-}
-.svg-icon-line
-{
-  background-image: url('../public/svgs/Line\ 81.svg');
-}
 .ul-check-circle
 {
   /* border: 1px solid black; */
@@ -378,14 +217,6 @@ ul.footer-links a:hover
 {
   height: 100%;
   min-Height: calc(100vw / 2.21);
-}
-.SectionOneText
-{
-  font-weight: 800;
-  text-align: left;
-  color: #FFFFFF;
-  font-size: 48px;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.25), -1px -1px rgba(0, 0, 0, 0.25);
 }
 .SectionOneOverlay
 {
@@ -443,27 +274,6 @@ ul.footer-links a:hover
 .SectionFiveImage
 {
   overflow: hidden !important;
-}
-@media screen and (max-width: 588px) 
-{
-  .SectionThreeTitle
-  {
-    margin-top: -245px;
-  }
-}
-@media (min-width: 589px) and (max-width: 763px) 
-{
-  .SectionThreeTitle
-  {
-    margin-top: -165px;
-  }
-}
-@media (min-width: 764px) 
-{
-  .SectionThreeTitle
-  {
-    margin-top: -85px;
-  }
 }
 
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Marquee from "react-fast-marquee";
-import { MinDivBorder } from "../partials/Sections";
+import { MinDivBorder } from "../partials/CommonSections";
 
 import Header, { Footer, Navbar } from "../partials/Theme";
 
@@ -17,9 +17,15 @@ const Home = () => {
         fetch(`${process.env.REACT_APP_BACKEND}api/products`)
           .then(res => res.json())
           .then(data => {
-            console.log(data.data);
             setProducts(data.data);
           })
+      }
+
+      const stripestyle = {
+
+        '@media (max-width: 500px)': {
+            height: '42px',
+          },
       }
 
     return (
@@ -31,15 +37,6 @@ const Home = () => {
 
             {/* Marquee stripe */}
             <SectionOneStripe className="d-flex align-items-center" style={{width: '100w', overflow: 'hidden'}}>
-                {/* <p className="marquee w-100">
-                    <span>We are currently avaliable at delhi, to know more Click here..</span>
-                </p> */}
-                {/* <p className="marquee marquee2 w-100">
-                    <span>We are currently avaliable at delhi, to know more Click here..</span>
-                </p>
-                <p className="marquee marquee3 w-100">
-                    <span>We are currently avaliable at delhi, to know more Click here..</span>
-                </p> */}
                 <Marquee style={{height: '42px'}} loop={0} speed={50} gradientColor={'none'}>
                     <div className="mt-2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         We are currently avaliable at delhi, to know more Click here.. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -57,7 +54,6 @@ const Home = () => {
                         It can invade food waste, malnutrition and keep things superfresh.
                     </div>
                 </Marquee>
-                
             </SectionOneStripe>
 
             <div className="MinDiv" style={{backgroundColor: '#EEEBE6'}}>
@@ -67,9 +63,9 @@ const Home = () => {
                     <div className="SectionOneOverlay">
                         <div className="d-flex align-items-end SectionOneTextBox">
                             <div className="my-5 my-md-5 pt-3 py-md-3">
-                                <div className="SectionOneText minDiv-text">
+                                <SectionOneText className="minDiv-text">
                                     Your freezer is a special place
-                                </div>
+                                </SectionOneText>
                                 <SectionOneDescription className="mt-auto minDiv-text">
                                     It can invade food waste, malnutrition and keep things superfresh
                                 </SectionOneDescription>
@@ -128,7 +124,7 @@ const Home = () => {
                     <SectionThreeImage />
 
                     <SectionThreeTitleBox>
-                        <SectionThreeTitle className="SectionThreeTitle">
+                        <SectionThreeTitle>
                             <span className="text-white">Close Encounters of the</span>
                             <br /> 
                             <span className="text-black">Hungry Kind</span>
@@ -139,7 +135,7 @@ const Home = () => {
                         Subscriptions help us estimate demand better, fight food waste and grow this community meaningfully, Buying even one product every week automatically gives you all the benefits!
                     </SectionTwoDescription>
 
-                    <div className="container">
+                    <SectionHungryBox>
                         <div className="row">
                             <div className="col-12 pt-5">
                                 <div className="row ul-check-circle ">
@@ -147,54 +143,54 @@ const Home = () => {
                                         <div style={{height: '60px'}}>
                                             <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-save-energy"></span>
                                         </div>
-                                        <div>
+                                        <SectionHungryText>
                                             Save upto 15% on every purchase
-                                        </div>
+                                        </SectionHungryText>
                                     </div>
                                     <div className="col-12 col-md-6 mb-3">
                                         <div style={{height: '60px'}}>
                                             <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-community"></span>
                                         </div>
-                                        <div>
+                                        <SectionHungryText>
                                             A community that takes you back to a happier future
-                                        </div>
+                                        </SectionHungryText>
                                     </div>
                                     <div className="col-12 col-md-6 mb-3">
                                         <div style={{height: '60px'}}>
                                             <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-bakery-products"></span>
                                         </div>
-                                        <div>
+                                        <SectionHungryText>
                                             Free Products, Limited Releases & Pre-Orders
-                                        </div>
+                                        </SectionHungryText>
                                     </div>
                                     <div className="col-12 col-md-6 mb-3">
                                         <div style={{height: '60px'}}>
                                             <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-event"></span>
                                         </div>
-                                        <div>
+                                        <SectionHungryText>
                                             Access Exclusive Content & Uncrowded Events
-                                        </div>
+                                        </SectionHungryText>
                                     </div>
                                     <div className="col-12 col-md-6 mb-3">
-                                        <div style={{height: '60px'}}>
-                                            <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-noun-no"></span>
+                                        <div style={{height: '55px', marginTop: '5px', marginLeft: '5px'}}>
+                                            <span className="svg-icon svg-icon-mid svg-icon-mid-nohover svg-icon-noun-no"></span>
                                         </div>
-                                        <div>
+                                        <SectionHungryText>
                                             No committments and No extra Fees
-                                        </div>
+                                        </SectionHungryText>
                                     </div>
                                     <div className="col-12 col-md-6 mb-3">
                                         <div style={{height: '60px'}}>
                                             <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-speech"></span>
                                         </div>
-                                        <div>
+                                        <SectionHungryText>
                                             Have a say in where we go and what we bring
-                                        </div>
+                                        </SectionHungryText>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </SectionHungryBox>
 
                     <div className="d-flex justify-content-center mt-3 pb-5">
                         <SectionTwoButton>
@@ -308,7 +304,7 @@ const Home = () => {
                         Have a question, we are here to help.
                     </SectionTwoDescription>
 
-                    <SectionFAQ className="pt-5 pb-5">
+                    <SectionFAQ className="pt-5 pb-md-5">
                         <div className="d-flex justify-content-between align-items-center">
                             <SectionFiveFaqText>How does Flying Saucer work?</SectionFiveFaqText>
                             <div style={{minWidth: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
@@ -333,8 +329,43 @@ const Home = () => {
                             <SectionFiveFaqText>Can I buy a gift card for a friend?</SectionFiveFaqText>
                             <div style={{minHeight: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
                         </div>
-                        <hr style={{opacity: '1'}} />
+                        {/* <hr style={{opacity: '1'}} /> */}
                     </SectionFAQ>
+
+                    <MinDivBorder className="mt-5">
+                        <div className="my-5 py-lg-5">
+                            <StayConnectedBox className="row">
+                                <div className="col-12 col-xl-6" style={{backgroundColor: '#565656'}}>
+                                    <div className="p-5 h-100 mt-5">
+                                        <StayConnectedText className="mb-4">
+                                            Stay connected
+                                        </StayConnectedText>
+                                        <StayConnectedDescription>
+                                            And curated all the good stuff in food, 
+                                            culture and what we’re doing, things we 
+                                            believe are too good to be 
+                                            true but no one will tell you.
+                                        </StayConnectedDescription>
+                                    </div>
+                                </div>
+                                <div className="col-12 col-xl-6">
+                                    <div className="p-5 h-100 mt-5">
+                                        <GetInTouchText>
+                                            Get in Touch
+                                        </GetInTouchText>
+                                        <GetInTouchEmail>
+                                            <div className="input-group submit-box">
+                                                <input type="text" className="form-control submit-mail-left" placeholder="Enter your mail" />
+                                                <div className="input-group-append submit-mail-right d-flex justify-content-center align-items-center">
+                                                    <svg className="svg-icon svg-icon-button svg-icon-noun-arrow"></svg>
+                                                </div>
+                                            </div>
+                                        </GetInTouchEmail>
+                                    </div>
+                                </div>
+                            </StayConnectedBox>
+                        </div>
+                    </MinDivBorder>
 
                 </SectionTwo>
 
@@ -356,6 +387,17 @@ const SectionOne = styled.div`
     background-position: center;
 `;
 
+// const DivMarquee = styled.div`
+//     font-size: 12px;
+//     padding: 4px 0;
+
+//     @media (min-width: 768px)
+//     {
+//         font-size: 16px;
+//         padding: 0;
+//     }
+// `;
+
 const SectionOneStripe = styled.div`
     position: absolute;
     min-width: 100%;
@@ -366,16 +408,35 @@ const SectionOneStripe = styled.div`
     border-top: 0;
     border-left: 0;
     border-right: 0;
+`;
 
+const SectionOneText = styled.div`
+  font-weight: 800;
+  text-align: left;
+  color: #FFFFFF;
+  margin-top: 100px;
+  font-size: 24px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.25), -1px -1px rgba(0, 0, 0, 0.25);
+
+  @media (min-width: 768px)
+  {
+    margin-top: 0;
+    font-size: 48px;
+  }
 `;
 
 const SectionOneDescription = styled.div`
     font-weight: 400;
-    font-size: 32px;
     color: #ffffff;
-    line-height: 48px;
+    font-size: 16px;
     text-align: left;
-    z-index:101;
+    z-index: 101;
+
+    @media (min-width: 768px)
+    {
+        font-size: 32px;
+        line-height: 48px;
+    }
 `;
 
 // Section Two
@@ -388,28 +449,40 @@ const SectionTwoTitle = styled.div`
     width: 100%;
     font-family: Poppins Bold;
     font-weight: 800;
-    font-size: 48px;
-    line-height: 72px;
+    font-size: 24px;
     color: #000000;
+
+    @media (min-width: 768px)
+    {
+        font-size: 48px;
+        line-height: 72px;
+    }
 `;
 
 const SectionTwoDescription = styled.div`
     width: 100%;
     font-weight: 400;
-    font-size: 32px;
-    line-height: 52px;
+    font-size: 16px;
     color: #464646;
+    margin-top: 25px;
+
+    @media (min-width: 768px)
+    {
+        font-size: 32px;
+        line-height: 52px;
+    }
 `;
 
 const SectionTwoThreeTitle = styled.div`
     font-weight: 400;
-    font-size: 48px;
-    line-height: 72px;
+    font-size: 24px;
     text-align: left;
     color: #000000;
 
     @media (min-width: 1200px)
     {
+        font-size: 48px;
+        line-height: 72px;
         text-align: right;
     }
 `;
@@ -425,10 +498,16 @@ const SectionTwoImage = styled.div`
 
 const SectionTwoText = styled.div`
     font-weight: 400;
-    margin: 24px 0;
-    font-size: 40px;
-    line-height: 60px;
+    margin: 16px 0;
+    font-size: 20px;
     color: #000000;
+
+    @media (min-width: 768px)
+    {
+        margin: 24px 0;
+        font-size: 40px;
+        line-height: 60px;
+    }
 `;
 
 const SectionTwoButton = styled.button`
@@ -473,17 +552,37 @@ const SectionThreeTitleBox = styled.div`
 const SectionThreeTitle = styled.div`
     font-family: Poppins Bold;
     font-weight: 400;
-    font-size: 56px;
-    line-height: 84px;
     text-align: center;
     margin-bottom: 60px;
+
+    @media screen and (max-width: 424px) 
+    {
+        font-size: 32px;
+        margin-top: -48px;
+    }
+    @media (min-width: 425px) and (max-width: 767px) 
+    {
+        font-size: 36px;
+        margin-top: -55px;
+    }
+    @media (min-width: 768px) 
+    {
+        font-size: 56px;
+        line-height: 84px;
+        margin-top: -84px;
+    }
 `;
 
 // Four
 const SectionFourTitle = styled.div`
     font-weight: 400;
-    font-size: 48px;
-    line-height: 72px;
+    font-size: 24px;
+
+    @media (min-width: 768px)
+    {
+        font0size: 48px;
+        line-hright: 72px;
+    }
 `;
 
 const SectionFourRectangle = styled.div`
@@ -511,49 +610,67 @@ const SectionFiveImage = styled.div`
 `;
 
 const SectionFiveStarImage = styled.div`
-    width: 310px;
-    height: 310px;
+    width: 155px;
+    height: 155px;
     background-image: url('images/Star 1.png');
     background-size: cover;
+
+    @media (min-width: 768px)
+    {
+        width: 310px;
+        height: 310px;
+    }
 `;
 
 const SectionFiveStarTitle = styled.div`
     width: 100%;
     font-family: Poppins Bold;
     font-weight: 700;
-    font-size: 32px;
-    line-height: 48px;
-
+    font-size: 16px;
     text-align: center;
-
     color: #000000;
+
+    @media (min-width: 768px)
+    {
+        font-size: 32px;
+        line-height: 48px;
+    }
 `;
 
 const SectionFiveStarDescription = styled.div`
     width: 100%;
     font-weight: 500;
-    font-size: 32px;
-    line-height: 48px;
+    font-size: 16px;
     text-align: center;
     text-decoration-line: underline;
-
     color: #000000;
+
+    @media (min-width: 768px)
+    {
+        font-size: 32px;
+        line-height: 48px;
+    }
 `;
 
 const SectionFiveFaqText = styled.div`
     font-weight: 600;
-    font-size: 32px;
-    line-height: 52px;
+    font-size: 16px;
+
+    @media (min-width: 767px)
+    {
+        font-size: 32px;
+        line-height: 52px;
+    }
 `;
 
 const SectionFAQ = styled.div`
-    padding: 0 25px;
+    padding: 0 30px;
 
-    @media (min-width: 575px) and (max-width: 849px)
+    @media (min-width: 576px) and (max-width: 991px)
     {
         padding: 0 50px;
     }
-    @media (min-width: 850px)
+    @media (min-width: 992px)
     {
         padding: 0 100px;
     }
@@ -577,4 +694,87 @@ const SectionMoreEvidence = styled.div`
     {
         justify-content: flex-end;
     }
+`;
+
+const SectionGetInTouch = styled.div`
+    border: 1px solid #000000;
+    margin-right: 100px;
+`;
+
+const StayConnectedText = styled.div`
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 52px;
+    color: #FFFFFF;
+`;
+
+const StayConnectedDescription = styled.div`
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+    margin-bottom: 50px;
+`;
+
+const GetInTouchText = styled.div`
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 52px;
+    color: #000000;
+`;
+
+const GetInTouchEmail = styled.div`
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+    @media (min-width: 1200px)
+    {
+        margin-top: 50px;
+    }
+`;
+
+const SectionHungryText = styled.div`
+    font-size: 16px;
+
+    @media (min-width: 768px)
+    {
+        font-size: 24px;
+        line-height: 42px;
+    }
+`;
+
+const StayConnectedBox = styled.div`
+    border: 1px solid #000000;
+
+
+    @media (min-width: 576px) and (max-width: 767px)
+    {
+        margin: 0 50px 0 0;
+    }
+    @media (min-width: 768px) and (max-width: 991px)
+    {
+        margin: 0 50px 0 0;
+    }
+    @media (min-width: 992px)
+    {
+        margin: 0 100px 0 0;
+    }
+`;
+
+const SectionHungryBox = styled.div
+`
+    margin: 0 20px;
+
+    @media (min-width: 576px) and (max-width: 767px)
+    {
+        margin: 0 30px;
+    }
+    @media (min-width: 768px) and (max-width: 991px)
+    {
+        margin: 0 30px;
+    }
+    @media (min-width: 992px)
+    {
+        margin: 0 80px;
+    }   
 `;

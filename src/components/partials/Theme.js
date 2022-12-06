@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { MinDivBorder } from "../partials/Sections";
+import { MinDivBorder } from "./CommonSections";
 
 function Header() {
     return ( 
@@ -23,12 +23,17 @@ function Navbar() {
     return ( 
         <NavbarDiv className="d-none d-sm-flex justify-content-center align-items-center">
             {/* Navbar */}
-            <div className="text-black text-center p-2">
-                <span className="svg-icon svg-icon-min svg-icon-menu"></span>
-                <span className="svg-icon svg-icon-min svg-icon-cart"></span>
-                <span className="svg-icon svg-icon-min svg-icon-notification"></span>
-                <span className="svg-icon svg-icon-mid svg-icon-aqua" style={{ marginBottom: '15px'}}></span>
-                <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
+            <div className="d-flex align-items-end flex-column text-black text-center p-2 h-100">
+                <div className="mb-auto"></div>
+                <div className="">
+                    <span className="svg-icon svg-icon-min svg-icon-menu"></span>
+                    <span className="svg-icon svg-icon-min svg-icon-cart"></span>
+                    <span className="svg-icon svg-icon-min svg-icon-notification"></span>
+                    <span className="svg-icon svg-icon-mid svg-icon-aqua" style={{ marginBottom: '15px'}}></span>
+                </div>
+                <div className="mt-auto">
+                    <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
+                </div>
             </div>
         </NavbarDiv>
     );
@@ -43,12 +48,6 @@ function Footer() {
                 <div className="row pt-5 pb-4">
                     <div className="col-12 col-lg-4 col-xl-5 text-start mb-4 m-md-0">
                         <HeaderLogo className="mb-3" />
-                        {/* <div className="input-group submit-box">
-                            <input type="text" className="form-control submit-mail-left" placeholder="Enter your mail" />
-                            <div className="input-group-append submit-mail-right d-flex justify-content-center align-items-center">
-                                <svg className="svg-icon svg-icon-min svg-icon-chevrons-right"></svg>
-                            </div>
-                        </div> */}
                         <SectionEmailText>flyingsaucer@gmail.com</SectionEmailText>
                         
                         <div className="mt-4">
@@ -70,28 +69,28 @@ function Footer() {
                         <div className="row">
                             <div className="col-12 col-md-6">
                                 <ul className="footer-links">
-                                    <li>
-                                        <a href="*">Order Tracking</a>
-                                    </li>
-                                    <li>
-                                        <a href="*">Our story</a>
-                                    </li>
-                                    <li>
-                                        <a href="*">Help</a>
-                                    </li>
+                                    <SectionDivli>
+                                        <SectionDivliA href="*">Order Tracking</SectionDivliA>
+                                    </SectionDivli>
+                                    <SectionDivli>
+                                        <SectionDivliA href="*">Our story</SectionDivliA>
+                                    </SectionDivli>
+                                    <SectionDivli>
+                                        <SectionDivliA href="*">Help</SectionDivliA>
+                                    </SectionDivli>
                                 </ul>
                             </div>
                             <div className="col-12 col-md-6">
                                 <ul className="footer-links">
-                                    <li>
-                                        <a href="*">FAQ's</a>
-                                    </li>
-                                    <li>
-                                        <a href="*">Terms</a>
-                                    </li>
-                                    <li>
-                                        <a href="*">Privacy</a>
-                                    </li>
+                                    <SectionDivli>
+                                        <SectionDivliA href="*">FAQ's</SectionDivliA>
+                                    </SectionDivli>
+                                    <SectionDivli>
+                                        <SectionDivliA href="*">Terms</SectionDivliA>
+                                    </SectionDivli>
+                                    <SectionDivli>
+                                        <SectionDivliA href="*">Privacy</SectionDivliA>
+                                    </SectionDivli>
                                 </ul>
                             </div>
                         </div>
@@ -161,6 +160,7 @@ const NavbarDiv = styled.div`
     height: 100vh;
     border-left: 1px solid #000000;
 
+
     span 
     {
         margin-top: 13px;
@@ -179,14 +179,52 @@ const FooterDiv = styled.div`
 const SectionCopyRightText = styled.div`
     color: #000000;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 12px;
+
+    @media (min-width: 768px)
+    {
+        font-size: 16px;
+        line-height: 24px;
+    }
 `;
 
 const SectionEmailText = styled.div`
     font-family: Poppins;
     color: #000000;
     font-weight: 400;
+    font-size: 12px;
+
+    @media (min-width: 768px)
+    {
+        font-size: 16px;
+        line-height: 24px;
+    }
+`;
+
+const SectionDivli = styled.li` 
+  text-align: left;
+  list-style-type: none;
+  margin-bottom: 10px;
+
+  @media (min-width: 768px)
+  {
+    margin-bottom: 30px;
+  }
+`;
+
+const SectionDivliA = styled.a` 
     font-size: 16px;
-    line-height: 24px;
+    color: #000000;
+    text-decoration: none;
+
+    @media (min-width: 768px)
+    {
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    &:hover
+    { 
+        text-decoration: underline;
+    }
 `;

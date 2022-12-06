@@ -1,5 +1,6 @@
 import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import './styles/Icons.css';
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 

@@ -12,7 +12,7 @@ function Header() {
                 {/* Hamburger button */}
                 <HamBurger className="hamburger d-none d-sm-inline-block">Enter Pincode</HamBurger>
                 <div className="d-inline-block d-sm-none pt-2">
-                    <span className="svg-icon svg-icon-min-white svg-icon-menu"></span>
+                    <span className="svg-icon svg-icon-min svg-icon-menu"></span>
                 </div>
             </div>
         </HeaderDiv>

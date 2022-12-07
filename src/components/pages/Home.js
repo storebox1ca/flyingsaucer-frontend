@@ -192,59 +192,63 @@ const Home = () => {
                         </div>
                     </SectionHungryBox>
 
-                    <div className="d-flex justify-content-center mt-3 pb-5">
-                        <SectionTwoButton>
+                    <div className="d-flex justify-content-md-center mt-3 pb-5">
+                        <SectionFourButton>
                             <span style={{marginLeft: '10px'}}>Lets Shop!</span>
-                        </SectionTwoButton>
+                        </SectionFourButton>
                     </div>
 
                     <MinDivBorder className="mt-5"/>
 
-                    {/* Four */}
-                    
-                    
-                    <SectionFourTitle className="mt-5 pt-5 text-center" >
-                        Saucers that are taking off...
-                    </SectionFourTitle>
+                    {/* Four */}                    
+                    {products.length > 0 &&
+                        (
+                            <div>
+                                <SectionFourTitle className="mt-5 pt-5 text-center" >
+                                    Saucers that are taking off...
+                                </SectionFourTitle>
 
-                    <div className="row my-5">
-                        <div className="d-flex justify-content-center align-items-center">
-                            <div className="slider">
-                                <div className="slides">
-                                    {products &&
-                                        products.map(p => 
-                                            (
-                                                <SectionFourRectangle key={p.id.toString()}>
-                                                    <img className="section-four-product-image" src={p.attributes.path}></img>
-                                                    <SectionFourRectangleText>{p.attributes.name}</SectionFourRectangleText>
-                                                </SectionFourRectangle>
-                                            )
-                                        )
-                                    }
+                                <div className="row my-5">
+                                    <div className="d-flex justify-content-center align-items-center">
+                                        <div className="slider">
+                                            <div className="slides">
+                                                {products.map(
+                                                    p => 
+                                                        (
+                                                            <SectionFourRectangle key={p.id.toString()}>
+                                                                <img className="section-four-product-image" src={p.attributes.path}></img>
+                                                                <SectionFourRectangleText>{p.attributes.name}</SectionFourRectangleText>
+                                                            </SectionFourRectangle>
+                                                        )
+                                                    )
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <div className="d-flex justify-content-center align-items-center">
+                                        <div className="d-flex align-items-center" style={{marginTop: '23px', height: '35px'}}>
+                                            <span className="svg-icon svg-icon-min svg-icon-chevron-left"></span>
+                                        </div>
+                                        <div className="bottom-slider">
+                                            <div className="bottom-slides">
+                                                {products.map(
+                                                    p => 
+                                                        (
+                                                            <div className="d-inline-block invisible">@</div>
+                                                        )
+                                                    )
+                                                }
+                                            </div>
+                                        </div>
+                                        <div className="d-flex align-items-center" style={{marginTop: '23px', height: '35px'}}>
+                                            <span className="svg-icon svg-icon-min svg-icon-chevron-right"></span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                            
-                        <div className="d-flex justify-content-center align-items-center">
-                            <div className="d-flex align-items-center" style={{marginTop: '23px', height: '35px'}}>
-                                <span className="svg-icon svg-icon-min svg-icon-chevron-left"></span>
-                            </div>
-                            <div className="bottom-slider">
-                                <div className="bottom-slides">
-                                    {products &&
-                                        products.map(p => 
-                                            (
-                                                <div className="d-inline-block invisible">@</div>
-                                            )
-                                        )
-                                    }
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center" style={{marginTop: '23px', height: '35px'}}>
-                                <span className="svg-icon svg-icon-min svg-icon-chevron-right"></span>
-                            </div>
-                        </div>
-                    </div>
+                        )
+                    }
 
                     {/* <div className="row">
                         <div className="d-flex justify-content-center align-items-center mb-5" style={{height: '35px'}}>
@@ -510,15 +514,27 @@ const SectionTwoText = styled.div`
     }
 `;
 
-const SectionTwoButton = styled.button`
+const SectionCommonButton = styled.button`
     padding: 12px 45px;
     font-size: 16px;
     color: #ffffff;
     width: 200px;
     height: 48px;
-    margin: 24px 0;
     background: #000000;
     border-radius: 4px;
+`;
+
+const SectionTwoButton = styled(SectionCommonButton)`
+    margin: 24px 0;
+`;
+
+const SectionFourButton = styled(SectionCommonButton)`
+    margin: 24px 50px;
+
+    @media (min-width: 768px)
+    {
+        margin: 24px 0;
+    }
 `;
 
 const SectionTwoThreeButton = styled.div`

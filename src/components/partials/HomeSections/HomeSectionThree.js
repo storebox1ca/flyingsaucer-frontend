@@ -6,8 +6,8 @@ import { SectionTwoDescription } from "./HomeSectionTwo";
 function HomeSectionThree() {
     return (
         <div>
-            <div className="d-xl-flex pt-5 pb-5 mb-5">
-                <div className="float-xl-left">
+            <div className="d-xl-flex pt-5 pb-5 mb-5 w-100">
+                <div className="float-xl-left w-100">
                     <SectionTwoDescription className=" minDiv-text">
                         Properly Frozen Food can stay fresh beyond space & time
                         <br />

@@ -28,7 +28,7 @@ function Navbar() {
                 <div className="mb-auto"></div>
                 <div className="">
                     <NavLink to="/menu"><span className="svg-icon svg-icon-min svg-icon-menu"></span></NavLink>
-                    <NavLink to="/explore"><span className="svg-icon svg-icon-min svg-icon-cart"></span></NavLink>
+                    <NavLink to="/about"><span className="svg-icon svg-icon-min svg-icon-cart"></span></NavLink>
                     <NavLink to="/notifications"><span className="svg-icon svg-icon-min svg-icon-notification"></span></NavLink>
                     <NavLink to="/chatbot"><span className="svg-icon svg-icon-mid svg-icon-aqua" style={{ marginBottom: '15px'}}></span></NavLink>
                 </div>

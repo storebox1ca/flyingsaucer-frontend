@@ -81,6 +81,14 @@
   {
     padding: 0 100px;
   }
+  .minDiv-l-text-0
+  {
+    padding-left: 0;
+  }
+  .minDiv-r-text-0
+  {
+    padding-right: 0;
+  }
 }
 
 /* Header */

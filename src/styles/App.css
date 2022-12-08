@@ -42,7 +42,7 @@
 
 .MinDiv
 {
-  min-height: calc(100vh - 143px - 397px);
+  min-height: calc(100vh - 101px);
   left: 0;
   border: 1px solid lightgrey;
   border-left: 0;
@@ -65,7 +65,7 @@
 {
   .MinDiv
   {
-    margin-right: 99px;
+    margin-right: 100px;
   }
 }
 @media (min-width: 576px) and (max-width: 991px)
@@ -279,7 +279,10 @@
 
 
 
-
+.active span
+{
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
 
 
 

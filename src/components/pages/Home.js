@@ -1,38 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Marquee from "react-fast-marquee";
-import { MinDivBorder } from "../partials/CommonSections";
 
+import { MinDivBorder } from "../partials/CommonSections";
 import Header, { Footer, Navbar } from "../partials/Theme";
+import HomeSectionTwo, { SectionTwoTitle, SectionTwoDescription } from "../partials/HomeSections/HomeSectionTwo";
+import HomeSectionThree from "../partials/HomeSections/HomeSectionThree";
+import HomeSectionFour from "../partials/HomeSections/HomeSectionFour";
 
 const Home = () => {
 
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        getProducts();
-      }, []);
-
-    function getProducts() {
-        fetch(`${process.env.REACT_APP_BACKEND}api/products`)
-          .then(res => res.json())
-          .then(data => {
-            setProducts(data.data);
-          })
-      }
-
-      const stripestyle = {
-
-        '@media (max-width: 500px)': {
-            height: '42px',
-          },
-      }
-
     return (
-        <div>
+        <div style={{backgroundColor: '#EEEBE6'}}>
 
             {/* Homepage */}
             <Navbar />
+
             <Header />
 
             {/* Marquee stripe */}
@@ -56,7 +39,8 @@ const Home = () => {
                 </Marquee>
             </SectionOneStripe>
 
-            <div className="MinDiv" style={{backgroundColor: '#EEEBE6'}}>
+            {/* Container */}
+            <div className="MinDiv" style={{backgroundColor: '#EEEBE6', borderRight: '1px solid #000000'}}>
 
                 {/* Section One */}
                 <SectionOne>
@@ -74,205 +58,26 @@ const Home = () => {
                     </div>
                 </SectionOne>
 
-                {/* Section Two */}
-                <SectionTwo>
-                    {/* One */}
-                    <SectionTwoTitle className="pt-5 minDiv-text">
-                        So we’ve declassified Frozen Food
-                    </SectionTwoTitle>
-                    <SectionTwoDescription className="minDiv-text">
-                        And built a launchpad for all the good food from around the world
-                    </SectionTwoDescription>
+                <div className="w-100">
 
-                    <div className="row minDiv-text mb-5 pb-5">
-                        <div className="col-12 col-xl-5">
-                            <SectionTwoText style={{color: '#777777'}}>The Snacks</SectionTwoText>
-                            <SectionTwoText>The Ice Creams</SectionTwoText>
-                            <SectionTwoText>Ingredients</SectionTwoText>
-                            <SectionTwoText>Quick & Easy Meals</SectionTwoText>
-                            <SectionTwoText>and more...</SectionTwoText>
-                            <SectionTwoButton className="mt-2">See all foods</SectionTwoButton>
-                        </div>
-                        <div className="col-12 col-xl-7 pt-4">
-                            <img src="images/jamaicansnacks1.jpg" alt="" className="w-100" style={{maxHeight: '500px', maxWidth: '800px'}} />
-                        </div>
-                    </div>
+                    {/* Section Two */}
+                    <HomeSectionTwo />
 
-                    {/* Two */}
                     <MinDivBorder />
 
-                    <div className="d-xl-flex pt-5 pb-5 mb-5">
-                        <div className="float-xl-left">
-                            <SectionTwoDescription className=" minDiv-text">
-                                Properly Frozen Food can stay fresh beyond space & time
-                                <br />
-                                <br />
-                                It also helps the world fight food waste & locks in more nutrition 
-                            </SectionTwoDescription>
-                        </div>
-                        <div className="float-xl-right" style={{minWidth: '450px'}}>
-                            <SectionTwoThreeTitle className="minDiv-text mt-5 mt-xl-0 mb-5">
-                                Why go <br />Sub-Zero?
-                            </SectionTwoThreeTitle>
-                            <SectionMoreEvidence className="mb-5">
-                                <SectionTwoThreeButton>{'More evidence? ->'}</SectionTwoThreeButton>
-                            </SectionMoreEvidence>
-                        </div>
-                    </div>
-
-                    {/* Three */}
-                    <SectionThreeImage />
-
-                    <SectionThreeTitleBox>
-                        <SectionThreeTitle>
-                            <span className="text-white">Close Encounters of the</span>
-                            <br /> 
-                            <span className="text-black">Hungry Kind</span>
-                        </SectionThreeTitle>
-                    </SectionThreeTitleBox>
-
-                    <SectionTwoDescription className=" minDiv-text text-center">
-                        Subscriptions help us estimate demand better, fight food waste and grow this community meaningfully, Buying even one product every week automatically gives you all the benefits!
-                    </SectionTwoDescription>
-
-                    <SectionHungryBox>
-                        <div className="row">
-                            <div className="col-12 pt-5">
-                                <div className="row ul-check-circle ">
-                                    <div className="col-12 col-md-6 mb-3">
-                                        <div style={{height: '60px'}}>
-                                            <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-save-energy"></span>
-                                        </div>
-                                        <SectionHungryText>
-                                            Save upto 15% on every purchase
-                                        </SectionHungryText>
-                                    </div>
-                                    <div className="col-12 col-md-6 mb-3">
-                                        <div style={{height: '60px'}}>
-                                            <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-community"></span>
-                                        </div>
-                                        <SectionHungryText>
-                                            A community that takes you back to a happier future
-                                        </SectionHungryText>
-                                    </div>
-                                    <div className="col-12 col-md-6 mb-3">
-                                        <div style={{height: '60px'}}>
-                                            <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-bakery-products"></span>
-                                        </div>
-                                        <SectionHungryText>
-                                            Free Products, Limited Releases & Pre-Orders
-                                        </SectionHungryText>
-                                    </div>
-                                    <div className="col-12 col-md-6 mb-3">
-                                        <div style={{height: '60px'}}>
-                                            <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-event"></span>
-                                        </div>
-                                        <SectionHungryText>
-                                            Access Exclusive Content & Uncrowded Events
-                                        </SectionHungryText>
-                                    </div>
-                                    <div className="col-12 col-md-6 mb-3">
-                                        <div style={{height: '55px', marginTop: '5px', marginLeft: '5px'}}>
-                                            <span className="svg-icon svg-icon-mid svg-icon-mid-nohover svg-icon-noun-no"></span>
-                                        </div>
-                                        <SectionHungryText>
-                                            No committments and No extra Fees
-                                        </SectionHungryText>
-                                    </div>
-                                    <div className="col-12 col-md-6 mb-3">
-                                        <div style={{height: '60px'}}>
-                                            <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-speech"></span>
-                                        </div>
-                                        <SectionHungryText>
-                                            Have a say in where we go and what we bring
-                                        </SectionHungryText>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </SectionHungryBox>
-
-                    <div className="d-flex justify-content-md-center mt-3 pb-5">
-                        <SectionFourButton>
-                            <span style={{marginLeft: '10px'}}>Lets Shop!</span>
-                        </SectionFourButton>
-                    </div>
+                    {/* Section Three */}
+                    <HomeSectionThree />
 
                     <MinDivBorder className="mt-5"/>
 
-                    {/* Four */}                    
-                    {products.length > 0 &&
-                        (
-                            <div>
-                                <SectionFourTitle className="mt-5 pt-5 text-center" >
-                                    Saucers that are taking off...
-                                </SectionFourTitle>
-
-                                <div className="row my-5">
-                                    <div className="d-flex justify-content-center align-items-center">
-                                        <div className="slider">
-                                            <div className="slides">
-                                                {products.map(
-                                                    p => 
-                                                        (
-                                                            <SectionFourRectangle key={p.id.toString()}>
-                                                                <img className="section-four-product-image" src={p.attributes.path}></img>
-                                                                <SectionFourRectangleText>{p.attributes.name}</SectionFourRectangleText>
-                                                            </SectionFourRectangle>
-                                                        )
-                                                    )
-                                                }
-                                            </div>
-                                        </div>
-                                    </div>
-                                        
-                                    <div className="d-flex justify-content-center align-items-center">
-                                        <div className="d-flex align-items-center" style={{marginTop: '23px', height: '35px'}}>
-                                            <span className="svg-icon svg-icon-min svg-icon-chevron-left"></span>
-                                        </div>
-                                        <div className="bottom-slider">
-                                            <div className="bottom-slides">
-                                                {products.map(
-                                                    p => 
-                                                        (
-                                                            <div className="d-inline-block invisible">@</div>
-                                                        )
-                                                    )
-                                                }
-                                            </div>
-                                        </div>
-                                        <div className="d-flex align-items-center" style={{marginTop: '23px', height: '35px'}}>
-                                            <span className="svg-icon svg-icon-min svg-icon-chevron-right"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    }
-
-                    {/* <div className="row">
-                        <div className="d-flex justify-content-center align-items-center mb-5" style={{height: '35px'}}>
-                            <span className="svg-icon svg-icon-min svg-icon-chevron-left"></span>
-                            <span className="svg-icon svg-line svg-icon-line-active svg-line-nohover"></span>
-                            <span className="svg-icon svg-line svg-icon-line"></span>
-                            <span className="svg-icon svg-icon-min svg-icon-chevron-right"></span>
-                        </div>
-                    </div> */}
+                    
+                    {/* Section Four */}
+                    <HomeSectionFour />
 
                     {/* Five */}
 
                     <SectionFiveImage className="d-flex justify-content-center mt-5 pt-5">
-                        <SectionOneStripe className="d-flex align-items-center SectionFiveStripeAngle">
-                            {/* <p className="marquee marquee-transform w-100">
-                                <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
-                            </p> */}
-                            {/* <p className="marquee marquee2-transform marquee2 w-100">
-                                <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
-                            </p>
-                            <p className="marquee marquee3-transform marquee3 w-100">
-                                <span>HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious </span>
-                            </p> */}
-                            
+                        <SectionOneStripe className="d-flex align-items-center SectionFiveStripeAngle">                            
                             <Marquee style={{height: '42px'}} loop={0} speed={50} gradientColor={'none'}>
                                 <div className="mt-2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                     HoReCa Cloud Kitchens Logistics Investors Bulk Orders Media or simply curious. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -371,7 +176,7 @@ const Home = () => {
                         </div>
                     </MinDivBorder>
 
-                </SectionTwo>
+                </div>
 
             <Footer />
             </div>
@@ -390,17 +195,6 @@ const SectionOne = styled.div`
     background-size: cover;
     background-position: center;
 `;
-
-// const DivMarquee = styled.div`
-//     font-size: 12px;
-//     padding: 4px 0;
-
-//     @media (min-width: 768px)
-//     {
-//         font-size: 16px;
-//         padding: 0;
-//     }
-// `;
 
 const SectionOneStripe = styled.div`
     position: absolute;
@@ -441,178 +235,6 @@ const SectionOneDescription = styled.div`
         font-size: 32px;
         line-height: 48px;
     }
-`;
-
-// Section Two
-const SectionTwo = styled.div`
-    width: 100%;
-`;
-
-// Section Two 1
-const SectionTwoTitle = styled.div`
-    width: 100%;
-    font-family: Poppins Bold;
-    font-weight: 800;
-    font-size: 24px;
-    color: #000000;
-
-    @media (min-width: 768px)
-    {
-        font-size: 48px;
-        line-height: 72px;
-    }
-`;
-
-const SectionTwoDescription = styled.div`
-    width: 100%;
-    font-weight: 400;
-    font-size: 16px;
-    color: #464646;
-    margin-top: 25px;
-
-    @media (min-width: 768px)
-    {
-        font-size: 32px;
-        line-height: 52px;
-    }
-`;
-
-const SectionTwoThreeTitle = styled.div`
-    font-weight: 400;
-    font-size: 24px;
-    text-align: left;
-    color: #000000;
-
-    @media (min-width: 1200px)
-    {
-        font-size: 48px;
-        line-height: 72px;
-        text-align: right;
-    }
-`;
-
-const SectionTwoImage = styled.div`
-    display: inline-block;
-    background: url('images/jamaicansnacks1.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-bottom: 50px;
-    max-width: calc(100vw - 100px);
-`;
-
-const SectionTwoText = styled.div`
-    font-weight: 400;
-    margin: 16px 0;
-    font-size: 20px;
-    color: #000000;
-
-    @media (min-width: 768px)
-    {
-        margin: 24px 0;
-        font-size: 40px;
-        line-height: 60px;
-    }
-`;
-
-const SectionCommonButton = styled.button`
-    padding: 12px 45px;
-    font-size: 16px;
-    color: #ffffff;
-    width: 200px;
-    height: 48px;
-    background: #000000;
-    border-radius: 4px;
-`;
-
-const SectionTwoButton = styled(SectionCommonButton)`
-    margin: 24px 0;
-`;
-
-const SectionFourButton = styled(SectionCommonButton)`
-    margin: 24px 50px;
-
-    @media (min-width: 768px)
-    {
-        margin: 24px 0;
-    }
-`;
-
-const SectionTwoThreeButton = styled.div`
-    padding: 12px 48px;
-    font-size: 16px;
-    color: #ffffff;
-    width: 244px;
-    height: 48px;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #000000
-`;
-
-// Three
-const SectionThreeImage = styled.div`
-    min-width: 100%;
-    min-Height: 250px;
-    max-height: 950px;
-    height: calc(100vw / 2.21);
-    background-image: url('images/Rectangle 3057.png');
-    background-size: cover;
-    background-position: center;
-`;
-
-const SectionThreeTitleBox = styled.div`
-
-`;
-
-const SectionThreeTitle = styled.div`
-    font-family: Poppins Bold;
-    font-weight: 400;
-    text-align: center;
-    margin-bottom: 60px;
-
-    @media screen and (max-width: 424px) 
-    {
-        font-size: 32px;
-        margin-top: -48px;
-    }
-    @media (min-width: 425px) and (max-width: 767px) 
-    {
-        font-size: 36px;
-        margin-top: -55px;
-    }
-    @media (min-width: 768px) 
-    {
-        font-size: 56px;
-        line-height: 84px;
-        margin-top: -84px;
-    }
-`;
-
-// Four
-const SectionFourTitle = styled.div`
-    font-weight: 400;
-    font-size: 24px;
-
-    @media (min-width: 768px)
-    {
-        font0size: 48px;
-        line-hright: 72px;
-    }
-`;
-
-const SectionFourRectangle = styled.div`
-    width: 288px;
-    height: 317px;
-    background: #ffffff;
-    margin: 10px;
-`;
-const SectionFourRectangleText = styled.p`
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
-    color: #000000;
-    margin: 10px;
 `;
 
 // Five
@@ -692,26 +314,6 @@ const SectionFAQ = styled.div`
     }
 `;
 
-const SectionMoreEvidence = styled.div`
-    margin: 0 30px;
-    display: flex;
-    justify-content: flex-start;
-    
-    @media (min-width: 576px) and (max-width: 991px)
-    {
-        margin: 0 50px;
-    }
-    @media (min-width: 992px)
-    {
-        margin: 0 100px;
-    }
-
-    @media (min-width: 1200px)
-    {
-        justify-content: flex-end;
-    }
-`;
-
 const SectionGetInTouch = styled.div`
     border: 1px solid #000000;
     margin-right: 100px;
@@ -749,16 +351,6 @@ const GetInTouchEmail = styled.div`
     }
 `;
 
-const SectionHungryText = styled.div`
-    font-size: 16px;
-
-    @media (min-width: 768px)
-    {
-        font-size: 24px;
-        line-height: 42px;
-    }
-`;
-
 const StayConnectedBox = styled.div`
     border: 1px solid #000000;
 
@@ -775,22 +367,4 @@ const StayConnectedBox = styled.div`
     {
         margin: 0 100px 0 0;
     }
-`;
-
-const SectionHungryBox = styled.div
-`
-    margin: 0 20px;
-
-    @media (min-width: 576px) and (max-width: 767px)
-    {
-        margin: 0 30px;
-    }
-    @media (min-width: 768px) and (max-width: 991px)
-    {
-        margin: 0 30px;
-    }
-    @media (min-width: 992px)
-    {
-        margin: 0 80px;
-    }   
 `;

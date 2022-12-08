@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom"
 import { MinDivBorder } from "./CommonSections";
 
 function Header() {
@@ -23,13 +24,13 @@ function Navbar() {
     return ( 
         <NavbarDiv className="d-none d-sm-flex justify-content-center align-items-center">
             {/* Navbar */}
-            <div className="d-flex align-items-end flex-column text-black text-center p-2 h-100">
+            <div className="d-flex align-items-end flex-column text-black text-center p-2" style={{height: '100%'}}>
                 <div className="mb-auto"></div>
                 <div className="">
-                    <span className="svg-icon svg-icon-min svg-icon-menu"></span>
-                    <span className="svg-icon svg-icon-min svg-icon-cart"></span>
-                    <span className="svg-icon svg-icon-min svg-icon-notification"></span>
-                    <span className="svg-icon svg-icon-mid svg-icon-aqua" style={{ marginBottom: '15px'}}></span>
+                    <NavLink to="/menu"><span className="svg-icon svg-icon-min svg-icon-menu"></span></NavLink>
+                    <NavLink to="/explore"><span className="svg-icon svg-icon-min svg-icon-cart"></span></NavLink>
+                    <NavLink to="/notifications"><span className="svg-icon svg-icon-min svg-icon-notification"></span></NavLink>
+                    <NavLink to="/chatbot"><span className="svg-icon svg-icon-mid svg-icon-aqua" style={{ marginBottom: '15px'}}></span></NavLink>
                 </div>
                 <div className="mt-auto">
                     <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
@@ -152,14 +153,13 @@ const HamBurger = styled.div`
 
 // Navbar
 const NavbarDiv = styled.div`
-    background: #EEEBE6;
+    background-color: #EEEBE6;
     position: fixed;
     right: 0;
     width: 100px;
     padding: 32px;
     height: 100vh;
-    border-left: 1px solid #000000;
-
+    height: -webkit-fill-available;
 
     span 
     {
@@ -228,3 +228,15 @@ const SectionDivliA = styled.a`
         text-decoration: underline;
     }
 `;
+
+const SectionCommonButton = styled.button`
+    padding: 12px 45px;
+    font-size: 16px;
+    color: #ffffff;
+    width: 200px;
+    height: 48px;
+    background: #000000;
+    border-radius: 4px;
+`;
+
+export { SectionCommonButton };

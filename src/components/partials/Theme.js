@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom"
-import { MinDivBorder } from "./CommonSections";
 
 function Header() {
     return ( 
@@ -9,7 +8,7 @@ function Header() {
             {/* Header */}
             <div className="d-flex justify-content-between align-items-center" style={{height: '70px'}}>
                 {/* Company logo */}
-                <HeaderLogo />
+                <HeaderLogo to="/" />
                 {/* Hamburger button */}
                 <HamBurger className="hamburger d-none d-sm-inline-block">Enter Pincode</HamBurger>
                 <div className="d-inline-block d-sm-none pt-2">
@@ -48,21 +47,21 @@ function Footer() {
             <div className="minDiv-text">
                 <div className="row pt-5 pb-4">
                     <div className="col-12 col-lg-4 col-xl-5 text-start mb-4 m-md-0">
-                        <HeaderLogo className="mb-3" />
+                        <HeaderLogo to="/" className="mb-3" />
                         <SectionEmailText>flyingsaucer@gmail.com</SectionEmailText>
                         
                         <div className="mt-4">
                             <div className="social-icon d-inline-block" style={{marginRight: '5px'}}>
-                                <img className="text-white" src="svgs/facebook 1.png" />
+                                <img className="text-white" src="svgs/facebook 1.png" alt="facebook_icon" />
                             </div>
                             <div className="social-icon d-inline-block mx-1">
-                                <img className="text-white" src="svgs/instagram 1.png" />
+                                <img className="text-white" src="svgs/instagram 1.png" alt="instagram_icon" />
                             </div>
                             <div className="social-icon d-inline-block mx-1">
-                                <img className="text-white" src="svgs/linkedin 1.png" />
+                                <img className="text-white" src="svgs/linkedin 1.png" alt="linkedin_icon" />
                             </div>
                             <div className="social-icon d-inline-block mx-1">
-                                <img className="text-white" src="svgs/twitter 1.png" />
+                                <img className="text-white" src="svgs/twitter 1.png" alt="twitter_icon" />
                             </div>
                         </div>
                     </div>
@@ -107,7 +106,7 @@ function Footer() {
 }
 
 export default Header;
-export { Footer, Navbar };
+export { Footer, Navbar }; 
 
 // Header
 const HeaderDiv = styled.div`
@@ -133,12 +132,20 @@ const HeaderDiv = styled.div`
     }
 `;
 
-const HeaderLogo = styled.div`
+const HeaderLogo = styled(NavLink)`
     width: 170px;
     height: 48px;
     display: inline-block;
     background: url(Flying_saucer_logo.png);
-    background-size: 170px 48px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover
+    {
+        width: 173px;
+        height: 50px;
+    }
 `;
 
 const HamBurger = styled.div`
@@ -239,4 +246,33 @@ const SectionCommonButton = styled.button`
     border-radius: 4px;
 `;
 
-export { SectionCommonButton };
+// const MinDiv = styled.main`
+//     min-height: calc(100vh - 143px - 397px);
+//     max-width: calc(100vw - 100px);
+//     left: 0;
+//     border: 1px solid lightgrey;
+//     border-left: 0;
+//     border-bottom: 0;
+//     border-top: 0;
+//     overflow: hidden;
+// `;
+
+const MinDivBorder = styled.div`
+    margin-left: 30px;
+    margin-right: 30px;
+    border-top: 1px solid #000000;
+
+    @media (min-width: 576px) and (max-width: 991px)
+    {
+        margin-left: 50px;
+        margin-right: 0;
+    }
+    @media (min-width: 992px)
+    {
+        margin-left: 100px;
+        margin-right: 0;
+    }
+
+`;
+
+export { SectionCommonButton, MinDivBorder };

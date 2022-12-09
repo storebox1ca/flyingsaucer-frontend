@@ -5,10 +5,17 @@ import Header, { Footer, Navbar } from "../partials/Theme";
 
 const ChatBot = () => {
 
+    // const [isLoaded, setLoaded] = useState(false);
+
     useEffect(() => {
-        initContainer('typebot-container', {
-            url: 'https://typebot.io/my-typebot-g17oy01',
-        })
+        // if (!isLoaded)
+        // {
+            initContainer('typebot-container', {
+                url: 'https://typebot.io/my-typebot-g17oy01',
+            })
+
+        //     setLoaded(true);
+        // }
     },[]);
 
     return(

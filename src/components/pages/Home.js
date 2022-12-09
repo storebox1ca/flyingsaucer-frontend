@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Marquee from "react-fast-marquee";
 
-import { MinDivBorder } from "../partials/CommonSections";
-import Header, { Footer, Navbar } from "../partials/Theme";
+import Header, { Footer, Navbar, MinDivBorder } from "../partials/Theme";
 import HomeSectionTwo, { SectionTwoTitle, SectionTwoDescription } from "../partials/HomeSections/HomeSectionTwo";
 import HomeSectionThree from "../partials/HomeSections/HomeSectionThree";
 import HomeSectionFour from "../partials/HomeSections/HomeSectionFour";
@@ -314,10 +313,10 @@ const SectionFAQ = styled.div`
     }
 `;
 
-const SectionGetInTouch = styled.div`
-    border: 1px solid #000000;
-    margin-right: 100px;
-`;
+// const SectionGetInTouch = styled.div`
+//     border: 1px solid #000000;
+//     margin-right: 100px;
+// `;
 
 const StayConnectedText = styled.div`
     font-weight: 400;

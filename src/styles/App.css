@@ -58,7 +58,8 @@
   }
   .minDiv-text
   {
-    padding: 0 30px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 @media (min-width: 576px)
@@ -72,14 +73,16 @@
 {
   .minDiv-text
   {
-    padding: 0 50px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 }
 @media (min-width: 992px)
 {
   .minDiv-text
   {
-    padding: 0 100px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
   .minDiv-l-text-0
   {

@@ -172,6 +172,7 @@ const SectionCrewHead = styled.div`
 const SectionCrewGrid = styled.div`
     display: grid;
     grid-template-columns: auto;
+    margin-right: -1px;
 
     @media (min-width: 768px)
     {
@@ -187,7 +188,7 @@ const SectionCrewGrid = styled.div`
 const Item = styled.div`
     border-bottom: 1px solid;
     border-color: black;
-    border-left: 1px solid;
+    border-right: 1px solid;
     padding: 20px 0;
     font-size: 30px;
     text-align: center;

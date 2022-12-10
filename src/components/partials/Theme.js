@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState} from "react";
 import styled from "styled-components";
+import { ThemeContext } from "../../contexts/ThemeContext";
 import { NavLink } from "react-router-dom"
 
 function Header() {
@@ -20,13 +21,15 @@ function Header() {
 }
 
 function Navbar() {
+
     return ( 
+        <ThemeContext.Consumer>
         <NavbarDiv className="d-none d-sm-flex justify-content-center align-items-center">
             {/* Navbar */}
             <div className="d-flex align-items-end flex-column text-black text-center p-2" style={{height: '100%'}}>
                 <div className="mb-auto"></div>
                 <div className="">
-                    <NavLink to="/menu"><span className="svg-icon svg-icon-min svg-icon-menu"></span></NavLink>
+                    <span onClick={ToggleSidebar} className="svg-icon svg-icon-min svg-icon-menu"></span>
                     <NavLink to="/about"><span className="svg-icon svg-icon-min svg-icon-cart"></span></NavLink>
                     <NavLink to="/notifications"><span className="svg-icon svg-icon-min svg-icon-notification"></span></NavLink>
                     <NavLink to="/chatbot"><span className="svg-icon svg-icon-mid svg-icon-aqua" style={{ marginBottom: '15px'}}></span></NavLink>
@@ -35,7 +38,29 @@ function Navbar() {
                     <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
                 </div>
             </div>
+
+            {/* Sidebar */}
+            <div className={`sidebar ${isSidebar == true ? 'active' : ''}`}>
+                <div className="sd-header">
+                    <h4 className="mb-0">Sidebar Header</h4>
+                    <div className="btn btn-primary" onClick={ToggleSidebar}><i className="fa fa-times"></i></div>
+                </div>
+                <div className="sd-body">
+                    <ul>
+                        <li><a className="sd-link">Menu Item 1</a></li>
+                        <li><a className="sd-link">Menu Item 2</a></li>
+                        <li><a className="sd-link">Menu Item 3</a></li>
+                        <li><a className="sd-link">Menu Item 4</a></li>
+                        <li><a className="sd-link">Menu Item 5</a></li>
+                        <li><a className="sd-link">Menu Item 6</a></li>
+                        <li><a className="sd-link">Menu Item 7</a></li>
+                        <li><a className="sd-link">Menu Item 8</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div className={`sidebar-overlay ${isSidebarOpen == true ? 'active' : ''}`} onClick={ToggleSidebar}></div>
         </NavbarDiv>
+        </ThemeContext.Consumer>
     );
 }
 

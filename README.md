@@ -1,3 +1,4 @@
+Latest Branch is `new_design`
 
 To test frontend project only,
 

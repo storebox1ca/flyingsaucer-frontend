@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './styles/App.css';
 import './styles/Icons.css';
+import { Sidebar } from './components/partials/Theme';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
@@ -12,6 +13,9 @@ import NotFound from './components/pages/NotFound';
 function App() {
   return (
     <div className="App">
+
+      <Sidebar />
+
       <Router>
         <Routes>
           {/* Guest routes */}

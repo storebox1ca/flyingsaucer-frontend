@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom"
 
 function Header() {
+    
+    const showSidebar = () => {
+        document.getElementById('lgMenu').classList.remove("lgMenu-notenter");
+        document.getElementById('lgMenu').classList.add("lgMenu-enter");
+    }
+
     return ( 
         <HeaderDiv>
             {/* Header */}
@@ -12,7 +18,7 @@ function Header() {
                 {/* Hamburger button */}
                 <HamBurger className="hamburger d-none d-sm-inline-block">Enter Pincode</HamBurger>
                 <div className="d-inline-block d-sm-none pt-2">
-                    <span className="svg-icon svg-icon-min svg-icon-menu"></span>
+                    <span onClick={()=>showSidebar()} className="svg-icon svg-icon-min svg-icon-menu"></span>
                 </div>
             </div>
         </HeaderDiv>
@@ -20,22 +26,79 @@ function Header() {
 }
 
 function Navbar() {
+
+    const [navSideWidth, setNavSideWidth] = useState('101px');
+    
+    const toggleSidebar = () => {
+        if (navSideWidth == '101px')
+        {
+            showSidebar();
+            setNavSideWidth('500px');
+        } else {
+            hideSidebar();
+            setNavSideWidth('101px');
+        }
+    }
+    
+    const hideSidebar = () => {
+        document.getElementById('lgMenu').classList.remove("lgMenu-enter");
+        document.getElementById('lgMenu').classList.add("lgMenu-notenter");
+    }
+
+    
+    const showSidebar = () => {
+        document.getElementById('lgMenu').classList.remove("lgMenu-notenter");
+        document.getElementById('lgMenu').classList.add("lgMenu-enter");
+    }
+
     return ( 
         <NavbarDiv className="d-none d-sm-flex justify-content-center align-items-center">
             {/* Navbar */}
-            <div className="d-flex align-items-end flex-column text-black text-center p-2" style={{height: '100%'}}>
+            <div className="d-flex align-items-end flex-column text-black text-center" style={{height: '100%', width: navSideWidth, }}>
                 <div className="mb-auto"></div>
-                <div className="">
-                    <NavLink to="/menu"><span className="svg-icon svg-icon-min svg-icon-menu"></span></NavLink>
-                    <NavLink to="/about"><span className="svg-icon svg-icon-min svg-icon-cart"></span></NavLink>
-                    <NavLink to="/notifications"><span className="svg-icon svg-icon-min svg-icon-notification"></span></NavLink>
-                    <NavLink to="/chatbot"><span className="svg-icon svg-icon-mid svg-icon-aqua" style={{ marginBottom: '15px'}}></span></NavLink>
+                <div style={{padding: '20px'}}>
+                    <div>
+                        <span onClick={()=>toggleSidebar()} className="svg-icon svg-icon-min svg-icon-menu"></span>
+                    </div>
+                    <div>
+                        <NavLink to="/about"><span className="svg-icon svg-icon-min svg-icon-cart"></span></NavLink>
+                    </div>
+                    <div>
+                        <NavLink to="/notifications"><span className="svg-icon svg-icon-min svg-icon-notification"></span></NavLink>
+                    </div>
+                    <div>
+                        <NavLink to="/chatbot"><span className="svg-icon svg-icon-mid svg-icon-aqua" style={{ marginBottom: '15px'}}></span></NavLink>
+                    </div>
                 </div>
                 <div className="mt-auto">
                     <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
                 </div>
             </div>
         </NavbarDiv>
+    );
+}
+
+
+function Sidebar() {
+    
+    const hideSidebar = () => {
+        document.getElementById('lgMenu').classList.remove("lgMenu-enter");
+        document.getElementById('lgMenu').classList.add("lgMenu-notenter");
+    }
+
+    return ( 
+        <SectionSidebar id="lgMenu" className="lgMenu-notenter">
+            <div className="d-flex justify-content-end" style={{height: '50px', padding: '10px'}}>
+                <span onClick={()=>hideSidebar()} className="svg-icon svg-icon-min svg-icon-cross"></span>
+            </div>
+            <div className="d-flex justify-content-center align-items-center h-100">
+                <ul>
+                    <li className="py-2">Link One</li>
+                    <li className="py-2">Link Two</li>
+                    <li className="py-2">Link Three</li>
+                </ul>
+            </div>
+        </SectionSidebar>
     );
 }
 
@@ -106,14 +169,41 @@ function Footer() {
 }
 
 export default Header;
-export { Footer, Navbar }; 
+export { Footer, Navbar, Sidebar }; 
+
+const SectionSidebar = styled.div`
+    position: fixed;
+    right: 0;
+    background-color: #EEEBE6;
+    border-left: 1px solid #000000;
+    height: 100%;
+    z-index: 10000;
+    overflow:hidden;
+    box-shadow: 5px 5px 10px grey;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+
+    &.lgMenu-notenter{
+      width: 0;
+    }
+    
+    &.lgMenu-enter{
+      width: 100%;
+
+      @media (min-width: 768px)
+      {
+        width: 0;
+      }
+    }
+`;
+
 
 // Header
 const HeaderDiv = styled.div`
     position: relative;
     width: 100%;
     color: white;
-    background: #EEEBE6;
+    background-color: #EEEBE6;
     box-shadow: 0px -4px 12px rgba(165, 165, 165, 0.25);
     overflow: hidden;
     border-bottom: 1px solid #000000;
@@ -163,10 +253,9 @@ const NavbarDiv = styled.div`
     background-color: #EEEBE6;
     position: fixed;
     right: 0;
-    width: 100px;
-    padding: 32px;
     height: 100vh;
     height: -webkit-fill-available;
+    border-left: 1px solid #000000;
 
     span 
     {

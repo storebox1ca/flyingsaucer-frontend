@@ -1,3 +1,36 @@
+
+#menu{
+  /* left: 20px; */
+  font-size: 4em;
+  font-weight: 800;
+  z-index: 111;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.5s;
+  -webkit-transition: all 0.25s;
+  position: absolute;
+}
+
+#menu:hover{
+  transform: rotate(90deg);
+  color: #FF9900;
+}
+
+#exit{
+  position: absolute;
+  right: 10px;
+  padding: 0px;
+  top: -10px;
+  font-size: 4em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+}
+#exit:hover{
+  color:#FF9900;
+}
+
 .svg-icon 
 {
   display: inline-block;
@@ -123,6 +156,10 @@
 .svg-icon-noun-no
 {
   background-image: url('../../public/svgs/nounno.svg');
+}
+.svg-icon-cross
+{
+  background-image: url('../../public/svgs/cross.svg');
 }
 .svg-icon-community
 {

@@ -124,33 +124,33 @@ function Sidebar() {
             <div className="d-flex justify-content-end w-100" style={{position: 'absolute', padding: '35px 30px'}}>
                 <span onClick={()=>hideSidebar()} className="svg-icon svg-icon-min svg-icon-cross"></span>
             </div>
-            <div className="d-flex justify-content-center align-items-center h-100">
+            <div className="d-flex justify-content-center align-items-center h-100" style={{padding: '0 100px'}}>
                 <div className="d-flex align-items-start flex-column h-100" style={{width: '250px'}}>
                     <div className="mb-auto"></div>
                     <ul style={{listStyleType: 'none'}}>
                         <li className="py-5">
-                            <NavLink to="/about" className="text-black">
+                            <NavLink to="/about" className="text-black" onClick={()=>hideSidebar()}>
                                 <span className="svg-icon svg-icon-min svg-icon-cart" style={{padding:'0px 0', marginLeft: '14px'}}>
                                     <span style={{marginLeft: '53px', fontSize: '21px'}}>Cart</span>
                                 </span>
                             </NavLink>
                         </li>
                         <li className="py-5">
-                            <NavLink to="/notifications" className="text-black">
+                            <NavLink to="/notifications" className="text-black" onClick={()=>hideSidebar()}>
                                 <span className="svg-icon svg-icon-min svg-icon-notification" style={{padding:'0px 0', marginLeft: '14px'}}>
                                     <span style={{marginLeft: '53px', fontSize: '21px', transition: 'all 0.5s'}}>Notifications</span>
                                 </span>
                                 </NavLink>
                         </li>
                         <li className="py-4">
-                            <NavLink to="/chatbot" className="text-black">
+                            <NavLink to="/chatbot" className="text-black" onClick={()=>hideSidebar()}>
                                 <span className="svg-icon svg-icon-mid svg-icon-aqua" style={{margin: '0', padding:'15px 0'}}>
                                     <span style={{marginLeft: '67px', fontSize: '21px', transition: 'all 0.5s'}}>Chat</span>
                                 </span>
                             </NavLink>
                         </li>
                     </ul>
-                    <div className="mt-auto w-100 text-center" style={{padding: '26px'}}>
+                    <div className="mt-auto w-100 text-center" style={{padding: '26px'}} onClick={()=>hideSidebar()}>
                         <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
                     </div>
                 </div>

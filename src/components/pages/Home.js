@@ -18,7 +18,7 @@ const Home = () => {
             <Header />
 
             {/* Marquee stripe */}
-            <SectionOneStripe className="d-flex align-items-center" style={{width: '100w', overflow: 'hidden'}}>
+            <SectionOneStripe className="d-flex align-items-center" style={{width: '100w', overflow: 'hidden', zIndex: '10100'}}>
                 <Marquee style={{height: '42px'}} loop={0} speed={50} gradientColor={'none'}>
                     <div className="mt-2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         We are currently avaliable at delhi, to know more Click here.. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -200,7 +200,6 @@ const SectionOneStripe = styled.div`
     min-width: 100%;
     height: 42px;
     background: #FFFFFF;
-    z-index: 110;
     border: 1px solid lightgrey;
     border-top: 0;
     border-left: 0;

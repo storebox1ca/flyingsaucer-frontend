@@ -28,15 +28,28 @@ function Header() {
 function Navbar() {
 
     const [navSideWidth, setNavSideWidth] = useState('101px');
+
+    const [newStyleText, setnewStyleText] = useState(0);
+
+    const new_style = {
+        '@media (max-width: 575px)':
+        {
+            maxWidth : 0
+        }
+    }
     
     const toggleSidebar = () => {
         if (navSideWidth == '101px')
         {
             showSidebar();
-            setNavSideWidth('500px');
+            setNavSideWidth('280px');
+
+            setnewStyleText(1);
         } else {
             hideSidebar();
             setNavSideWidth('101px');
+
+            setnewStyleText(0);
         }
     }
     
@@ -54,23 +67,43 @@ function Navbar() {
     return ( 
         <NavbarDiv className="d-none d-sm-flex justify-content-center align-items-center">
             {/* Navbar */}
-            <div className="d-flex align-items-end flex-column text-black text-center" style={{height: '100%', width: navSideWidth, }}>
+            <div className="d-flex align-items-start flex-column text-black text-center" style={{height: '100%', width: navSideWidth , new_style, transition: 'all 0.5s'}}>
                 <div className="mb-auto"></div>
-                <div style={{padding: '20px'}}>
+                <div style={{margin: '21px'}}>
                     <div>
-                        <span onClick={()=>toggleSidebar()} className="svg-icon svg-icon-min svg-icon-menu"></span>
+                        {navSideWidth == '101px' ?
+                            <span onClick={()=>toggleSidebar()} className="svg-icon svg-icon-min svg-icon-menu" style={{padding:'0px 0'}}>
+                                <span style={{marginLeft: '53px', fontSize: '21px', opacity : newStyleText, transition: 'all 0.5s'}}>Menu</span>
+                            </span>
+                            : 
+                            <span onClick={()=>toggleSidebar()} className="svg-icon svg-icon-min svg-icon-cross" style={{padding:'0px 0'}}>
+                                <span style={{marginLeft: '53px', fontSize: '21px', opacity : newStyleText, transition: 'all 0.5s'}}>Close&nbsp;Menu</span>
+                            </span>
+                        }
                     </div>
                     <div>
-                        <NavLink to="/about"><span className="svg-icon svg-icon-min svg-icon-cart"></span></NavLink>
+                        <NavLink to="/about" className="text-black">
+                            <span className="svg-icon svg-icon-min svg-icon-cart" style={{padding:'0px 0'}}>
+                                <span style={{marginLeft: '53px', fontSize: '21px', opacity : newStyleText, transition: 'all 0.5s'}}>Cart</span>
+                            </span>
+                        </NavLink>
                     </div>
                     <div>
-                        <NavLink to="/notifications"><span className="svg-icon svg-icon-min svg-icon-notification"></span></NavLink>
+                        <NavLink to="/notifications" className="text-black">
+                            <span className="svg-icon svg-icon-min svg-icon-notification" style={{padding:'0px 0'}}>
+                                <span style={{marginLeft: '53px', fontSize: '21px', opacity : newStyleText, transition: 'all 0.5s'}}>Notifications</span>
+                            </span>
+                            </NavLink>
                     </div>
                     <div>
-                        <NavLink to="/chatbot"><span className="svg-icon svg-icon-mid svg-icon-aqua" style={{ marginBottom: '15px'}}></span></NavLink>
+                        <NavLink to="/chatbot" className="text-black">
+                            <span className="svg-icon svg-icon-mid svg-icon-aqua" style={{margin: '0', padding:'15px 0'}}>
+                                <span style={{marginLeft: '67px', fontSize: '21px', opacity : newStyleText, transition: 'all 0.5s'}}>Chat</span>
+                            </span>
+                        </NavLink>
                     </div>
                 </div>
-                <div className="mt-auto">
+                <div className="mt-auto w-100" style={{padding: '26px'}}>
                     <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
                 </div>
             </div>
@@ -88,25 +121,53 @@ function Sidebar() {
 
     return ( 
         <SectionSidebar id="lgMenu" className="lgMenu-notenter">
-            <div className="d-flex justify-content-end" style={{height: '50px', padding: '10px'}}>
+            <div className="d-flex justify-content-end w-100" style={{position: 'absolute', padding: '35px 30px'}}>
                 <span onClick={()=>hideSidebar()} className="svg-icon svg-icon-min svg-icon-cross"></span>
             </div>
             <div className="d-flex justify-content-center align-items-center h-100">
-                <ul>
-                    <li className="py-2">Link One</li>
-                    <li className="py-2">Link Two</li>
-                    <li className="py-2">Link Three</li>
-                </ul>
+                <div className="d-flex align-items-start flex-column h-100" style={{width: '250px'}}>
+                    <div className="mb-auto"></div>
+                    <ul style={{listStyleType: 'none'}}>
+                        <li className="py-5">
+                            <NavLink to="/about" className="text-black">
+                                <span className="svg-icon svg-icon-min svg-icon-cart" style={{padding:'0px 0', marginLeft: '14px'}}>
+                                    <span style={{marginLeft: '53px', fontSize: '21px'}}>Cart</span>
+                                </span>
+                            </NavLink>
+                        </li>
+                        <li className="py-5">
+                            <NavLink to="/notifications" className="text-black">
+                                <span className="svg-icon svg-icon-min svg-icon-notification" style={{padding:'0px 0', marginLeft: '14px'}}>
+                                    <span style={{marginLeft: '53px', fontSize: '21px', transition: 'all 0.5s'}}>Notifications</span>
+                                </span>
+                                </NavLink>
+                        </li>
+                        <li className="py-4">
+                            <NavLink to="/chatbot" className="text-black">
+                                <span className="svg-icon svg-icon-mid svg-icon-aqua" style={{margin: '0', padding:'15px 0'}}>
+                                    <span style={{marginLeft: '67px', fontSize: '21px', transition: 'all 0.5s'}}>Chat</span>
+                                </span>
+                            </NavLink>
+                        </li>
+                    </ul>
+                    <div className="mt-auto w-100 text-center" style={{padding: '26px'}}>
+                        <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
+                    </div>
+                </div>
             </div>
         </SectionSidebar>
     );
 }
 
 
-function Footer() {
+function Footer({mindiv}) {
     return ( 
         <FooterDiv>
-            <MinDivBorder className="mt-5"/>
+            {mindiv && mindiv == 'full' ?
+                <MinDivBorderFull style={{marginTop: '2px'}}/>
+            :
+                <MinDivBorder className="mt-5"/>
+            }
             <div className="minDiv-text">
                 <div className="row pt-5 pb-4">
                     <div className="col-12 col-lg-4 col-xl-5 text-start mb-4 m-md-0">
@@ -160,9 +221,13 @@ function Footer() {
                     </div>
                 </div>
             </div>
-            <MinDivBorder className="mb-2" />
+            {mindiv && mindiv == 'full' ?
+                <MinDivBorderFull className="mt-5"/>
+            :
+                <MinDivBorder className="mt-5"/>
+            }
             <div className="py-4">
-                <SectionCopyRightText className="mb-3 text-center">Copyright@floe All Rights Reserved</SectionCopyRightText>
+                <SectionCopyRightText className="text-center">Copyright@floe All Rights Reserved</SectionCopyRightText>
             </div>
         </FooterDiv>
     );
@@ -177,7 +242,7 @@ const SectionSidebar = styled.div`
     background-color: #EEEBE6;
     border-left: 1px solid #000000;
     height: 100%;
-    z-index: 10000;
+    z-index: 10200;
     overflow:hidden;
     box-shadow: 5px 5px 10px grey;
     transition: all 0.5s;
@@ -190,7 +255,7 @@ const SectionSidebar = styled.div`
     &.lgMenu-enter{
       width: 100%;
 
-      @media (min-width: 768px)
+      @media (min-width: 575px)
       {
         width: 0;
       }
@@ -207,6 +272,7 @@ const HeaderDiv = styled.div`
     box-shadow: 0px -4px 12px rgba(165, 165, 165, 0.25);
     overflow: hidden;
     border-bottom: 1px solid #000000;
+    z-index: 10100;
 
     @media screen and (max-width: 575px)
     {
@@ -256,6 +322,7 @@ const NavbarDiv = styled.div`
     height: 100vh;
     height: -webkit-fill-available;
     border-left: 1px solid #000000;
+    z-index: 10000;
 
     span 
     {
@@ -362,6 +429,10 @@ const MinDivBorder = styled.div`
         margin-right: 0;
     }
 
+`;
+
+const MinDivBorderFull = styled.div`
+    border-top: 1px solid #000000;
 `;
 
 export { SectionCommonButton, MinDivBorder };

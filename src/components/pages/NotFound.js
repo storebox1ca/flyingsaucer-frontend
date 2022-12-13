@@ -19,7 +19,7 @@ const NotFound = () => {
                     </div>
                 </div>
 
-                <Footer />
+                <Footer mindiv="full" />
             </div>
         </div>
     );

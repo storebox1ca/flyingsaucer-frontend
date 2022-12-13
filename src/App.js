@@ -14,9 +14,10 @@ function App() {
   return (
     <div className="App">
 
-      <Sidebar />
-
       <Router>
+
+        <Sidebar />
+        
         <Routes>
           {/* Guest routes */}
           <Route path="/" exact={true} element={<Home />} />

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Marquee from "react-fast-marquee";
 
 import Header, { Footer, Navbar, MinDivBorder } from "../partials/Theme";
 import { SectionTwoTitle, SectionTwoDescription } from "../partials/HomeSections/HomeSectionTwo";
@@ -79,9 +80,9 @@ const About = () => {
                 { crews &&
                     <SectionCrewGrid>
                         {crews.map(
-                            p => 
+                            (p, index) => 
                                 (
-                                    <Item>
+                                    <CrewItem key={index}>
                                         <div className="w-100">
                                             <img src="images/Rectangle 3075.png" width="250px" height="250px" alt="" />
                                         </div>
@@ -92,14 +93,36 @@ const About = () => {
                                             <SectionCrewTitle className="py-3">Dwayne Johnson </SectionCrewTitle>
                                             <SectionCrewDescription className="pb-2">“Properly Frozen Food at -18° C helps fight food wastage & locks in more nutrition. Without the need for any preservatives or loss of flavour ”</SectionCrewDescription>
                                         </div>
-                                    </Item>
+                                    </CrewItem>
                                 )
                             )
                         }
                     </SectionCrewGrid>
                 }
 
-                <Footer />
+                <MinDivBorder style={{marginLeft: '0', marginTop: '-1px', marginBottom: '2px'}} />
+                
+                <SectionAboutMarquee>
+                    <Marquee style={{height: '94px', border: '1px solid'}} loop={0} speed={50} gradientColor={'none'}>
+                        <div style={{margin: '18px 0'}}> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            JOIN US! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        </div>
+                        <div style={{margin: '18px 0'}}>
+                            JOIN US! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        </div>
+                        <div style={{margin: '18px 0'}}>
+                            JOIN US! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        </div>
+                        <div style={{margin: '18px 0'}}>
+                            JOIN US! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        </div>
+                        <div style={{margin: '18px 0'}}>
+                            JOIN US!
+                        </div>
+                    </Marquee>
+                </SectionAboutMarquee>
+
+                <Footer mindiv="full" />
             </div>
         </div>
     );
@@ -184,10 +207,10 @@ const SectionCrewGrid = styled.div`
     }
 `;
 
-const Item = styled.div`
+const CrewItem = styled.div`
     border-bottom: 1px solid;
     border-color: black;
-    border-left: 1px solid;
+    border-right: 1px solid;
     padding: 20px 0;
     font-size: 30px;
     text-align: center;
@@ -205,4 +228,12 @@ const SectionCrewDescription = styled.div`
     font-size: 20px;
     line-height: 36px;
     padding: 0 20px;
+`;
+
+const SectionAboutMarquee = styled.div`
+    background-color: #8AB48E;
+    color: white;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 54px;
 `;

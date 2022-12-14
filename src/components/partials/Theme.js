@@ -124,7 +124,7 @@ function Sidebar() {
             <div className="d-flex justify-content-end w-100" style={{position: 'absolute', padding: '35px 30px'}}>
                 <span onClick={()=>hideSidebar()} className="svg-icon svg-icon-min svg-icon-cross"></span>
             </div>
-            <div className="d-flex justify-content-center align-items-center h-100" style={{padding: '0 100px'}}>
+            <div className="d-flex justify-content-center align-items-center h-100" style={{padding: '0 50px'}}>
                 <div className="d-flex align-items-start flex-column h-100" style={{width: '250px'}}>
                     <div className="mb-auto"></div>
                     <ul style={{listStyleType: 'none'}}>

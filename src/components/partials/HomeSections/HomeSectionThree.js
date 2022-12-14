@@ -42,52 +42,53 @@ function HomeSectionThree() {
 
             <SectionHungryBox>
                 <div className="row">
-                    <div className="col-12 pt-5">
-                        <div className="row ul-check-circle ">
+                    <div className="col-12 pt-5 minDiv-text">
+                        <div className="row">
                             <div className="col-12 col-md-6 mb-3">
-                                <div style={{height: '60px'}}>
+                                <SectionHungryIcon>
                                     <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-save-energy"></span>
-                                </div>
+                                </SectionHungryIcon>
                                 <SectionHungryText>
                                     Save upto 15% on every purchase
                                 </SectionHungryText>
                             </div>
                             <div className="col-12 col-md-6 mb-3">
-                                <div style={{height: '60px'}}>
+                                <SectionHungryIcon>
                                     <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-community"></span>
-                                </div>
+                                </SectionHungryIcon>
                                 <SectionHungryText>
                                     A community that takes you back to a happier future
                                 </SectionHungryText>
                             </div>
                             <div className="col-12 col-md-6 mb-3">
-                                <div style={{height: '60px'}}>
+                                <SectionHungryIcon>
                                     <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-bakery-products"></span>
-                                </div>
+                                </SectionHungryIcon>
                                 <SectionHungryText>
                                     Free Products, Limited Releases & Pre-Orders
                                 </SectionHungryText>
                             </div>
                             <div className="col-12 col-md-6 mb-3">
-                                <div style={{height: '60px'}}>
+                                <SectionHungryIcon>
                                     <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-event"></span>
-                                </div>
+                                </SectionHungryIcon>
                                 <SectionHungryText>
                                     Access Exclusive Content & Uncrowded Events
                                 </SectionHungryText>
                             </div>
                             <div className="col-12 col-md-6 mb-3">
-                                <div style={{height: '55px', marginTop: '5px', marginLeft: '5px'}}>
+                                <SectionHungryIcon 
+                                    style={{height: '55px', marginTop: '5px', marginLeft: '5px'}}>
                                     <span className="svg-icon svg-icon-mid svg-icon-mid-nohover svg-icon-noun-no"></span>
-                                </div>
+                                </SectionHungryIcon>
                                 <SectionHungryText>
                                     No committments and No extra Fees
                                 </SectionHungryText>
                             </div>
                             <div className="col-12 col-md-6 mb-3">
-                                <div style={{height: '60px'}}>
+                                <SectionHungryIcon>
                                     <span className="svg-icon svg-icon-large svg-icon-large-nohover svg-icon-speech"></span>
-                                </div>
+                                </SectionHungryIcon>
                                 <SectionHungryText>
                                     Have a say in where we go and what we bring
                                 </SectionHungryText>
@@ -97,7 +98,7 @@ function HomeSectionThree() {
                 </div>
             </SectionHungryBox>
 
-            <div className="d-flex justify-content-md-center mt-3 pb-5">
+            <div className="d-flex justify-content-center mt-3 pb-5">
                 <SectionFourButton>
                     <span style={{marginLeft: '10px'}}>Lets Shop!</span>
                 </SectionFourButton>
@@ -129,6 +130,11 @@ const SectionTwoThreeTitle = styled.div`
     font-size: 24px;
     text-align: left;
     color: #000000;
+
+    @media (min-width: 768px)
+    {
+        font-size: 48px;
+    }
 
     @media (min-width: 1200px)
     {
@@ -197,8 +203,7 @@ const SectionThreeTitle = styled.div`
     }
 `;
 
-const SectionHungryBox = styled.div
-`
+const SectionHungryBox = styled.div`    
     margin: 0 20px;
 
     @media (min-width: 576px) and (max-width: 767px)
@@ -217,12 +222,28 @@ const SectionHungryBox = styled.div
 
 const SectionHungryText = styled.div`
     font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
 
     @media (min-width: 768px)
     {
         font-size: 24px;
         line-height: 42px;
+        text-align: left;
     }
+`;
+
+const SectionHungryIcon = styled.div`
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+
+    @media (min-width: 768px)
+    {
+        justify-content: start;
+    }
+
 `;
 
 const SectionFourButton = styled(SectionCommonButton)`

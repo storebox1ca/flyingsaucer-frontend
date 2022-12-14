@@ -31,7 +31,7 @@ const ChatBot = () => {
                     style={{width: '100%', minHeight: 'calc(100vh - 149px - 341px)', height: '435px', marginLeft: '-12px', marginRight: '-12px'}}>
                 </div>
                 
-                <Footer />
+                <Footer mindiv="full" />
 
             </div>
 

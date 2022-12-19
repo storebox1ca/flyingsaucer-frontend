@@ -18,22 +18,22 @@ const Home = () => {
             <Header />
 
             {/* Marquee stripe */}
-            <SectionOneStripe className="d-flex align-items-center" style={{width: '100w', overflow: 'hidden', zIndex: '10100'}}>
+            <SectionOneStripe className="d-flex align-items-center" style={{width: '100w', marginTop: '12px', overflow: 'hidden', zIndex: '10100'}}>
                 <Marquee style={{height: '42px'}} loop={0} speed={50} gradientColor={'none'}>
                     <div className="mt-2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        We are currently avaliable at delhi, to know more Click here.. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        We are currently avaliable at delhi, to know more <strong>Click here</strong>.. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     </div>
                     <div className="mt-2">
-                        It can invade food waste, malnutrition and keep things superfresh. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        We are currently avaliable at delhi, to know more <strong>Click here</strong>.. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     </div>
                     <div className="mt-2">
-                        It can invade food waste, malnutrition and keep things superfresh. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        We are currently avaliable at delhi, to know more <strong>Click here</strong>.. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     </div>
                     <div className="mt-2">
-                        It can invade food waste, malnutrition and keep things superfresh. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        We are currently avaliable at delhi, to know more <strong>Click here</strong>.. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                     </div>
                     <div className="mt-2">
-                        It can invade food waste, malnutrition and keep things superfresh.
+                        We are currently avaliable at delhi, to know more <strong>Click here</strong>..
                     </div>
                 </Marquee>
             </SectionOneStripe>

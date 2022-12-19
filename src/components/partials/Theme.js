@@ -17,16 +17,16 @@ function Header() {
                 <HeaderLogo to="/" >Flying Saucer</HeaderLogo>
 
                 <div className="d-flex align-items-center">
-                    <div className="d-inline-block">
+                    <div className="d-inline-block mx-3">
                         {/* Hamburger button */}
-                        <HamSearch className="d-flex align-items-center">
+                        <HamSearch className="d-flex align-items-center" style={{width: '360px'}}>
                             <HamSearchText />Search / Track Order
                         </HamSearch>
                     </div>
                     
-                    <span className="svg-icon svg-icon-min svg-icon-menu"></span>
-                    <span className="svg-icon svg-icon-min svg-icon-menu"></span>
-                    <span className="svg-icon svg-icon-min svg-icon-menu"></span>
+                    <span className="svg-icon svg-icon-local-mall mx-3"></span>
+                    <span className="svg-icon svg-icon-person mx-3"></span>
+                    <span className="svg-icon svg-icon-min svg-icon-menu mx-3 svg-white"></span>
 
                     <div className="d-inline-block d-sm-none pt-2">
                         <span onClick={()=>showSidebar()} className="svg-icon svg-icon-min svg-icon-menu"></span>
@@ -39,47 +39,49 @@ function Header() {
 
 function Navbar() {
 
-    const [navSideWidth, setNavSideWidth] = useState('101px');
+    // const [navSideWidth, setNavSideWidth] = useState('150px');
+    // const [navSideWidth, setNavSideWidth] = useState('101px');
 
-    const [newStyleText, setnewStyleText] = useState(0);
+    // const [newStyleText, setnewStyleText] = useState(0);
 
-    const new_style = {
-        '@media (max-width: 575px)':
-        {
-            maxWidth : 0
-        }
-    }
+    // const new_style = {
+    //     '@media (max-width: 575px)':
+    //     {
+    //         maxWidth : 0
+    //     }
+    // }
     
-    const toggleSidebar = () => {
-        if (navSideWidth == '101px')
-        {
-            showSidebar();
-            setNavSideWidth('280px');
+    // const toggleSidebar = () => {
+    //     if (navSideWidth == '101px')
+    //     {
+    //         showSidebar();
+    //         setNavSideWidth('280px');
 
-            setnewStyleText(1);
-        } else {
-            hideSidebar();
-            setNavSideWidth('101px');
+    //         setnewStyleText(1);
+    //     } else {
+    //         hideSidebar();
+    //         setNavSideWidth('101px');
 
-            setnewStyleText(0);
-        }
-    }
+    //         setnewStyleText(0);
+    //     }
+    // }
     
-    const hideSidebar = () => {
-        document.getElementById('lgMenu').classList.remove("lgMenu-enter");
-        document.getElementById('lgMenu').classList.add("lgMenu-notenter");
-    }
+    // const hideSidebar = () => {
+    //     document.getElementById('lgMenu').classList.remove("lgMenu-enter");
+    //     document.getElementById('lgMenu').classList.add("lgMenu-notenter");
+    // }
 
     
-    const showSidebar = () => {
-        document.getElementById('lgMenu').classList.remove("lgMenu-notenter");
-        document.getElementById('lgMenu').classList.add("lgMenu-enter");
-    }
+    // const showSidebar = () => {
+    //     document.getElementById('lgMenu').classList.remove("lgMenu-notenter");
+    //     document.getElementById('lgMenu').classList.add("lgMenu-enter");
+    // }
 
     return ( 
-        <NavbarDiv className="d-none d-sm-flex justify-content-center align-items-center">
+        <NavbarDiv className="d-flex align-items-end" style={{width: '150px'}}>
+        {/* <NavbarDiv className="d-none d-sm-flex justify-content-center align-items-center"> */}
             {/* Navbar */}
-            <div className="d-flex align-items-start flex-column text-black text-center" style={{height: '100%', width: navSideWidth , new_style, transition: 'all 0.5s'}}>
+            {/* <div className="d-flex align-items-start flex-column text-black text-center" style={{height: '100%', width: navSideWidth , new_style, transition: 'all 0.5s'}}>
                 <div className="mb-auto"></div>
                 <div style={{margin: '21px'}}>
                     <div>
@@ -118,6 +120,33 @@ function Navbar() {
                 <div className="mt-auto w-100" style={{padding: '26px'}}>
                     <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
                 </div>
+            </div> */}
+            <div className="w-100">
+                <NavItemBox className="w-100">
+                    <div className="d-flex align-items-center h-100">
+                        <NavItemText className="w-100 text-center">Vegetarian</NavItemText>
+                    </div>
+                </NavItemBox>
+                <NavItemBox className="w-100">
+                    <div className="d-flex align-items-center h-100">
+                        <NavItemText className="w-100 text-center">Meat</NavItemText>
+                    </div>
+                </NavItemBox>
+                <NavItemBox className="w-100">
+                    <div className="d-flex align-items-center h-100">
+                        <NavItemText className="w-100 text-center">Seafood</NavItemText>
+                    </div>
+                </NavItemBox>
+                <NavItemBox className="w-100">
+                    <div className="d-flex align-items-center h-100">
+                        <NavItemText className="w-100 text-center">Dessert</NavItemText>
+                    </div>
+                </NavItemBox>
+                <NavItemBox className="w-100">
+                    <div className="d-flex align-items-center h-100">
+                        <NavItemText className="w-100 text-center active">View all</NavItemText>
+                    </div>
+                </NavItemBox>
             </div>
         </NavbarDiv>
     );
@@ -331,7 +360,7 @@ const HamSearch = styled.div`
     font-size: 16px;
     color: white;
     border: 1px solid #A4A4A4;
-    padding: 7px 32px;
+    padding: 7px 20px;
     z-index: 110;
 `;
 
@@ -455,5 +484,22 @@ const MinDivBorder = styled.div`
 const MinDivBorderFull = styled.div`
     border-top: 1px solid #000000;
 `;
+
+const NavItemBox = styled.div`
+    height: 70px;
+    border-top: 1px solid black;
+`;
+
+const NavItemText = styled.div`
+    font-size: 16px;
+    color: #111111;
+    font-weight: 700;
+
+    &.active
+    {
+        color: #F4A73F;
+    }
+`;
+
 
 export { SectionCommonButton, MinDivBorder };

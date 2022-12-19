@@ -30,7 +30,10 @@
 #exit:hover{
   color:#FF9900;
 }
-
+.svg-white
+{
+  filter: invert(93%) sepia(96%) saturate(13%) hue-rotate(112deg) brightness(106%) contrast(100%);
+}
 .svg-icon 
 {
   display: inline-block;
@@ -176,6 +179,34 @@
 .svg-icon-noun-arrow
 {
   background-image: url('../../public/svgs/noun-arrow.svg');
+}
+
+.svg-icon-person
+{
+  width: 26px;
+  height: 26px;
+  background-image: url('../../public/svgs/person.svg');
+  background-position: center;
+}
+.svg-icon-person:hover
+{
+  width: 28px;
+  height: 28px;
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+.svg-icon-local-mall
+{
+  width: 26px;
+  height: 28px;
+  background-image: url('../../public/svgs/local_mall.svg');
+  background-position: center;
+}
+.svg-icon-local-mall:hover
+{
+  width: 28px;
+  height: 30px;
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
 }
 .svg-icon-line-active
 {

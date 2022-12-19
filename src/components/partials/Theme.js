@@ -14,11 +14,23 @@ function Header() {
             {/* Header */}
             <div className="d-flex justify-content-between align-items-center" style={{height: '70px'}}>
                 {/* Company logo */}
-                <HeaderLogo to="/" />
-                {/* Hamburger button */}
-                <HamBurger className="hamburger d-none d-sm-inline-block">Enter Pincode</HamBurger>
-                <div className="d-inline-block d-sm-none pt-2">
-                    <span onClick={()=>showSidebar()} className="svg-icon svg-icon-min svg-icon-menu"></span>
+                <HeaderLogo to="/" >Flying Saucer</HeaderLogo>
+
+                <div className="d-flex align-items-center">
+                    <div className="d-inline-block">
+                        {/* Hamburger button */}
+                        <HamSearch className="d-flex align-items-center">
+                            <HamSearchText />Search / Track Order
+                        </HamSearch>
+                    </div>
+                    
+                    <span className="svg-icon svg-icon-min svg-icon-menu"></span>
+                    <span className="svg-icon svg-icon-min svg-icon-menu"></span>
+                    <span className="svg-icon svg-icon-min svg-icon-menu"></span>
+
+                    <div className="d-inline-block d-sm-none pt-2">
+                        <span onClick={()=>showSidebar()} className="svg-icon svg-icon-min svg-icon-menu"></span>
+                    </div>
                 </div>
             </div>
         </HeaderDiv>
@@ -268,7 +280,7 @@ const HeaderDiv = styled.div`
     position: relative;
     width: 100%;
     color: white;
-    background-color: #EEEBE6;
+    background-color: #2C488E;
     box-shadow: 0px -4px 12px rgba(165, 165, 165, 0.25);
     overflow: hidden;
     border-bottom: 1px solid #000000;
@@ -289,29 +301,49 @@ const HeaderDiv = styled.div`
 `;
 
 const HeaderLogo = styled(NavLink)`
-    width: 170px;
     height: 48px;
     display: inline-block;
-    background: url(Flying_saucer_logo.png);
+    background: url(favicon2.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
+
+    padding: 0;
+    padding-left: 70px;
+
+    font-size: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    line-height: 1;
 
     &:hover
     {
-        width: 173px;
         height: 50px;
+        font-size: 41px;
+        color: white;
     }
 `;
 
-const HamBurger = styled.div`
+const HamSearch = styled.div`
     margin: 10px 0;
     font-weight: 500;
     font-size: 16px;
-    color: #000000;
-    border: 1px solid #000000;
-    padding: 12px 32px;
+    color: white;
+    border: 1px solid #A4A4A4;
+    padding: 7px 32px;
     z-index: 110;
+`;
+
+const HamSearchText = styled.div`
+    background: url(svgs/search.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 17px;
+    width: 17px;
+    display: inline-block;
+    margin-right: 10px;
 `;
 
 // Navbar
@@ -401,17 +433,6 @@ const SectionCommonButton = styled.button`
     background: #000000;
     border-radius: 4px;
 `;
-
-// const MinDiv = styled.main`
-//     min-height: calc(100vh - 143px - 397px);
-//     max-width: calc(100vw - 100px);
-//     left: 0;
-//     border: 1px solid lightgrey;
-//     border-left: 0;
-//     border-bottom: 0;
-//     border-top: 0;
-//     overflow: hidden;
-// `;
 
 const MinDivBorder = styled.div`
     margin-left: 30px;

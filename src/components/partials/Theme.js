@@ -29,7 +29,7 @@ function Header() {
                     <span className="svg-icon svg-icon-local-mall mx-3"></span>
                     <span className="svg-icon svg-icon-person mx-3"></span>
 
-                    <div className="d-inline-block d-sm-none pt-2">
+                    <div className="d-inline-block d-md-none pt-2">
                         <span onClick={()=>showSidebar()} className="svg-icon svg-icon-min svg-icon-menu mx-3 svg-white"></span>
                     </div>
                 </div>
@@ -480,7 +480,7 @@ const NavbarDiv = styled.div`
 
     @media (min-width: 768px)
     {
-        width: 150px;
+        width: 151px;
     }
 
 `;

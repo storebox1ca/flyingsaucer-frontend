@@ -39,7 +39,7 @@ const Home = () => {
             </SectionOneStripe>
 
             {/* Container */}
-            <div className="MinDiv" style={{backgroundColor: '#EEEBE6', borderRight: '1px solid #000000'}}>
+            <div className="MinDiv">
 
                 {/* Section One */}
                 <SectionOne>

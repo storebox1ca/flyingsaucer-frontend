@@ -204,12 +204,12 @@ function Sidebar() {
 function Footer({mindiv}) {
     return ( 
         <FooterDiv>
-            {mindiv && mindiv == 'full' ?
+            {/* {mindiv && mindiv == 'full' ?
                 <MinDivBorderFull style={{marginTop: '2px'}}/>
             :
                 <MinDivBorder className="mt-5"/>
-            }
-            <div className="minDiv-text">
+            } */}
+            {/* <div className="minDiv-text">
                 <div className="row pt-5 pb-4">
                     <div className="col-12 col-lg-4 col-xl-5 text-start mb-4 m-md-0">
                         <HeaderLogo to="/" className="mb-3" />
@@ -261,14 +261,54 @@ function Footer({mindiv}) {
                         </div>
                     </div>
                 </div>
-            </div>
-            {mindiv && mindiv == 'full' ?
+            </div> */}
+            {/* {mindiv && mindiv == 'full' ?
                 <MinDivBorderFull className="mt-5"/>
             :
                 <MinDivBorder className="mt-5"/>
-            }
-            <div className="py-4">
+            } */}
+            {/* <div className="py-4">
                 <SectionCopyRightText className="text-center">Copyright@floe All Rights Reserved</SectionCopyRightText>
+            </div> */}
+            <div className="row m-0" style={{borderBottom: '1px solid #A9A9A9'}}>
+                <FooterCol className="col-12 col-lg-12 col-xxl-5 p-0" style={{borderLeft: '1px solid #A9A9A9', borderTop: '1px solid #A9A9A9'}}>
+                    <FooterColTitle className="minDiv-text">Tales from outer space</FooterColTitle>
+                    <FooterColBody className="minDiv-text">
+                        <FooterColText>Once in a while, we’ll fly by.</FooterColText>
+                        <FooterColTextLight>
+                            <div>No false sales, ads & discount. <br/>No email marketing. No Newsletters.</div>
+                        </FooterColTextLight>
+                    </FooterColBody>
+                </FooterCol>
+                <FooterCol className="col-12 col-lg-6 col-xxl-4 p-0" style={{borderLeft: '1px solid #A9A9A9', borderTop: '1px solid #A9A9A9'}}>
+                    <FooterColTitle className="minDiv-text">Work with us</FooterColTitle>
+                    <FooterColBody className="minDiv-text">
+                        <FooterColText>kitchens</FooterColText>
+                        <FooterColText>investors</FooterColText>
+                        <FooterColText>careers</FooterColText>
+                        <FooterColText>cold chain</FooterColText>
+                        <FooterColText>sustainability</FooterColText>
+                    </FooterColBody>
+                </FooterCol>
+                <FooterCol className="col-12 col-lg-6 col-xxl-3 p-0" style={{borderLeft: '1px solid #A9A9A9', borderTop: '1px solid #A9A9A9'}}>
+                    <FooterColTitle className="minDiv-text">quick links</FooterColTitle>
+                    <FooterColBody className="minDiv-text">
+                        <FooterColText>gifts</FooterColText>
+                        <FooterColText>shop</FooterColText>
+                        <FooterColText>the ticket</FooterColText>
+                        <FooterColText>FAQ’s</FooterColText>
+                    </FooterColBody>
+                </FooterCol>
+            </div>
+            <div className="minDiv-text">
+                <div className="d-flex justify-content-between">
+                    <div className="py-3">The Flying Saucer Project</div>
+                    <div className="d-flex justify-content-between">
+                        <div className="py-3">Whitepaper</div>
+                        <div className="p-3">Whatsapp</div>
+                        <div className="py-3">LinkedIn</div>
+                    </div>
+                </div>
             </div>
         </FooterDiv>
     );
@@ -277,10 +317,19 @@ function Footer({mindiv}) {
 export default Header;
 export { Footer, Navbar, Sidebar }; 
 
+
+const dark_head_color = '#838181';
+const dark_theme_bg_color = '#838181';
+const dark_theme_border_color = '#EEEBE6';
+
+const light_head_color = '#2C488E';
+const light_theme_bg_color = '#EEEBE6';
+const light_theme_border_color = '#A9A9A9';
+
 const SectionSidebar = styled.div`
     position: fixed;
     right: 0;
-    background-color: #EEEBE6;
+    background-color: ${light_theme_bg_color};
     border-left: 1px solid #000000;
     height: 100%;
     z-index: 10200;
@@ -304,15 +353,35 @@ const SectionSidebar = styled.div`
 `;
 
 
+const FooterLast = styled.div`
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #111111;
+
+    @media screen and (max-width: 575px)
+    {
+        padding: 0 30px;
+    }
+    @media (min-width: 576px) and (max-width: 991px)
+    {
+        padding: 5px 50px;
+    }
+    @media (min-width: 992px)
+    {
+        padding: 7px 100px;
+    }
+`;
+
 // Header
 const HeaderDiv = styled.div`
     position: relative;
     width: 100%;
     color: white;
-    background-color: #2C488E;
+    background-color: ${light_head_color};
     box-shadow: 0px -4px 12px rgba(165, 165, 165, 0.25);
     overflow: hidden;
-    border-bottom: 1px solid #000000;
+    // border-bottom: 1px solid #000000;
     z-index: 10100;
 
     @media screen and (max-width: 575px)
@@ -377,12 +446,12 @@ const HamSearchText = styled.div`
 
 // Navbar
 const NavbarDiv = styled.div`
-    background-color: #EEEBE6;
+    background-color: ${light_theme_bg_color};
     position: fixed;
     right: 0;
     height: 100vh;
     height: -webkit-fill-available;
-    border-left: 1px solid #000000;
+    border-left: 1px solid ${light_theme_border_color};
     z-index: 10000;
 
     span 
@@ -397,7 +466,7 @@ const NavbarDiv = styled.div`
 const FooterDiv = styled.div`
     width: 100%;
     min-height: 330px;
-    background: #EEEBE6;
+    background: ${light_theme_bg_color};
 `;
 
 const SectionCopyRightText = styled.div`
@@ -466,7 +535,7 @@ const SectionCommonButton = styled.button`
 const MinDivBorder = styled.div`
     margin-left: 30px;
     margin-right: 30px;
-    border-top: 1px solid #000000;
+    border-top: 1px solid ${light_theme_border_color};
 
     @media (min-width: 576px) and (max-width: 991px)
     {
@@ -482,12 +551,12 @@ const MinDivBorder = styled.div`
 `;
 
 const MinDivBorderFull = styled.div`
-    border-top: 1px solid #000000;
+    border-top: 1px solid ${light_theme_border_color};
 `;
 
 const NavItemBox = styled.div`
     height: 70px;
-    border-top: 1px solid black;
+    border-top: 1px solid ${light_theme_border_color};
 `;
 
 const NavItemText = styled.div`
@@ -501,5 +570,42 @@ const NavItemText = styled.div`
     }
 `;
 
+const FooterCol = styled.div`
+    @media (min-width: 1610px)
+    {
+        width: calc(100% / 3);
+    }
+`;
+
+const FooterColTitle = styled.div`
+    font-weight: 700;
+    font-size: 24px;
+    text-transform: capitalize;
+    color: #929292;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid ${light_theme_border_color};
+`;
+
+const FooterColBody = styled.div`  
+    padding-top: 32px;
+    padding-bottom: 32px;
+`;
+
+const FooterColText = styled.div`
+    font-weight: 600;
+    font-size: 24px;
+    color: #000000;
+    padding: 4px 0;
+    text-transform: capitalize;
+`;
+
+const FooterColTextLight = styled.div`
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: #373737;
+    margin-top: 10px;
+`;
 
 export { SectionCommonButton, MinDivBorder };

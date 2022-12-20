@@ -44,13 +44,13 @@ const Home = () => {
                 {/* Section One */}
                 <SectionOne>
                     <div className="SectionOneOverlay">
-                        <div className="d-flex align-items-end SectionOneTextBox">
+                        <div className="d-flex align-items-start pt-5 SectionOneTextBox">
                             <div className="my-5 my-md-5 pt-3 py-md-3">
                                 <SectionOneText className="minDiv-text">
-                                    Your freezer is a special place
+                                    Reliable Interplanetary Food Delivery 
                                 </SectionOneText>
                                 <SectionOneDescription className="mt-auto minDiv-text">
-                                    It can invade food waste, malnutrition and keep things superfresh
+                                    Celebrate with good food from around the world
                                 </SectionOneDescription>
                             </div>
                         </div>
@@ -60,22 +60,22 @@ const Home = () => {
                 <div className="w-100">
 
                     {/* Section Two */}
-                    <HomeSectionTwo />
+                    {/* <HomeSectionTwo /> */}
 
-                    <MinDivBorder />
+                    {/* <MinDivBorder /> */}
 
                     {/* Section Three */}
-                    <HomeSectionThree />
+                    {/* <HomeSectionThree /> */}
 
-                    <MinDivBorder className="mt-5"/>
+                    {/* <MinDivBorder className="mt-5"/> */}
 
                     
                     {/* Section Four */}
-                    <HomeSectionFour />
+                    {/* <HomeSectionFour /> */}
 
                     {/* Five */}
 
-                    <SectionFiveImage className="d-flex justify-content-center mt-5 pt-5">
+                    {/* <SectionFiveImage className="d-flex justify-content-center mt-5 pt-5">
                         <SectionOneStripe className="d-flex align-items-center SectionFiveStripeAngle">                            
                             <Marquee style={{height: '42px'}} loop={0} speed={50} gradientColor={'none'}>
                                 <div className="mt-2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -101,11 +101,11 @@ const Home = () => {
                                 <SectionFiveStarDescription>Let’s have a<br />chat!</SectionFiveStarDescription>
                             </div>
                         </SectionFiveStarImage>
-                    </SectionFiveImage>
+                    </SectionFiveImage> */}
 
                     {/* Six */}
                     
-                    <SectionTwoTitle className="mt-5 pt-5 text-center">
+                    {/* <SectionTwoTitle className="mt-5 pt-5 text-center">
                         FAQ’s
                     </SectionTwoTitle>
                     <SectionTwoDescription className="mt-3 text-center">
@@ -137,10 +137,9 @@ const Home = () => {
                             <SectionFiveFaqText>Can I buy a gift card for a friend?</SectionFiveFaqText>
                             <div style={{minHeight: '20px>'}}><span className="svg-icon svg-icon-min svg-icon-chevron-down"></span></div>
                         </div>
-                        {/* <hr style={{opacity: '1'}} /> */}
-                    </SectionFAQ>
+                    </SectionFAQ> */}
 
-                    <MinDivBorder className="mt-5">
+                    {/* <MinDivBorder className="mt-5">
                         <div className="my-5 py-lg-5">
                             <StayConnectedBox className="row">
                                 <div className="col-12 col-xl-6" style={{backgroundColor: '#565656'}}>
@@ -173,7 +172,7 @@ const Home = () => {
                                 </div>
                             </StayConnectedBox>
                         </div>
-                    </MinDivBorder>
+                    </MinDivBorder> */}
 
                 </div>
 

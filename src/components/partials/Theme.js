@@ -14,22 +14,23 @@ function Header() {
             {/* Header */}
             <div className="d-flex justify-content-between align-items-center" style={{height: '70px'}}>
                 {/* Company logo */}
-                <HeaderLogo to="/" >Flying Saucer</HeaderLogo>
+                <HeaderLogo to="/" className="d-flex align-items-center">
+                    <div>Flying Saucer</div>
+                </HeaderLogo>
 
                 <div className="d-flex align-items-center">
                     <div className="d-inline-block mx-3">
                         {/* Hamburger button */}
-                        <HamSearch className="d-flex align-items-center" style={{width: '360px'}}>
+                        <HamSearch className="d-none d-lg-flex align-items-center">
                             <HamSearchText />Search / Track Order
                         </HamSearch>
                     </div>
                     
                     <span className="svg-icon svg-icon-local-mall mx-3"></span>
                     <span className="svg-icon svg-icon-person mx-3"></span>
-                    <span className="svg-icon svg-icon-min svg-icon-menu mx-3 svg-white"></span>
 
                     <div className="d-inline-block d-sm-none pt-2">
-                        <span onClick={()=>showSidebar()} className="svg-icon svg-icon-min svg-icon-menu"></span>
+                        <span onClick={()=>showSidebar()} className="svg-icon svg-icon-min svg-icon-menu mx-3 svg-white"></span>
                     </div>
                 </div>
             </div>
@@ -78,7 +79,7 @@ function Navbar() {
     // }
 
     return ( 
-        <NavbarDiv className="d-flex align-items-end" style={{width: '150px'}}>
+        <NavbarDiv className="d-flex align-items-end">
         {/* <NavbarDiv className="d-none d-sm-flex justify-content-center align-items-center"> */}
             {/* Navbar */}
             {/* <div className="d-flex align-items-start flex-column text-black text-center" style={{height: '100%', width: navSideWidth , new_style, transition: 'all 0.5s'}}>
@@ -161,42 +162,43 @@ function Sidebar() {
     }
 
     return ( 
-        <SectionSidebar id="lgMenu" className="lgMenu-notenter">
-            <div className="d-flex justify-content-end w-100" style={{position: 'absolute', padding: '35px 30px'}}>
-                <span onClick={()=>hideSidebar()} className="svg-icon svg-icon-min svg-icon-cross"></span>
-            </div>
-            <div className="d-flex justify-content-center align-items-center h-100" style={{padding: '0 50px'}}>
-                <div className="d-flex align-items-start flex-column h-100" style={{width: '250px'}}>
-                    <div className="mb-auto"></div>
-                    <ul style={{listStyleType: 'none'}}>
-                        <li className="py-5">
-                            <NavLink to="/about" className="text-black" onClick={()=>hideSidebar()}>
-                                <span className="svg-icon svg-icon-min svg-icon-cart" style={{padding:'0px 0', marginLeft: '14px'}}>
-                                    <span style={{marginLeft: '53px', fontSize: '21px'}}>Cart</span>
-                                </span>
-                            </NavLink>
-                        </li>
-                        <li className="py-5">
-                            <NavLink to="/notifications" className="text-black" onClick={()=>hideSidebar()}>
-                                <span className="svg-icon svg-icon-min svg-icon-notification" style={{padding:'0px 0', marginLeft: '14px'}}>
-                                    <span style={{marginLeft: '53px', fontSize: '21px', transition: 'all 0.5s'}}>Notifications</span>
-                                </span>
-                                </NavLink>
-                        </li>
-                        <li className="py-4">
-                            <NavLink to="/chatbot" className="text-black" onClick={()=>hideSidebar()}>
-                                <span className="svg-icon svg-icon-mid svg-icon-aqua" style={{margin: '0', padding:'15px 0'}}>
-                                    <span style={{marginLeft: '67px', fontSize: '21px', transition: 'all 0.5s'}}>Chat</span>
-                                </span>
-                            </NavLink>
-                        </li>
-                    </ul>
-                    <div className="mt-auto w-100 text-center" style={{padding: '26px'}} onClick={()=>hideSidebar()}>
-                        <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
-                    </div>
-                </div>
-            </div>
-        </SectionSidebar>
+        <div></div>
+        // <SectionSidebar id="lgMenu" className="lgMenu-notenter">
+        //     <div className="d-flex justify-content-end w-100" style={{position: 'absolute', padding: '35px 30px'}}>
+        //         <span onClick={()=>hideSidebar()} className="svg-icon svg-icon-min svg-icon-cross"></span>
+        //     </div>
+        //     <div className="d-flex justify-content-center align-items-center h-100" style={{padding: '0 50px'}}>
+        //         <div className="d-flex align-items-start flex-column h-100" style={{width: '250px'}}>
+        //             <div className="mb-auto"></div>
+        //             <ul style={{listStyleType: 'none'}}>
+        //                 <li className="py-5">
+        //                     <NavLink to="/about" className="text-black" onClick={()=>hideSidebar()}>
+        //                         <span className="svg-icon svg-icon-min svg-icon-cart" style={{padding:'0px 0', marginLeft: '14px'}}>
+        //                             <span style={{marginLeft: '53px', fontSize: '21px'}}>Cart</span>
+        //                         </span>
+        //                     </NavLink>
+        //                 </li>
+        //                 <li className="py-5">
+        //                     <NavLink to="/notifications" className="text-black" onClick={()=>hideSidebar()}>
+        //                         <span className="svg-icon svg-icon-min svg-icon-notification" style={{padding:'0px 0', marginLeft: '14px'}}>
+        //                             <span style={{marginLeft: '53px', fontSize: '21px', transition: 'all 0.5s'}}>Notifications</span>
+        //                         </span>
+        //                         </NavLink>
+        //                 </li>
+        //                 <li className="py-4">
+        //                     <NavLink to="/chatbot" className="text-black" onClick={()=>hideSidebar()}>
+        //                         <span className="svg-icon svg-icon-mid svg-icon-aqua" style={{margin: '0', padding:'15px 0'}}>
+        //                             <span style={{marginLeft: '67px', fontSize: '21px', transition: 'all 0.5s'}}>Chat</span>
+        //                         </span>
+        //                     </NavLink>
+        //                 </li>
+        //             </ul>
+        //             <div className="mt-auto w-100 text-center" style={{padding: '26px'}} onClick={()=>hideSidebar()}>
+        //                 <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
+        //             </div>
+        //         </div>
+        //     </div>
+        // </SectionSidebar>
     );
 }
 
@@ -280,7 +282,7 @@ function Footer({mindiv}) {
                         </FooterColTextLight>
                     </FooterColBody>
                 </FooterCol>
-                <FooterCol className="col-12 col-lg-6 col-xxl-4 p-0" style={{borderLeft: '1px solid #A9A9A9', borderTop: '1px solid #A9A9A9'}}>
+                <FooterCol className="col-12 col-md-6 col-xxl-4 p-0" style={{borderLeft: '1px solid #A9A9A9', borderTop: '1px solid #A9A9A9'}}>
                     <FooterColTitle className="minDiv-text">Work with us</FooterColTitle>
                     <FooterColBody className="minDiv-text">
                         <FooterColText>kitchens</FooterColText>
@@ -290,7 +292,7 @@ function Footer({mindiv}) {
                         <FooterColText>sustainability</FooterColText>
                     </FooterColBody>
                 </FooterCol>
-                <FooterCol className="col-12 col-lg-6 col-xxl-3 p-0" style={{borderLeft: '1px solid #A9A9A9', borderTop: '1px solid #A9A9A9'}}>
+                <FooterCol className="col-12 col-md-6 col-xxl-3 p-0" style={{borderLeft: '1px solid #A9A9A9', borderTop: '1px solid #A9A9A9'}}>
                     <FooterColTitle className="minDiv-text">quick links</FooterColTitle>
                     <FooterColBody className="minDiv-text">
                         <FooterColText>gifts</FooterColText>
@@ -409,7 +411,7 @@ const HeaderLogo = styled(NavLink)`
     padding: 0;
     padding-left: 70px;
 
-    font-size: 40px;
+    font-size: 24px;
     font-weight: 600;
     text-decoration: none;
     color: white;
@@ -417,10 +419,19 @@ const HeaderLogo = styled(NavLink)`
 
     &:hover
     {
-        height: 50px;
-        font-size: 41px;
         color: white;
     }
+
+    @media (min-width: 992px) and (max-width: 1199px)
+    {
+        font-size: 36px;
+    }
+
+    @media (min-width: 1200px)
+    {
+        font-size: 40px;
+    }
+
 `;
 
 const HamSearch = styled.div`
@@ -431,6 +442,11 @@ const HamSearch = styled.div`
     border: 1px solid #A4A4A4;
     padding: 7px 20px;
     z-index: 110;
+
+    @media (min-width: 1200px)
+    {
+        width: 360px;
+    }
 `;
 
 const HamSearchText = styled.div`
@@ -453,6 +469,7 @@ const NavbarDiv = styled.div`
     height: -webkit-fill-available;
     border-left: 1px solid ${light_theme_border_color};
     z-index: 10000;
+    width: 0;
 
     span 
     {
@@ -460,6 +477,12 @@ const NavbarDiv = styled.div`
         margin-bottom: 10px;
         font-weight: 400;
     }
+
+    @media (min-width: 768px)
+    {
+        width: 150px;
+    }
+
 `;
 
 // Footer

@@ -3,9 +3,11 @@ import styled from "styled-components";
 import Marquee from "react-fast-marquee";
 
 import Header, { Footer, Navbar, MinDivBorder } from "../partials/Theme";
-import HomeSectionTwo, { SectionTwoTitle, SectionTwoDescription } from "../partials/HomeSections/HomeSectionTwo";
-import HomeSectionThree from "../partials/HomeSections/HomeSectionThree";
-import HomeSectionFour from "../partials/HomeSections/HomeSectionFour";
+import Carousel, { CarouselItem } from "../../components/partials/Carousel";
+
+// import HomeSectionTwo, { SectionTwoTitle, SectionTwoDescription } from "../partials/HomeSections/HomeSectionTwo";
+// import HomeSectionThree from "../partials/HomeSections/HomeSectionThree";
+// import HomeSectionFour from "../partials/HomeSections/HomeSectionFour";
 
 const Home = () => {
 
@@ -43,21 +45,80 @@ const Home = () => {
 
                 {/* Section One */}
                 <SectionOne>
-                    <div className="SectionOneOverlay">
-                        <div className="d-flex align-items-start pt-5 SectionOneTextBox">
-                            <div className="my-5 my-md-5 pt-3 py-md-3">
-                                <SectionOneText className="minDiv-text">
-                                    Reliable Interplanetary Food Delivery 
-                                </SectionOneText>
-                                <SectionOneDescription className="mt-auto minDiv-text">
-                                    Celebrate with good food from around the world
-                                </SectionOneDescription>
+                    <Carousel>
+                        <CarouselItem>
+                            <div className="d-flex align-items-start" style={{backgroundImage: "linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/Rectangle 3038.png')", backgroundSize: 'cover', backgroundPosition: 'top', height: 'calc(100vw / 2.21)', paddingTop: '100px', maxHeight: '768px'}}>
+                                <div>
+                                    <SectionOneText className="minDiv-text text-wrap">
+                                        Reliable Interplanetary Food Delivery 
+                                    </SectionOneText>
+                                    <SectionOneDescription className="minDiv-text text-wrap">
+                                        Celebrate with good food from around the world
+                                    </SectionOneDescription>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                            <div className="d-flex align-items-start" style={{backgroundImage: "linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/image 17.png')", backgroundSize: 'cover', backgroundPosition: 'top', height: 'calc(100vw / 2.21)', paddingTop: '100px', maxHeight: '768px'}}>
+                                <div>
+                                    <SectionOneText className="minDiv-text text-wrap">
+                                        Taste trips from home 
+                                    </SectionOneText>
+                                    <SectionOneDescription className="minDiv-text text-wrap">
+                                        Sign up for free delivery, always
+                                    </SectionOneDescription>
+                                </div>
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                            <div className="d-flex align-items-start" style={{backgroundImage: "linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/Rectangle 3038 nasta.png')", backgroundSize: 'cover', backgroundPosition: 'top', height: 'calc(100vw / 2.21)', paddingTop: '100px', maxHeight: '768px'}}>
+                                <div>
+                                    <SectionOneText className="minDiv-text text-wrap">
+                                        we only harm food tourism
+                                    </SectionOneText>
+                                    <SectionOneDescription className="minDiv-text text-wrap">
+                                        Norwegian Salmon, Plant-based Seafood, Truffles, Groceries and more!
+                                    </SectionOneDescription>
+                                </div>
+                            </div>
+                        </CarouselItem>
+                    </Carousel>
                 </SectionOne>
 
+
                 <div className="w-100">
+                    
+                    {/* <SectionOne style={{backgroundImage: 'none'}}>
+
+                        <div className="slider">
+
+                            <div className="slides">
+                                <div id="slide-1">
+                                    <img src="/images/Rectangle 3038.png" />
+                                </div>
+                                <div id="slide-2">
+                                    2
+                                </div>
+                                <div id="slide-3">
+                                    3
+                                </div>
+                                <div id="slide-4">
+                                    4
+                                </div>
+                                <div id="slide-5">
+                                    5
+                                </div>
+                            </div>
+
+                            <a data-target="#slide-1" data-toggle="tab">1</a>
+                            <a data-target="#slide-2" data-toggle="tab">2</a>
+                            <a data-target="#slide-3" data-toggle="tab">3</a>
+                            <a data-target="#slide-4" data-toggle="tab">4</a>
+                            <a data-target="#slide-5" data-toggle="tab">5</a>
+
+                        </div>
+
+                    </SectionOne> */}
 
                     {/* Section Two */}
                     {/* <HomeSectionTwo /> */}
@@ -188,10 +249,6 @@ export default Home;
 const SectionOne = styled.div`
     min-width: 100%;
     max-height: 950px;
-    min-height: calc(100vw / 2.21);
-    background-image: url('images/Rectangle 3038.png');
-    background-size: cover;
-    background-position: center;
 `;
 
 const SectionOneStripe = styled.div`
@@ -206,18 +263,20 @@ const SectionOneStripe = styled.div`
 `;
 
 const SectionOneText = styled.div`
-  font-weight: 800;
-  text-align: left;
-  color: #FFFFFF;
-  margin-top: 100px;
-  font-size: 24px;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.25), -1px -1px rgba(0, 0, 0, 0.25);
+    font-family: Staatliches;
+    font-style: normal;
+    font-weight: 400;
+    text-align: left;
+    color: #FFFFFF;
+    margin-top: 100px;
+    font-size: 24px;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.25), -1px -1px rgba(0, 0, 0, 0.25);
 
-  @media (min-width: 768px)
-  {
-    margin-top: 0;
-    font-size: 48px;
-  }
+    @media (min-width: 768px)
+    {
+        margin-top: 0;
+        font-size: 48px;
+    }
 `;
 
 const SectionOneDescription = styled.div`

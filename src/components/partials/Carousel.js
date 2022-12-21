@@ -59,7 +59,7 @@ const Carousel = ({ children }) => {
           return React.cloneElement(child, { width: "100%" });
         })}
       </div>
-      <div className="indicators d-flex align-items-center" style={{marginTop: '-60px', marginLeft: '50px', position: 'absolute' ,zIndex: '100000'}}>
+      <div className="indicators d-flex align-items-center minDiv-text" style={{marginTop: '-60px', position: 'absolute' ,zIndex: '100000'}}>
         {/* <button
           onClick={() => {
             updateIndex(activeIndex - 1);

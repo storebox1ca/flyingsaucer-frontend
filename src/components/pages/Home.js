@@ -47,7 +47,7 @@ const Home = () => {
                 <SectionOne>
                     <Carousel>
                         <CarouselItem>
-                            <div className="d-flex align-items-start" style={{backgroundImage: "linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/Rectangle 3038.png')", backgroundSize: 'cover', backgroundPosition: 'top', height: 'calc(100vw / 2.21)', paddingTop: '100px', maxHeight: '768px'}}>
+                            <SliderItem className="d-flex align-items-start" style={{backgroundImage: "linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/Rectangle 3038.png')"}}>
                                 <div>
                                     <SectionOneText className="minDiv-text text-wrap">
                                         Reliable Interplanetary Food Delivery 
@@ -56,10 +56,10 @@ const Home = () => {
                                         Celebrate with good food from around the world
                                     </SectionOneDescription>
                                 </div>
-                            </div>
+                            </SliderItem>
                         </CarouselItem>
                         <CarouselItem>
-                            <div className="d-flex align-items-start" style={{backgroundImage: "linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/image 17.png')", backgroundSize: 'cover', backgroundPosition: 'top', height: 'calc(100vw / 2.21)', paddingTop: '100px', maxHeight: '768px'}}>
+                            <SliderItem className="d-flex align-items-start" style={{backgroundImage: "linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/image 17.png')"}}>
                                 <div>
                                     <SectionOneText className="minDiv-text text-wrap">
                                         Taste trips from home 
@@ -68,10 +68,10 @@ const Home = () => {
                                         Sign up for free delivery, always
                                     </SectionOneDescription>
                                 </div>
-                            </div>
+                            </SliderItem>
                         </CarouselItem>
                         <CarouselItem>
-                            <div className="d-flex align-items-start" style={{backgroundImage: "linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/Rectangle 3038 nasta.png')", backgroundSize: 'cover', backgroundPosition: 'top', height: 'calc(100vw / 2.21)', paddingTop: '100px', maxHeight: '768px'}}>
+                            <SliderItem className="d-flex align-items-start" style={{backgroundImage: "linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/Rectangle 3038 nasta.png')"}}>
                                 <div>
                                     <SectionOneText className="minDiv-text text-wrap">
                                         we only harm food tourism
@@ -80,7 +80,7 @@ const Home = () => {
                                         Norwegian Salmon, Plant-based Seafood, Truffles, Groceries and more!
                                     </SectionOneDescription>
                                 </div>
-                            </div>
+                            </SliderItem>
                         </CarouselItem>
                     </Carousel>
                 </SectionOne>
@@ -268,9 +268,15 @@ const SectionOneText = styled.div`
     font-weight: 400;
     text-align: left;
     color: #FFFFFF;
-    margin-top: 100px;
+    margin-top: 0;
     font-size: 24px;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.25), -1px -1px rgba(0, 0, 0, 0.25);
+   
+    @media (min-width: 576px) and (max-width: 767px)
+    {
+        margin-top: 0;
+        font-size: 36px;
+    }
 
     @media (min-width: 768px)
     {
@@ -422,5 +428,21 @@ const StayConnectedBox = styled.div`
     @media (min-width: 992px)
     {
         margin: 0 100px 0 0;
+    }
+`;
+
+const SliderItem = styled.div`
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/image 17.png');
+    background-size: cover;
+    background-repeat: norepeat;
+    background-position: top;
+    height: calc(100vw / 2.21);
+    max-height: 768px;
+    min-height: 240px;
+    padding-top: 65px;
+
+    @media (min-width: 992px)
+    {
+        padding-top: 100px;
     }
 `;

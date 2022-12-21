@@ -303,12 +303,18 @@ function Footer({mindiv}) {
                 </FooterCol>
             </div>
             <div className="minDiv-text">
-                <div className="d-flex justify-content-between">
-                    <div className="py-3">The Flying Saucer Project</div>
-                    <div className="d-flex justify-content-between">
-                        <div className="py-3">Whitepaper</div>
-                        <div className="p-3">Whatsapp</div>
-                        <div className="py-3">LinkedIn</div>
+                <div className="d-block d-md-flex justify=content-center justify-md-content-between align-items-center w-100">
+                    <div className="d-block d-md-inline-block w-100 py-3">
+                        <div className="d-flex justify-content-center justify-content-md-start w-100">
+                            <div>The Flying Saucer Project</div>
+                        </div>
+                    </div>
+                    <div className="d-block d-md-inline-block">
+                        <div className="d-flex justify-content-between">
+                            <div className="py-3">Whitepaper</div>
+                            <div className="p-3">Whatsapp</div>
+                            <div className="py-3">LinkedIn</div>
+                        </div>
                     </div>
                 </div>
             </div>

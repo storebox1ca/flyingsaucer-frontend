@@ -18,10 +18,10 @@ function Header() {
                     <div>Flying Saucer</div>
                 </HeaderLogo>
 
-                <div className="d-flex align-items-center">
-                    <div className="d-inline-block mx-3">
+                <div className="d-flex justify-content-end align-items-center">
+                    <div className="d-none d-lg-inline-block mx-3">
                         {/* Hamburger button */}
-                        <HamSearch className="d-none d-lg-flex align-items-center">
+                        <HamSearch className="d-flex align-items-center">
                             <HamSearchText />Search / Track Order
                         </HamSearch>
                     </div>
@@ -303,17 +303,17 @@ function Footer({mindiv}) {
                 </FooterCol>
             </div>
             <div className="minDiv-text">
-                <div className="d-block d-md-flex justify=content-center justify-md-content-between align-items-center w-100">
+                <div className="d-flex flex-column-reverse flex-lg-row d-lg-flex justify-content-center justify-content-lg-between align-items-center w-100">
                     <div className="d-block d-md-inline-block w-100 py-3">
-                        <div className="d-flex justify-content-center justify-content-md-start w-100">
-                            <div>The Flying Saucer Project</div>
+                        <div className="d-flex justify-content-center justify-content-lg-start w-100">
+                            <FooterCopyrightText>The Flying Saucer Project</FooterCopyrightText>
                         </div>
                     </div>
                     <div className="d-block d-md-inline-block">
                         <div className="d-flex justify-content-between">
-                            <div className="py-3">Whitepaper</div>
-                            <div className="p-3">Whatsapp</div>
-                            <div className="py-3">LinkedIn</div>
+                            <FooterCopyrightText className="py-3">Whitepaper</FooterCopyrightText>
+                            <FooterCopyrightText className="p-3">Whatsapp</FooterCopyrightText>
+                            <FooterCopyrightText className="py-3">LinkedIn</FooterCopyrightText>
                         </div>
                     </div>
                 </div>
@@ -416,6 +416,7 @@ const HeaderLogo = styled(NavLink)`
 
     padding: 0;
     padding-left: 70px;
+    padding-right: 10px;
 
     font-size: 24px;
     font-weight: 600;
@@ -608,12 +609,17 @@ const FooterCol = styled.div`
 
 const FooterColTitle = styled.div`
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     text-transform: capitalize;
     color: #929292;
     padding-top: 17px;
     padding-bottom: 17px;
     border-bottom: 1px solid ${light_theme_border_color};
+
+    @media (min-width: 768px)
+    {
+        font-size: 24px;
+    }
 `;
 
 const FooterColBody = styled.div`  
@@ -623,18 +629,41 @@ const FooterColBody = styled.div`
 
 const FooterColText = styled.div`
     font-weight: 600;
-    font-size: 24px;
+    font-size: 16px;
     color: #000000;
     padding: 4px 0;
     text-transform: capitalize;
+
+    @media (min-width: 768px)
+    {
+        font-size: 24px;
+    }
 `;
 
 const FooterColTextLight = styled.div`
     font-weight: 400;
-    font-size: 20px;
-    line-height: 150%;
+    font-size: 12px;
     color: #373737;
     margin-top: 10px;
+
+    @media (min-width: 768px)
+    {
+        font-size: 20px;
+    }
+`;
+
+const FooterCopyrightText = styled.div`
+    font-size: 12px;
+
+    &:hover
+    {
+        color: blue;
+    }
+
+    @media (min-width: 768px)
+    {
+        font-size: 20px;
+    }
 `;
 
 export { SectionCommonButton, MinDivBorder };

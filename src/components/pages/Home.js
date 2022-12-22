@@ -48,37 +48,40 @@ const Home = () => {
                     <Carousel>
                         <CarouselItem>
                             <SliderItem className="d-flex align-items-start" style={{backgroundImage: "linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/Rectangle 3038.png')"}}>
-                                <div>
-                                    <SectionOneText className="minDiv-text text-wrap">
+                                <div className="minDiv-text">
+                                    <SectionOneText className="text-wrap">
                                         Reliable Interplanetary Food Delivery 
                                     </SectionOneText>
-                                    <SectionOneDescription className="minDiv-text text-wrap">
+                                    <SectionOneDescription className="text-wrap">
                                         Celebrate with good food from around the world
                                     </SectionOneDescription>
+                                    <CarouselButton>View Shop</CarouselButton>
                                 </div>
                             </SliderItem>
                         </CarouselItem>
                         <CarouselItem>
                             <SliderItem className="d-flex align-items-start" style={{backgroundImage: "linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/image 17.png')"}}>
-                                <div>
-                                    <SectionOneText className="minDiv-text text-wrap">
+                                <div className="minDiv-text">
+                                    <SectionOneText className="text-wrap">
                                         Taste trips from home 
                                     </SectionOneText>
-                                    <SectionOneDescription className="minDiv-text text-wrap">
+                                    <SectionOneDescription className="text-wrap">
                                         Sign up for free delivery, always
                                     </SectionOneDescription>
+                                    <CarouselButton>View Shop</CarouselButton>
                                 </div>
                             </SliderItem>
                         </CarouselItem>
                         <CarouselItem>
                             <SliderItem className="d-flex align-items-start" style={{backgroundImage: "linear-gradient(180deg, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/Rectangle 3038 nasta.png')"}}>
-                                <div>
-                                    <SectionOneText className="minDiv-text text-wrap">
+                                <div className="minDiv-text">
+                                    <SectionOneText className="text-wrap">
                                         we only harm food tourism
                                     </SectionOneText>
-                                    <SectionOneDescription className="minDiv-text text-wrap">
+                                    <SectionOneDescription className="text-wrap">
                                         Norwegian Salmon, Plant-based Seafood, Truffles, Groceries and more!
                                     </SectionOneDescription>
+                                    <CarouselButton>View Shop</CarouselButton>
                                 </div>
                             </SliderItem>
                         </CarouselItem>
@@ -271,6 +274,7 @@ const SectionOneText = styled.div`
     margin-top: 0;
     font-size: 24px;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.25), -1px -1px rgba(0, 0, 0, 0.25);
+    line-height: 1;
    
     @media (min-width: 576px) and (max-width: 767px)
     {
@@ -288,14 +292,14 @@ const SectionOneText = styled.div`
 const SectionOneDescription = styled.div`
     font-weight: 400;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 12px;
     text-align: left;
     z-index: 101;
+    margin-top: 10px;
 
     @media (min-width: 768px)
     {
-        font-size: 32px;
-        line-height: 48px;
+        font-size: 20px;
     }
 `;
 
@@ -439,10 +443,36 @@ const SliderItem = styled.div`
     height: calc(100vw / 2.21);
     max-height: 768px;
     min-height: 240px;
-    padding-top: 65px;
+    padding-top: 80px;
 
     @media (min-width: 992px)
     {
         padding-top: 100px;
+    }
+`;
+
+const CarouselButton = styled.div`
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 15px;
+    max-width: 100px;
+    padding: 6px 4px;
+    font-size: 12px;
+
+    @media (min-width: 768px) and (max-width: 991px)
+    {
+        margin-top: 24px;
+        max-width: 160px;
+        padding: 9px 7px;
+        font-size: 16px;
+    }
+    
+    @media (min-width: 992px)
+    {
+        margin-top: 36px;
+        max-width: 200px;
+        padding: 12px 10px;
+        font-size: 16px;
     }
 `;

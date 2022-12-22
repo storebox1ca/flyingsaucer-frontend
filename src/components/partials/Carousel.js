@@ -1,5 +1,6 @@
 import React, { Children, useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
+import styled from "styled-components";
 
 import "../../styles/Carousel.css";
 
@@ -59,40 +60,67 @@ const Carousel = ({ children }) => {
           return React.cloneElement(child, { width: "100%" });
         })}
       </div>
-      <div className="indicators d-flex align-items-center minDiv-text" style={{marginTop: '-60px', position: 'absolute' ,zIndex: '100000'}}>
-        {/* <button
-          onClick={() => {
-            updateIndex(activeIndex - 1);
-          }}
-        >
-          Prev
-        </button> */}
+      <CarouselControlSection className="indicators d-flex align-items-center minDiv-text">
+        
         {React.Children.map(children, (child, index) => {
           return (
             index === activeIndex ?
-                (<button style={{borderRadius: '12px', width: '24px', height: '24px', backgroundColor: 'rgba(217, 217, 217, 0.5)', border: '0'}}
-                >
-                </button>)
+                (<CarouselControlButtonActive />)
                 :
-                (<button style={{borderRadius: '8px', width: '16px', height: '16px', backgroundColor: 'rgba(217, 217, 217, 0.5)', border: '0'}}
-                onClick={() => {
-                    updateIndex(index);
-                }}
-                >
-                </button>)
+                (<CarouselControlButtonNormal
+                  onClick={() => {
+                      updateIndex(index);
+                  }}
+                />)
 
           );
         })}
-        {/* <button
-          onClick={() => {
-            updateIndex(activeIndex + 1);
-          }}
-        >
-          Next
-        </button> */}
-      </div>
+
+      </CarouselControlSection>
     </div>
   );
 };
+
+const CarouselControlSection = styled.div`
+  margin-top: -40px;
+  position: absolute;
+
+  @media (min-width: 768px)
+  {
+    margin-top: -60px;
+  }
+`;
+
+const CarouselControlButton = styled.button`
+  border: 0;
+`;
+
+const CarouselControlButtonActive = styled(CarouselControlButton)`
+  border-radius: 8px;
+  width: 16px;
+  height: 16px;
+  background-color: rgba(194, 194, 194, 1);
+
+  @media (min-width: 768px)
+  {
+    border-radius: 12px;
+    width: 24px;
+    height: 24px;
+  }
+`;
+
+const CarouselControlButtonNormal = styled(CarouselControlButton)`
+  border-radius: 6px;
+  width: 8px;
+  height: 12px;
+  background-color: rgba(217, 217, 217, 0.5);
+
+  @media (min-width: 768px)
+  {
+    border-radius: 8px;
+    width: 16px;
+    height: 16px;
+  }
+`;
 
 export default Carousel;

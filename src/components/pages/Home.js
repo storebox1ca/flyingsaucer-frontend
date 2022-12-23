@@ -41,7 +41,7 @@ const Home = () => {
             </SectionOneStripe>
 
             {/* Container */}
-            <div className="MinDiv">
+            <div className="MinDiv MinHeight" style={{backgroundColor: '#EEEBE6'}}>
 
                 {/* Section One */}
                 <SectionOne>
@@ -239,9 +239,9 @@ const Home = () => {
                     </MinDivBorder> */}
 
                 </div>
+            </div>
 
             <Footer />
-            </div>
         </div>
     );
 }
@@ -442,7 +442,7 @@ const SliderItem = styled.div`
     background-position: top;
     height: calc(100vw / 2.21);
     max-height: 768px;
-    min-height: 240px;
+    min-height: 280px;
     padding-top: 80px;
 
     @media (min-width: 992px)

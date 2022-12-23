@@ -42,7 +42,6 @@
 
 .MinDiv
 {
-  min-height: calc(100vh - 101px);
   left: 0;
   border: 1px solid lightgrey;
   border-left: 0;
@@ -58,25 +57,51 @@
   {
     margin-right: 0;
   }
+  .MinHeight
+  {
+    min-height: calc(100vh - 100px - 840px);
+  }
   .minDiv-text
   {
     padding-left: 30px;
     padding-right: 30px;
   }
 }
-@media (min-width: 768px)
+@media (min-width: 576px) and (max-width: 991px)
+{
+  .MinDiv
+  {
+    margin-right: 150px;
+  }
+  .MinHeight
+  {
+    min-height: calc(100vh - 100px - 731px);
+  }
+  .minDiv-text
+  {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media (min-width: 992px)
 {
   .MinDiv
   {
     margin-right: 150px;
   }
 }
-@media (min-width: 576px) and (max-width: 991px)
+@media (min-width: 992px) and (max-width: 1399px)
 {
-  .minDiv-text
+  .MinHeight
   {
-    padding-left: 50px;
-    padding-right: 50px;
+    min-height: calc(100vh - 100px - 669px);
+  }
+}
+@media (min-width: 1400px)
+{
+  .MinHeight
+  {
+    min-height: calc(100vh - 100px - 419px);
   }
 }
 @media (min-width: 992px)

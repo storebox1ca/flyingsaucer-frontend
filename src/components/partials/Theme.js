@@ -205,7 +205,7 @@ function Sidebar() {
 
 function Footer({mindiv}) {
     return ( 
-        <FooterDiv>
+        <FooterDiv className="MinDiv">
             {/* {mindiv && mindiv == 'full' ?
                 <MinDivBorderFull style={{marginTop: '2px'}}/>
             :
@@ -303,9 +303,9 @@ function Footer({mindiv}) {
                 </FooterCol>
             </div>
             <div className="minDiv-text">
-                <div className="d-flex flex-column-reverse flex-lg-row d-lg-flex justify-content-center justify-content-lg-between align-items-center w-100">
-                    <div className="d-block d-md-inline-block w-100 py-3">
-                        <div className="d-flex justify-content-center justify-content-lg-start w-100">
+                <div className="d-flex flex-column-reverse flex-lg-row d-lg-flex justify-content-center justify-content-lg-between align-items-center">
+                    <div className="d-block d-md-inline-block py-3">
+                        <div className="d-flex justify-content-center justify-content-lg-start">
                             <FooterCopyrightText>The Flying Saucer Project</FooterCopyrightText>
                         </div>
                     </div>
@@ -494,7 +494,7 @@ const NavbarDiv = styled.div`
 
 // Footer
 const FooterDiv = styled.div`
-    width: 100%;
+    // width: 100%;
     min-height: 330px;
     background: ${light_theme_bg_color};
 `;

@@ -280,6 +280,12 @@ function Footer({mindiv}) {
                         <FooterColTextLight>
                             <div>No false sales, ads & discount. <br/>No email marketing. No Newsletters.</div>
                         </FooterColTextLight>
+                        <div className="d-flex justify-content-between" style={{maxWidth: '500px', paddingTop: '32px', paddingBottom: '16px', borderBottom: '1px solid #727272'}}>
+                            <span style={{fontFamily: 'Poppins', fontWeight: '400', fontSize: '16px', color: '#878787'}}>
+                                Email
+                            </span>
+                            <span className="svg-icon svg-icon-ios-back-arrow" style={{height: '18px', width: '10px'}}></span>
+                        </div>
                     </FooterColBody>
                 </FooterCol>
                 <FooterCol className="col-12 col-md-6 col-xxl-4 p-0" style={{borderLeft: '1px solid #A9A9A9', borderTop: '1px solid #A9A9A9'}}>
@@ -331,7 +337,7 @@ const dark_theme_bg_color = '#838181';
 const dark_theme_border_color = '#EEEBE6';
 
 const light_head_color = '#2C488E';
-const light_theme_bg_color = '#EEEBE6';
+const light_theme_bg_color = 'white';//'#EEEBE6';
 const light_theme_border_color = '#A9A9A9';
 
 const SectionSidebar = styled.div`
@@ -485,7 +491,7 @@ const NavbarDiv = styled.div`
         font-weight: 400;
     }
 
-    @media (min-width: 768px)
+    @media (min-width: 576px)
     {
         width: 151px;
     }

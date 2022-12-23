@@ -36,15 +36,15 @@ export { SectionTwoTitle, SectionTwoDescription };
 // Section Two
 const SectionTwoTitle = styled.div`
     width: 100%;
-    font-family: Poppins Bold;
-    font-weight: 800;
+    font-family: Staatliches;
+    font-weight: 400;
     font-size: 24px;
-    color: #000000;
+    color: #111111;
 
     @media (min-width: 768px)
     {
         font-size: 48px;
-        line-height: 72px;
+        line-height: 60px;
     }
 `;
 
@@ -53,12 +53,12 @@ const SectionTwoDescription = styled.div`
     font-weight: 400;
     font-size: 16px;
     color: #464646;
-    margin-top: 25px;
+    margin-top: 24px;
 
     @media (min-width: 768px)
     {
-        font-size: 32px;
-        line-height: 52px;
+        font-size: 24px;
+        line-height: 150%;
     }
 `;
 

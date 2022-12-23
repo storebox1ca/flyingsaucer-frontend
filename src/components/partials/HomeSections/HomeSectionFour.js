@@ -10,7 +10,8 @@ function HomeSectionFour() {
       }, []);
 
     function getProducts() {
-        fetch(`${process.env.REACT_APP_BACKEND}api/products`)
+        // fetch(`${process.env.REACT_APP_BACKEND}api/products`)
+        fetch("/testData/products.json")
           .then(res => res.json())
           .then(data => {
             setProducts(data.data);
@@ -23,14 +24,14 @@ function HomeSectionFour() {
             {products.length > 0 &&
                 (
                     <div>
-                        <SectionFourTitle className="mt-5 pt-5 text-center" >
+                        {/* <SectionFourTitle className="mt-5 pt-5 text-center" >
                             Saucers that are taking off...
-                        </SectionFourTitle>
+                        </SectionFourTitle> */}
 
                         <div className="row my-5">
                             <div className="d-flex justify-content-center align-items-center">
                                 <div className="slider">
-                                    <div className="slides">
+                                    <div className="slides" style={{borderTop: '1px solid #A9A9A9', borderBottom: '1px solid #A9A9A9'}}>
                                         {products.map(
                                             p => 
                                                 (
@@ -45,7 +46,7 @@ function HomeSectionFour() {
                                 </div>
                             </div>
                                 
-                            <div className="d-flex justify-content-center align-items-center">
+                            {/* <div className="d-flex justify-content-center align-items-center">
                                 <div className="d-flex align-items-center" style={{marginTop: '23px', height: '35px'}}>
                                     <span className="svg-icon svg-icon-min svg-icon-chevron-left"></span>
                                 </div>
@@ -63,7 +64,7 @@ function HomeSectionFour() {
                                 <div className="d-flex align-items-center" style={{marginTop: '23px', height: '35px'}}>
                                     <span className="svg-icon svg-icon-min svg-icon-chevron-right"></span>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 )
@@ -96,10 +97,12 @@ const SectionFourTitle = styled.div`
 `;
 
 const SectionFourRectangle = styled.div`
-    width: 288px;
+    width: 290px;
     height: 317px;
     background: #ffffff;
-    margin: 10px;
+    margin: 0 20px;
+    border-left: 1px solid #A9A9A9;
+    border-right: 1px solid #A9A9A9;
 `;
 const SectionFourRectangleText = styled.p`
     font-weight: 500;

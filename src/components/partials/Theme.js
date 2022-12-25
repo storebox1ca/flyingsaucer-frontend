@@ -12,7 +12,7 @@ function Header() {
     return ( 
         <HeaderDiv>
             {/* Header */}
-            <div className="d-flex justify-content-between align-items-center" style={{height: '70px'}}>
+            <div className="d-flex justify-content-between align-items-center" style={{height: '60px'}}>
                 {/* Company logo */}
                 <HeaderLogo to="/" className="d-flex align-items-center">
                     <div>Flying Saucer</div>
@@ -26,10 +26,10 @@ function Header() {
                         </HamSearch>
                     </div>
                     
-                    <span className="svg-icon svg-icon-local-mall mx-3"></span>
+                    <span className="d-none d-sm-inline-block svg-icon svg-icon-local-mall mx-3"></span>
                     <span className="svg-icon svg-icon-person mx-3"></span>
 
-                    <div className="d-inline-block d-md-none pt-2">
+                    <div className="d-none d-sm-inline-block d-md-none pt-2">
                         <span onClick={()=>showSidebar()} className="svg-icon svg-icon-min svg-icon-menu mx-3 svg-white"></span>
                     </div>
                 </div>
@@ -122,6 +122,36 @@ function Navbar() {
                     <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
                 </div>
             </div> */}
+
+            <div style={position}>
+
+            </div>
+
+            <SignupBadgeCarousel className="h-100 d-none d-sm-block">
+                <div className="d-flex justify-content-center align-items-center"
+                    style={{
+                        width: '180px',
+                        height: '180px',
+                        backgroundImage: "url('/svgs/signupad.svg')",
+                        backgroundRepeat: 'no-repeat',
+                        transform: 'rotate(30deg)',
+                        paddingLeft: '4px',
+                    }}>
+                    <div style={{
+                        fontFamily: 'Poppins',
+                        fontWeight: '700',
+                        fontSize: '26px',
+                        textAlign: 'center',
+                        color: '#FFFFFF',
+                        maxWidth: '130px',
+                        whiteSpace: 'normal',
+                        marginTop: '-10px'
+                    }}>
+                        Sign up now!
+                    </div>
+                </div>
+            </SignupBadgeCarousel>
+            
             <div className="w-100">
                 <NavItemBox className="w-100">
                     <div className="d-flex align-items-center h-100">
@@ -400,7 +430,7 @@ const HeaderDiv = styled.div`
 
     @media screen and (max-width: 575px)
     {
-        padding: 15px 30px;
+        padding: 0 30px;
     }
     @media (min-width: 576px) and (max-width: 991px)
     {
@@ -669,6 +699,21 @@ const FooterCopyrightText = styled.div`
     @media (min-width: 768px)
     {
         font-size: 20px;
+    }
+`;
+
+const SignupBadgeCarousel = styled.div`
+    position: absolute; 
+    margin-left: -100px; 
+
+    @media (min-width: 576px) and (max-width: 767px)
+    {
+        padding-top: 200px;
+    }
+
+    @media (min-width: 768px)
+    {
+        padding-top: 250px;
     }
 `;
 

@@ -60,7 +60,7 @@ const Carousel = ({ children }) => {
           return React.cloneElement(child, { width: "100%" });
         })}
       </div>
-      <CarouselControlSection className="indicators d-flex align-items-center minDiv-text">
+      <CarouselControlSection className="indicators d-flex justify-content-center justify-content-sm-start align-items-center minDiv-text w-100">
         
         {React.Children.map(children, (child, index) => {
           return (
@@ -82,12 +82,17 @@ const Carousel = ({ children }) => {
 };
 
 const CarouselControlSection = styled.div`
-  margin-top: -40px;
+  margin-top: -170px;
   position: absolute;
 
-  @media (min-width: 768px)
+  @media (min-width: 768px) and (max-height: 1024px)
   {
-    margin-top: -60px;
+    margin-top: -100px;
+  }
+
+  @media (min-width: 768px) and (min-height: 1025px)
+  {
+    margin-top: -170px;
   }
 `;
 

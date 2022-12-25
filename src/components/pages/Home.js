@@ -49,7 +49,7 @@ const Home = () => {
                         We are currently avaliable at delhi, to know more <strong>Click here</strong> ... {[...Array(10)].map(() => (<span>&nbsp;</span>))}
                     </div>
                     <div className="mt-2">
-                        We are currently avaliable at delhi, to know more <strong>Click here</strong>..
+                        We are currently avaliable at delhi, to know more <strong>Click here</strong> ..
                     </div>
                 </Marquee>
             </SectionOneStripe>
@@ -76,7 +76,32 @@ const Home = () => {
                                                     <SectionOneDescription className="text-wrap">
                                                         {c.description}
                                                     </SectionOneDescription>
-                                                    <CarouselButton>View Shop</CarouselButton>
+                                                    <CarouselButton className="d-none d-sm-block">View Shop</CarouselButton>
+
+                                                    <div className="d-flex d-sm-none justify-content-center align-items-center"
+                                                        style={{
+                                                            width: '120px',
+                                                            height: '120px',
+                                                            backgroundImage: "url('/svgs/signupad.svg')",
+                                                            backgroundSize: 'contain',
+                                                            backgroundRepeat: 'no-repeat',
+                                                            transform: 'rotate(30deg)',
+                                                            paddingLeft: '2px',
+                                                            marginTop: '25px'
+                                                        }}>
+                                                        <div style={{
+                                                            fontFamily: 'Poppins',
+                                                            fontWeight: '700',
+                                                            fontSize: '16px',
+                                                            textAlign: 'center',
+                                                            color: '#FFFFFF',
+                                                            maxWidth: '60px',
+                                                            whiteSpace: 'normal',
+                                                            marginTop: '-7px'
+                                                        }}>
+                                                            Sign up now!
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </SliderItem>
                                         </CarouselItem>
@@ -235,7 +260,6 @@ export default Home;
 // Section One
 const SectionOne = styled.div`
     min-width: 100%;
-    max-height: 950px;
 `;
 
 const SectionOneStripe = styled.div`
@@ -262,13 +286,13 @@ const SectionOneText = styled.div`
    
     @media (min-width: 576px) and (max-width: 767px)
     {
-        margin-top: 0;
+        margin-top: 25px;
         font-size: 36px;
     }
 
     @media (min-width: 768px)
     {
-        margin-top: 0;
+        margin-top: 50px;
         font-size: 48px;
     }
 `;

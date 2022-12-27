@@ -10,31 +10,43 @@ function Header() {
     }
 
     return ( 
-        <HeaderDiv>
-            {/* Header */}
-            <div className="d-flex justify-content-between align-items-center" style={{height: '60px'}}>
-                {/* Company logo */}
-                <HeaderLogo to="/" className="d-flex align-items-center">
-                    <div>Flying Saucer</div>
-                </HeaderLogo>
+        <div>
+            <HeaderDiv>
+                {/* Header */}
+                <div className="d-flex justify-content-between align-items-center" style={{height: '60px'}}>
+                    {/* Company logo */}
+                    <HeaderLogo to="/" className="d-flex align-items-center">
+                        <div>Flying Saucer</div>
+                    </HeaderLogo>
 
-                <div className="d-flex justify-content-end align-items-center">
-                    <div className="d-none d-lg-inline-block mx-3">
-                        {/* Hamburger button */}
-                        <HamSearch className="d-flex align-items-center">
-                            <HamSearchText />Search / Track Order
-                        </HamSearch>
-                    </div>
-                    
-                    <span className="d-none d-sm-inline-block svg-icon svg-icon-local-mall mx-3"></span>
-                    <span className="svg-icon svg-icon-person mx-3"></span>
+                    <div className="d-flex justify-content-end align-items-center">
+                        <div className="d-none d-lg-inline-block mx-3">
+                            {/* Hamburger button */}
+                            <HamSearch className="d-flex align-items-center">
+                                <HeaderHamSearchIcon />Search / Track Order
+                            </HamSearch>
+                        </div>
+                        
+                        <span className="d-none d-sm-inline-block svg-icon svg-icon-local-mall mx-3"></span>
+                        <span className="svg-icon svg-icon-person mx-3"></span>
 
-                    <div className="d-none d-sm-inline-block d-md-none pt-2">
-                        <span onClick={()=>showSidebar()} className="svg-icon svg-icon-min svg-icon-menu mx-3 svg-white"></span>
+                        <div className="d-none d-sm-inline-block d-md-none pt-2">
+                            <span onClick={()=>showSidebar()} className="svg-icon svg-icon-min svg-icon-menu mx-3 svg-white"></span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </HeaderDiv>
+            </HeaderDiv>
+
+            <MobileNavbarDiv className="d-flex d-sm-none justify-content-between align-items-center px-5">
+                <span className="svg-icon svg-icon-min svg-icon-menu"></span>
+                <span className="svg-icon svg-icon-local-mall mx-3 svg-white" 
+                    style={{ width: '20px', height: '26px', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}></span>
+                <MobileNavbarHamSearchIcon className="svg-white" />
+                <div className="d-inline-block" style={{height: '32px', background: '#000000', borderRadius: '2px', padding: '7px 16px', color: 'white', fontSize: '12px'}}>
+                    See collection
+                </div>
+            </MobileNavbarDiv>
+        </div>
     );
 }
 
@@ -79,7 +91,7 @@ function Navbar() {
     // }
 
     return ( 
-        <NavbarDiv className="d-flex align-items-end">
+        <NavbarDiv className="d-none d-sm-flex align-items-center">
         {/* <NavbarDiv className="d-none d-sm-flex justify-content-center align-items-center"> */}
             {/* Navbar */}
             {/* <div className="d-flex align-items-start flex-column text-black text-center" style={{height: '100%', width: navSideWidth , new_style, transition: 'all 0.5s'}}>
@@ -122,59 +134,30 @@ function Navbar() {
                     <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
                 </div>
             </div> */}
-
-            <div style={position}>
-
-            </div>
-
-            <SignupBadgeCarousel className="h-100 d-none d-sm-block">
-                <div className="d-flex justify-content-center align-items-center"
-                    style={{
-                        width: '180px',
-                        height: '180px',
-                        backgroundImage: "url('/svgs/signupad.svg')",
-                        backgroundRepeat: 'no-repeat',
-                        transform: 'rotate(30deg)',
-                        paddingLeft: '4px',
-                    }}>
-                    <div style={{
-                        fontFamily: 'Poppins',
-                        fontWeight: '700',
-                        fontSize: '26px',
-                        textAlign: 'center',
-                        color: '#FFFFFF',
-                        maxWidth: '130px',
-                        whiteSpace: 'normal',
-                        marginTop: '-10px'
-                    }}>
-                        Sign up now!
-                    </div>
-                </div>
-            </SignupBadgeCarousel>
             
-            <div className="w-100">
-                <NavItemBox className="w-100">
-                    <div className="d-flex align-items-center h-100">
+            <div className="w-100 h-100 d-flex justify-content-end">
+                <NavItemBox className="h-100 text-center d-inline-block">
+                    <div className="d-flex align-items-center w-100 h-100">
                         <NavItemText className="w-100 text-center">Vegetarian</NavItemText>
                     </div>
                 </NavItemBox>
-                <NavItemBox className="w-100">
-                    <div className="d-flex align-items-center h-100">
+                <NavItemBox className="h-100 text-center d-inline-block">
+                    <div className="d-flex align-items-center w-100 h-100">
                         <NavItemText className="w-100 text-center">Meat</NavItemText>
                     </div>
                 </NavItemBox>
-                <NavItemBox className="w-100">
-                    <div className="d-flex align-items-center h-100">
+                <NavItemBox className="h-100 text-center d-inline-block">
+                    <div className="d-flex align-items-center w-100 h-100">
                         <NavItemText className="w-100 text-center">Seafood</NavItemText>
                     </div>
                 </NavItemBox>
-                <NavItemBox className="w-100">
-                    <div className="d-flex align-items-center h-100">
+                <NavItemBox className="h-100 text-center d-inline-block">
+                    <div className="d-flex align-items-center w-100 h-100">
                         <NavItemText className="w-100 text-center">Dessert</NavItemText>
                     </div>
                 </NavItemBox>
-                <NavItemBox className="w-100">
-                    <div className="d-flex align-items-center h-100">
+                <NavItemBox className="h-100 text-center d-inline-block">
+                    <div className="d-flex align-items-center w-100 h-100">
                         <NavItemText className="w-100 text-center active">View all</NavItemText>
                     </div>
                 </NavItemBox>
@@ -314,7 +297,7 @@ function Footer({mindiv}) {
                             <span style={{fontFamily: 'Poppins', fontWeight: '400', fontSize: '16px', color: '#878787'}}>
                                 Email
                             </span>
-                            <span className="svg-icon svg-icon-ios-back-arrow" style={{height: '18px', width: '10px'}}></span>
+                            <span className="svg-icon svg-icon-right-arrow-ios" style={{height: '18px', width: '10px'}}></span>
                         </div>
                     </FooterColBody>
                 </FooterCol>
@@ -395,7 +378,6 @@ const SectionSidebar = styled.div`
       }
     }
 `;
-
 
 const FooterLast = styled.div`
     font-weight: 400;
@@ -492,27 +474,41 @@ const HamSearch = styled.div`
     }
 `;
 
-const HamSearchText = styled.div`
+const HamSearchIcon = styled.div`
     background: url(svgs/search.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left;
+    display: inline-block;
+`;
+
+const HeaderHamSearchIcon = styled(HamSearchIcon)`
     height: 17px;
     width: 17px;
-    display: inline-block;
     margin-right: 10px;
+`;
+
+const MobileNavbarHamSearchIcon = styled(HamSearchIcon)`
+    height: 20px;
+    width: 20px;
 `;
 
 // Navbar
 const NavbarDiv = styled.div`
     background-color: ${light_theme_bg_color};
     position: fixed;
-    right: 0;
-    height: 100vh;
+    // top: 0;
+    right: calc(calc(calc(100vh/2) - 36px) * -1);
+    display: flex;
+    align-self: flex-end;
+    width: 100vh;
     height: -webkit-fill-available;
+    border-bottom: 1px solid ${light_theme_border_color};
     border-left: 1px solid ${light_theme_border_color};
     z-index: 10000;
-    width: 0;
+    height: 0;
+    margin-top: calc(calc(100vh/2) - 36px);
+    transform: rotateZ(90deg);
 
     span 
     {
@@ -523,9 +519,19 @@ const NavbarDiv = styled.div`
 
     @media (min-width: 576px)
     {
-        width: 151px;
+        height: 71px;
     }
 
+`;
+
+const MobileNavbarDiv = styled.div`
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-top: 1px solid ${light_theme_border_color};
+    z-index: 10000;
 `;
 
 // Footer
@@ -533,6 +539,12 @@ const FooterDiv = styled.div`
     // width: 100%;
     min-height: 330px;
     background: ${light_theme_bg_color};
+    margin-bottom: 60px;
+
+    @media (min-width: 576px)
+    {
+        margin-bottom: 0;
+    }
 `;
 
 const SectionCopyRightText = styled.div`
@@ -621,14 +633,16 @@ const MinDivBorderFull = styled.div`
 `;
 
 const NavItemBox = styled.div`
+    // transform: rotateZ(90deg);
     height: 70px;
-    border-top: 1px solid ${light_theme_border_color};
+    border-left: 1px solid ${light_theme_border_color};
 `;
 
 const NavItemText = styled.div`
     font-size: 16px;
     color: #111111;
     font-weight: 700;
+    padding: 0 15px;
 
     &.active
     {
@@ -699,21 +713,6 @@ const FooterCopyrightText = styled.div`
     @media (min-width: 768px)
     {
         font-size: 20px;
-    }
-`;
-
-const SignupBadgeCarousel = styled.div`
-    position: absolute; 
-    margin-left: -100px; 
-
-    @media (min-width: 576px) and (max-width: 767px)
-    {
-        padding-top: 200px;
-    }
-
-    @media (min-width: 768px)
-    {
-        padding-top: 250px;
     }
 `;
 

@@ -184,9 +184,13 @@
 {
   background-image: url('../../public/svgs/noun-arrow.svg');
 }
-.svg-icon-ios-back-arrow
+.svg-icon-right-arrow-ios
 {
-  background-image: url('../../public/svgs/arrow_back_ios.svg');
+  background-image: url('../../public/svgs/arrow_right_ios.svg');
+}
+.svg-icon-right-arrow-dark
+{
+  background-image: url('../../public/svgs/arrow_right_dark.svg');
 }
 
 .svg-icon-person

@@ -82,7 +82,7 @@ const Carousel = ({ children }) => {
 };
 
 const CarouselControlSection = styled.div`
-  margin-top: -170px;
+  margin-top: -125px;
   position: absolute;
 
   @media (min-width: 768px) and (max-height: 1024px)

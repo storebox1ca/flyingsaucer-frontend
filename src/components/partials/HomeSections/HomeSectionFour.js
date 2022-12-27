@@ -21,9 +21,14 @@ function HomeSectionFour() {
     return (
         <div>
             {/* Four */}                    
-            {products.length > 0 &&
+            {products && products.length > 0 &&
                 (
                     <div>
+
+                            <SignupBadgeBox className="d-flex justify-content-center align-items-center">
+                                <SignupBadgeText>Sign up now!</SignupBadgeText>
+                            </SignupBadgeBox>
+
                         {/* <SectionFourTitle className="mt-5 pt-5 text-center" >
                             Saucers that are taking off...
                         </SectionFourTitle> */}
@@ -104,10 +109,52 @@ const SectionFourRectangle = styled.div`
     border-left: 1px solid #A9A9A9;
     border-right: 1px solid #A9A9A9;
 `;
+
 const SectionFourRectangleText = styled.p`
     font-weight: 500;
     font-size: 20px;
     line-height: 30px;
     color: #000000;
     margin: 10px;
+`;
+
+const SignupBadgeCarousel = styled.div`
+    position: absolute; 
+    height: 100%;
+`;
+
+const SignupBadgeBox = styled.div`
+    position: absolute;
+    width: 95px;
+    height: 95px;
+    background-image: url('/svgs/signupad2.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotate(-30deg);
+    padding: 0 4px;
+    z-index: 1;
+    margin-top: -125px;
+    margin-left: 60px;
+
+    @media (min-width: 576px)
+    {
+        width: 180px;
+        height: 180px;
+    }
+`;
+
+const SignupBadgeText = styled.div`
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    color: #000000;
+    max-width: 130px;
+    white-space: normal;
+    margin-top: -10px;
+
+    @media (min-width: 576px)
+    {
+        font-size: 24px;
+    }
 `;

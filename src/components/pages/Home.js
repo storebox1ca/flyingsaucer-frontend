@@ -34,7 +34,7 @@ const Home = () => {
 
             {/* Marquee stripe */}
             <SectionOneStripe className="d-flex align-items-center" style={{width: '100w', marginTop: '12px', overflow: 'hidden', zIndex: '10100'}}>
-                <Marquee style={{height: '42px', paddingTop: '5px'}} loop={0} speed={50} gradientColor={'none'}>
+                <Marquee style={{height: '42px', paddingTop: '5px', overflow: 'hidden'}} loop={0} speed={50} gradientColor={'none'}>
                     <div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         We are currently avaliable at delhi, to know more <strong>Click here</strong> ... {[...Array(10)].map(() => (<span>&nbsp;</span>))}
                     </div>

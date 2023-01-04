@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom"
 
@@ -30,7 +30,7 @@ function Header() {
                         <span className="d-none d-sm-inline-block svg-icon svg-icon-local-mall mx-3"></span>
                         <span className="svg-icon svg-icon-person mx-3"></span>
 
-                        <div className="d-none d-sm-inline-block d-md-none pt-2">
+                        <div className="d-none d-sm-inline-block pt-2">
                             <span onClick={()=>showSidebar()} className="svg-icon svg-icon-min svg-icon-menu mx-3 svg-white"></span>
                         </div>
                     </div>
@@ -51,6 +51,20 @@ function Header() {
 }
 
 function Navbar() {
+
+    const [sidebarItems, setSidebarItems] = useState([]);
+
+    useEffect(() => {
+        getSidebarItems();
+      }, []);
+
+    function getSidebarItems() {
+        fetch("/testData/sidebaritems.json")
+          .then(res => res.json())
+          .then(data => {
+            setSidebarItems(data.data);
+          })
+      }
 
     // const [navSideWidth, setNavSideWidth] = useState('150px');
     // const [navSideWidth, setNavSideWidth] = useState('101px');
@@ -134,34 +148,29 @@ function Navbar() {
                     <span className="svg-icon-mid" style={{fontSize: '20px'}}>FAQs</span>
                 </div>
             </div> */}
-            
-            <div className="w-100 h-100 d-flex justify-content-end">
-                <NavItemBox className="h-100 text-center d-inline-block">
-                    <div className="d-flex align-items-center w-100 h-100">
-                        <NavItemText className="w-100 text-center">Vegetarian</NavItemText>
-                    </div>
-                </NavItemBox>
-                <NavItemBox className="h-100 text-center d-inline-block">
-                    <div className="d-flex align-items-center w-100 h-100">
-                        <NavItemText className="w-100 text-center">Meat</NavItemText>
-                    </div>
-                </NavItemBox>
-                <NavItemBox className="h-100 text-center d-inline-block">
-                    <div className="d-flex align-items-center w-100 h-100">
-                        <NavItemText className="w-100 text-center">Seafood</NavItemText>
-                    </div>
-                </NavItemBox>
-                <NavItemBox className="h-100 text-center d-inline-block">
-                    <div className="d-flex align-items-center w-100 h-100">
-                        <NavItemText className="w-100 text-center">Dessert</NavItemText>
-                    </div>
-                </NavItemBox>
-                <NavItemBox className="h-100 text-center d-inline-block">
-                    <div className="d-flex align-items-center w-100 h-100">
-                        <NavItemText className="w-100 text-center active">View all</NavItemText>
-                    </div>
-                </NavItemBox>
-            </div>
+
+
+            {sidebarItems && sidebarItems.length > 0 &&
+                <div className="w-100 h-100 d-flex justify-content-start">
+                    {sidebarItems.map
+                        (i => 
+                            (
+                                <NavItemBox key={i.id} className="h-100 text-center d-inline-block">
+                                    <div className="d-flex align-items-center w-100 h-100">
+                                        <NavItemText className="w-100 text-center">{i.label}</NavItemText>
+                                    </div>
+                                </NavItemBox>
+                            )
+                        )
+                    }
+                    <NavItemBox className="h-100 text-center d-inline-block">
+                        <div className="d-flex align-items-center w-100 h-100">
+                            <NavItemText className="w-100 text-center active">View all</NavItemText>
+                        </div>
+                    </NavItemBox>
+                </div>
+            }
+
         </NavbarDiv>
     );
 }
@@ -503,12 +512,12 @@ const NavbarDiv = styled.div`
     align-self: flex-end;
     width: 100vh;
     height: -webkit-fill-available;
-    border-bottom: 1px solid ${light_theme_border_color};
-    border-left: 1px solid ${light_theme_border_color};
+    border-top: 1px solid ${light_theme_border_color};
+    // border-left: 1px solid ${light_theme_border_color};
     z-index: 10000;
     height: 0;
     margin-top: calc(calc(100vh/2) - 36px);
-    transform: rotateZ(90deg);
+    transform: rotateZ(-90deg);
 
     span 
     {
@@ -635,7 +644,9 @@ const MinDivBorderFull = styled.div`
 const NavItemBox = styled.div`
     // transform: rotateZ(90deg);
     height: 70px;
-    border-left: 1px solid ${light_theme_border_color};
+    border-right: 1px solid ${light_theme_border_color};
+    // border-left: 1px solid ${light_theme_border_color};
+    // margin-left: -1px;
 `;
 
 const NavItemText = styled.div`

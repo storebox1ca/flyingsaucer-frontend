@@ -103,19 +103,28 @@ const SectionFourTitle = styled.div`
 
 const SectionFourRectangle = styled.div`
     width: 290px;
-    height: 317px;
+    height: 305px;
     background: #ffffff;
     margin: 0 20px;
     border-left: 1px solid #A9A9A9;
     border-right: 1px solid #A9A9A9;
+
+    @media (min-width: 768px)
+    {
+        height: 317px;
+    }
 `;
 
 const SectionFourRectangleText = styled.p`
     font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
     color: #000000;
     margin: 10px;
+    font-size: 16px;
+
+    @media (min-width: 768px)
+    {
+        font-size: 20px;
+    }
 `;
 
 const SignupBadgeCarousel = styled.div`
@@ -131,15 +140,16 @@ const SignupBadgeBox = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     transform: rotate(-30deg);
-    padding: 0 4px;
+    padding: 0 14px;
     z-index: 1;
-    margin-top: -125px;
+    margin-top: -60px;
     margin-left: 60px;
 
     @media (min-width: 576px)
     {
         width: 180px;
         height: 180px;
+        margin-top: -125px;
     }
 `;
 

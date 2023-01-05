@@ -28,9 +28,14 @@ const About = () => {
                             <div className="col-12 col-xxl-7 p-0">
                                 <div className="d-flex align-items-start h-100">
                                     <SectionOneTextBox className="h-100">
-                                        <AboutArrowBackIcon/>
                                         <SectionOneTextBoxTitle>
-                                            <AboutSectionTwoTitle className="text-uppercase">Flying Saucer who ?</AboutSectionTwoTitle>
+                                            <div className="d-flex align-items-center h-100">
+                                                <AboutArrowBackIcon/>
+                                                <AboutSectionTwoTitle className="text-uppercase">Flying Saucer who ?</AboutSectionTwoTitle>
+                                            </div>
+                                            <div className="d-flex justify-content-end">
+                                                <AboutYellowIcon />
+                                            </div>
                                         </SectionOneTextBoxTitle>
                                         
                                         <MinDivBorder style={{marginLeft: '0'}} />
@@ -193,6 +198,7 @@ const AboutSectionTwoTitle = styled.div`
     font-size: 56px;
     font-weight: 700;
     font-family: Poppins Bold;
+    z-index: 1;
 `;
 
 const AboutSectionTwoDescription = styled.div`
@@ -216,8 +222,16 @@ const AboutArrowBackIcon = styled.div`
     height: 50px;
     width: 50px;
 
-    margin-left: 10px;
-    margin-top: 17px;
+    margin-left: -100px;
+`;
+
+const AboutYellowIcon = styled.div`
+    position: absolute;
+    background-color: #F5A130;
+    border-radius: 50%;
+    height: 96px;
+    width: 96px;
+    margin-top: -40px;
 `;
 
 const SectionTwoTextBox = styled.div`
@@ -238,10 +252,11 @@ const SectionOneTextBox = styled(SectionTwoTextBox)`
 const SectionOneTextBoxTitle = styled.div`
     padding-left: 110px;
     padding-right: 40px;
+    height: 96px;
 `;
 
 const SectionOneTextBoxText = styled(SectionOneTextBoxTitle)`
-    height: calc(100% - 84px);
+    height: calc(100% - 96px);
 `;
 
 const SectionThreeTextBox = styled(SectionTwoTextBox)`

@@ -165,7 +165,7 @@ const AboutImage1 = styled(AboutImage)`
     {
         min-height: 500px;
         background-size: cover;
-        background-position: center;
+        background-position: center top;
     }
 `;
 
@@ -201,6 +201,7 @@ const AboutSectionTwoDescription = styled.div`
     line-height: 150%;
     font-weight: 500;
     font-family: Poppins Medium;
+    padding: 40px 0;
 `;
 
 const AboutArrowBackIcon = styled.div`
@@ -221,7 +222,7 @@ const AboutArrowBackIcon = styled.div`
 
 const SectionTwoTextBox = styled.div`
     // margin-top: 40px; 
-    margin-bottom: 50px; 
+    // margin-bottom: 50px; 
 `;
 
 const SectionOneTextBox = styled(SectionTwoTextBox)`

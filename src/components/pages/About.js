@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Marquee from "react-fast-marquee";
 
-import Header, { Footer, Navbar, MinDivBorder } from "../partials/Theme";
-import { SectionTwoTitle, SectionTwoDescription } from "../partials/HomeSections/HomeSectionTwo";
+import Header, { Footer, Navbar, MinDivBorder, SectionTwoTitle, SectionTwoDescription } from "../partials/Theme";
 
 const About = () => {
 
@@ -308,16 +307,14 @@ const SectionCrewDescription = styled.div`
 
 const SectionAboutMarquee = styled.div`
     background-color: #F9A83B;
-    color: white;
-    font-family: Poppins SemiBold;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 27px;
     margin-bottom: 22px;
 `;
 
 const AboutMarquee = styled.div`
     margin: 8px 0;
-    font-family: Poppins SemiBold;
+    color: white;
     font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    font-family: Poppins SemiBold;
 `;

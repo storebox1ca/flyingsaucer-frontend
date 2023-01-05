@@ -351,7 +351,7 @@ function Footer({mindiv}) {
 }
 
 export default Header;
-export { Footer, Navbar, Sidebar }; 
+export { Footer, Navbar, Sidebar, SectionTwoTitle, SectionTwoDescription, SectionCommonButton, MinDivBorder };
 
 
 const dark_head_color = '#838181';
@@ -406,6 +406,64 @@ const FooterLast = styled.div`
     {
         padding: 7px 100px;
     }
+`;
+
+
+// Section Two
+const SectionTwoTitle = styled.div`
+    width: 100%;
+    font-family: Staatliches;
+    font-weight: 400;
+    font-size: 24px;
+    color: #111111;
+
+    @media (min-width: 768px)
+    {
+        font-size: 48px;
+        line-height: 60px;
+    }
+`;
+
+const SectionTwoDescription = styled.div`
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    color: #464646;
+    margin-top: 24px;
+
+    @media (min-width: 768px)
+    {
+        font-size: 24px;
+        line-height: 150%;
+    }
+`;
+
+const SectionTwoText = styled.div`
+    font-weight: 400;
+    margin: 16px 0;
+    font-size: 20px;
+    color: #000000;
+
+    @media (min-width: 768px)
+    {
+        margin: 24px 0;
+        font-size: 40px;
+        line-height: 60px;
+    }
+`;
+
+const SectionCommonButton = styled.button`
+    padding: 12px 45px;
+    font-size: 16px;
+    color: #ffffff;
+    width: 200px;
+    height: 48px;
+    background: #000000;
+    border-radius: 4px;
+`;
+
+const SectionTwoButton = styled(SectionCommonButton)`
+    margin: 24px 0;
 `;
 
 // Header
@@ -609,16 +667,6 @@ const SectionDivliA = styled.a`
     }
 `;
 
-const SectionCommonButton = styled.button`
-    padding: 12px 45px;
-    font-size: 16px;
-    color: #ffffff;
-    width: 200px;
-    height: 48px;
-    background: #000000;
-    border-radius: 4px;
-`;
-
 const MinDivBorder = styled.div`
     margin-left: 30px;
     margin-right: 30px;
@@ -726,5 +774,3 @@ const FooterCopyrightText = styled.div`
         font-size: 20px;
     }
 `;
-
-export { SectionCommonButton, MinDivBorder };

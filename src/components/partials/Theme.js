@@ -651,7 +651,7 @@ const NavItemBox = styled.div`
 
 const NavItemText = styled.div`
     font-size: 16px;
-    color: #111111;
+    color: #000000;
     font-weight: 700;
     padding: 0 15px;
 

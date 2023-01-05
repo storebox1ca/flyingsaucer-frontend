@@ -16,25 +16,41 @@ const About = () => {
             <Header />
             
             {/* Container */}
-            <div className="MinDiv" style={{minHeight: 'calc(100vh - 149px)', backgroundColor: '#EEEBE6', borderRight: '1px solid #000000'}}>
+            <div className="MinDiv MinHeight">
+
+                <AboutBox style={{height: '54px'}}></AboutBox>
                 
-                <div className="minDiv-r-text-0">
-                    <div className="row">
-                        <div className="col-12 col-xxl-6">
-                            <div className="d-flex align-items-center h-100">
-                                <SectionOneTextBox className="minDiv-text">
-                                    <SectionTwoTitle>Flying Saucer who ?</SectionTwoTitle>
-                                    <SectionTwoDescription>
-                                        We are Flying Saucer aims to cherish everything that’s healthy and delicious. Whether it’s Salmon from North Atlantic to Avocados straight from Mexico, We’d like to bond with good, conveneient food even when the aliens arrive!
-                                    </SectionTwoDescription>
-                                </SectionOneTextBox>
+                <MinDivBorder style={{marginLeft: '0'}} />
+                
+                <AboutBox>
+                    <div className="minDiv-r-text-0">
+                        <div className="row m-0">
+                            <div className="col-12 col-xxl-7 p-0">
+                                <div className="d-flex align-items-start h-100">
+                                    <SectionOneTextBox className="h-100">
+                                        <AboutArrowBackIcon/>
+                                        <SectionOneTextBoxTitle>
+                                            <AboutSectionTwoTitle className="text-uppercase">Flying Saucer who ?</AboutSectionTwoTitle>
+                                        </SectionOneTextBoxTitle>
+                                        
+                                        <MinDivBorder style={{marginLeft: '0'}} />
+
+                                        <SectionOneTextBoxText className="d-flex align-items-center">
+                                            <AboutSectionTwoDescription>
+                                                <span>What we eat matters.</span><br />
+                                                <span>So is how it’s grown, sold & delivered.</span><br /><br />
+                                                <span>We want to shoot down this broken food system and show the world what Indian’s can do with their food.</span>
+                                            </AboutSectionTwoDescription>
+                                        </SectionOneTextBoxText>
+                                    </SectionOneTextBox>
+                                </div>
+                            </div>
+                            <div className="col-12 col-xxl-5 p-0">
+                                <AboutImage1 />
                             </div>
                         </div>
-                        <div className="col-12 col-xxl-6">
-                            <AboutImage1 />
-                        </div>
                     </div>
-                </div>
+                </AboutBox>
                 
                 <MinDivBorder style={{marginLeft: '0'}} />
 
@@ -121,15 +137,17 @@ const About = () => {
                         </div>
                     </Marquee>
                 </SectionAboutMarquee>
-
-                <Footer mindiv="full" />
             </div>
+
+            <Footer mindiv="full" />
+
         </div>
     );
 }
 
 export default About;
 
+const light_theme_border_color = '#A9A9A9';
 
 const AboutImage = styled.div`
     position: relative;
@@ -141,7 +159,7 @@ const AboutImage1 = styled(AboutImage)`
     min-height: calc(100vw / 1.3);
     background-size: contain;
     background-position: bottom;
-    background-image: url('images/Rectangle 3058.png');
+    background-image: url('images/Rectangle 3038 about.png');
 
     @media (min-width: 768px)
     {
@@ -165,16 +183,64 @@ const AboutImage2 = styled(AboutImage)`
     }
 `;
 
+const AboutBox = styled.div`
+    margin-left: 70px;
+    border-left: 1px solid ${light_theme_border_color};
+`;
+
+const AboutSectionTwoTitle = styled.div`
+    color: #111111;
+    font-size: 56px;
+    font-weight: 700;
+    font-family: Poppins Bold;
+`;
+
+const AboutSectionTwoDescription = styled.div`
+    color: #111111;
+    font-size: 24px;
+    line-height: 150%;
+    font-weight: 500;
+    font-family: Poppins Medium;
+`;
+
+const AboutArrowBackIcon = styled.div`
+    background: url(svgs/arrow_back.svg);
+    background-size: 30px 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+
+    margin-left: 10px;
+    margin-top: 17px;
+`;
+
 const SectionTwoTextBox = styled.div`
-    margin-top: 40px; 
+    // margin-top: 40px; 
     margin-bottom: 50px; 
 `;
 
 const SectionOneTextBox = styled(SectionTwoTextBox)`
+    margin-left: -70px;
+    width: calc(100% + 70px);
+
     @media (min-width: 1400px)
     {
-        padding-right: 20px;
+        // padding-right: 20px;
     }
+`;
+
+const SectionOneTextBoxTitle = styled.div`
+    padding-left: 110px;
+    padding-right: 40px;
+`;
+
+const SectionOneTextBoxText = styled(SectionOneTextBoxTitle)`
+    height: calc(100% - 84px);
 `;
 
 const SectionThreeTextBox = styled(SectionTwoTextBox)`

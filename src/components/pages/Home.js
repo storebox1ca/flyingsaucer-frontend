@@ -35,21 +35,16 @@ const Home = () => {
             {/* Marquee stripe */}
             <SectionOneStripe className="d-flex align-items-center" style={{width: '100w', marginTop: '12px', overflow: 'hidden', zIndex: '10100'}}>
                 <Marquee style={{height: '42px', paddingTop: '5px', overflow: 'hidden'}} loop={0} speed={50} gradientColor={'none'}>
-                    <div> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        We are currently avaliable at delhi, to know more <strong>Click here</strong> ... {[...Array(10)].map(() => (<span>&nbsp;</span>))}
-                    </div>
-                    <div>
-                        We are currently avaliable at delhi, to know more <strong>Click here</strong> ... {[...Array(10)].map(() => (<span>&nbsp;</span>))}
-                    </div>
-                    <div>
-                        We are currently avaliable at delhi, to know more <strong>Click here</strong> ... {[...Array(10)].map(() => (<span>&nbsp;</span>))}
-                    </div>
-                    <div>
-                        We are currently avaliable at delhi, to know more <strong>Click here</strong> ... {[...Array(10)].map(() => (<span>&nbsp;</span>))}
-                    </div>
-                    <div>
-                        We are currently avaliable at delhi, to know more <strong>Click here</strong> ..
-                    </div>
+                    
+                {[...Array(5).keys()].map
+                    ((x, index, arr) => 
+                        (
+                            <div key={x}> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                We are currently avaliable at delhi, to know more <strong>Click here</strong> ... {index != (arr.length - 1) && [...Array(10)].map((i, i_index) => (<span key={i_index}>&nbsp;</span>))}
+                            </div>
+                        )
+                    )
+                }
                 </Marquee>
             </SectionOneStripe>
 

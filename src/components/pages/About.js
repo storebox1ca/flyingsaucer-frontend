@@ -124,22 +124,16 @@ const About = () => {
                 <MinDivBorder style={{marginLeft: '0', marginTop: '-1px', marginBottom: '2px'}} />
                 
                 <SectionAboutMarquee>
-                    <Marquee style={{height: '94px', border: '1px solid'}} loop={0} speed={50} gradientColor={'none'}>
-                        <div style={{margin: '18px 0'}}> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            JOIN US! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        </div>
-                        <div style={{margin: '18px 0'}}>
-                            JOIN US! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        </div>
-                        <div style={{margin: '18px 0'}}>
-                            JOIN US! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        </div>
-                        <div style={{margin: '18px 0'}}>
-                            JOIN US! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        </div>
-                        <div style={{margin: '18px 0'}}>
-                            JOIN US!
-                        </div>
+                    <Marquee style={{height: '43px', overflow: 'hidden'}} loop={0} speed={50} gradientColor={'none'}>
+                        {[...Array(10).keys()].map
+                            ((x, index, arr) => 
+                                (
+                                    <AboutMarquee key={x} style={{}}> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        JOIN US! {index != (arr.length - 1) && [...Array(10)].map((i, i_index) => (<span key={i_index}>&nbsp;</span>))}
+                                    </AboutMarquee>
+                                )
+                            )
+                        }
                     </Marquee>
                 </SectionAboutMarquee>
             </div>
@@ -231,7 +225,7 @@ const AboutYellowIcon = styled.div`
     border-radius: 50%;
     height: 96px;
     width: 96px;
-    margin-top: -40px;
+    margin-top: -43px;
 `;
 
 const SectionTwoTextBox = styled.div`
@@ -313,9 +307,17 @@ const SectionCrewDescription = styled.div`
 `;
 
 const SectionAboutMarquee = styled.div`
-    background-color: #8AB48E;
+    background-color: #F9A83B;
     color: white;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 54px;
+    font-family: Poppins SemiBold;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 22px;
+`;
+
+const AboutMarquee = styled.div`
+    margin: 8px 0;
+    font-family: Poppins SemiBold;
+    font-size: 18px;
 `;

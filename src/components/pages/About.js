@@ -22,7 +22,7 @@ const About = () => {
                 <MinDivBorder style={{marginLeft: '0'}} />
                 
                 <AboutBox>
-                    <div className="minDiv-r-text-0">
+                    <div className="">
                         <div className="row m-0">
                             <div className="col-12 col-xxl-7 p-0">
                                 <div className="d-flex align-items-start h-100">
@@ -30,7 +30,7 @@ const About = () => {
                                         <SectionOneTextBoxTitle>
                                             <div className="d-flex align-items-center h-100">
                                                 <AboutArrowBackIcon/>
-                                                <AboutSectionTwoTitle className="text-uppercase">Flying Saucer who ?</AboutSectionTwoTitle>
+                                                <AboutSectionTwoTitle className="text-uppercase minDiv-text-page">Flying Saucer who ?</AboutSectionTwoTitle>
                                             </div>
                                             <div className="d-flex justify-content-end">
                                                 <AboutYellowIcon />
@@ -40,7 +40,7 @@ const About = () => {
                                         <MinDivBorder style={{marginLeft: '0'}} />
 
                                         <SectionOneTextBoxText className="d-flex align-items-center">
-                                            <AboutSectionTwoDescription>
+                                            <AboutSectionTwoDescription className="minDiv-text-page">
                                                 <span>What we eat matters.</span><br />
                                                 <span>So is how it’s grown, sold & delivered.</span><br /><br />
                                                 <span>We want to shoot down this broken food system and show the world what Indian’s can do with their food.</span>
@@ -58,18 +58,55 @@ const About = () => {
                 
                 <MinDivBorder style={{marginLeft: '0'}} />
 
-                <div className="minDiv-text">
-                    <div className="row">
-                        <div className="col-12">
-                            <SectionTwoTextBox>
-                                <SectionTwoTitle>Why go sub zero ?</SectionTwoTitle>
-                                <SectionTwoDescription>
-                                    Properly Frozen Food at -18° C helps fight food wastage & locks in more nutrition. Without the need for any preservatives or loss of flavour, Properly Frozen Food at -18° C helps fight food wastage & locks in more nutrition. Without the need for any preservatives or loss of flavour
-                                </SectionTwoDescription>
-                            </SectionTwoTextBox>
+                <AboutBox>
+                    <div className="">
+                        <div className="row m-0">
+                            <div className="col-12 col-xxl-7 p-0">
+                            </div>
+                            <div className="col-12 col-xxl-5 p-0">
+                                <div className="d-flex justify-content-center align-items-center" style={{height: '120px'}}>
+                                    <span style={{fontSize: '32px', fontFamily: 'Poppins Bold', color: '#000000'}}>Our Identity</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row m-0">
+                            <div className="col-12 col-xxl-5 p-0">
+                                <div className="d-flex justify-content-center h-100">
+                                    <div className="d-flex align-content-around flex-wrap h-100 minDiv-text-page" style={{maxWidth: '350px'}}>
+                                        <AboutSectionTwoLeftText style={{color: '#2C488E'}}>Food</AboutSectionTwoLeftText>
+                                        <AboutSectionTwoLeftText>Marketplace</AboutSectionTwoLeftText>
+                                        <AboutSectionTwoLeftText>Delivery</AboutSectionTwoLeftText>
+                                    </div>
+                                </div>
+                                {/* <SectionTwoTextBox>
+                                    <SectionTwoTitle>Why go sub zero ?</SectionTwoTitle>
+                                </SectionTwoTextBox> */}
+                            </div>
+                            <div className="col-12 col-xxl-7 p-0">
+                                <AboutSectionTwoRight>
+                                    <div className="minDiv-text-page">
+                                        <AboutSectionTwoRightText>
+                                            <span>A gourmet imported frozen food store for an at-home fine dining experience</span>
+                                        </AboutSectionTwoRightText>
+                                        <AboutSectionTwoRightText>
+                                            <span>D2C & Retail that’s fair, fast and secure for everyone involved.</span> <br/><span>And of course, doesn’t exploit your attention to make you buy more than you need.</span>
+                                        </AboutSectionTwoRightText>
+                                        <AboutSectionTwoRightText>
+                                            <span>We are building better ways to store & move food, so that we stay low on emissions, even if we’re bringing Peruvian Avocados or Ramen from Korea.</span>
+                                        </AboutSectionTwoRightText>
+                                    </div>
+                                </AboutSectionTwoRight>
+                            </div>
+                        </div>
+                        <div className="row m-0">
+                            <div className="col-12 p-0">
+                                <div className="d-flex justify-content-center align-items-center" style={{height: '120px'}}>
+                                    <span style={{fontSize: '32px', fontFamily: 'Poppins Bold', color: '#000000'}}>Why go sub zero ?</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </AboutBox>
                 
                 <MinDivBorder style={{marginLeft: '0'}} />
                 
@@ -215,7 +252,7 @@ const AboutArrowBackIcon = styled.div`
     height: 50px;
     width: 50px;
 
-    margin-left: -100px;
+    margin-left: -62px;
 `;
 
 const AboutYellowIcon = styled.div`
@@ -225,6 +262,28 @@ const AboutYellowIcon = styled.div`
     height: 96px;
     width: 96px;
     margin-top: -43px;
+`;
+
+const AboutSectionTwoLeftText = styled.div`
+    width: 100%;
+    font-size: 48px;
+    font-weight: 700;
+    font-family: Poppins Bold;
+    color: #959595;
+`;
+
+const AboutSectionTwoRight = styled.div` 
+    border: 1px solid ${light_theme_border_color};
+    border-right: 0;
+`;
+
+const AboutSectionTwoRightText = styled.div` 
+    font-family: Poppins Regular;
+    font-size: 16px;
+    line-height: 32px;
+    font-weight: 400;
+    color: #111111;
+    padding: 24px 0;
 `;
 
 const SectionTwoTextBox = styled.div`
@@ -243,7 +302,7 @@ const SectionOneTextBox = styled(SectionTwoTextBox)`
 `;
 
 const SectionOneTextBoxTitle = styled.div`
-    padding-left: 110px;
+    padding-left: 70px;
     padding-right: 40px;
     height: 96px;
 `;

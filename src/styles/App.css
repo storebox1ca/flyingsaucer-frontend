@@ -52,6 +52,10 @@
   background-color: white;
    /* #EEEBE6; */
 }
+.minDiv-text-page
+{
+  margin: 0 20px;
+}
 @media screen and (max-width: 575px)
 {
   .MinDiv

@@ -164,8 +164,11 @@ const About = () => {
                         {[...Array(10).keys()].map
                             ((x, index, arr) => 
                                 (
-                                    <AboutMarquee key={x} style={{}}> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                        JOIN US! {index != (arr.length - 1) && [...Array(10)].map((i, i_index) => (<span key={i_index}>&nbsp;</span>))}
+                                    <AboutMarquee key={x}> 
+                                        <span>
+                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                            Join us now! {index != (arr.length - 1) && [...Array(10)].map((i, i_index) => (<span key={i_index}>&nbsp;</span>))}
+                                        </span>
                                     </AboutMarquee>
                                 )
                             )

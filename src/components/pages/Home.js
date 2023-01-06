@@ -41,13 +41,15 @@ const Home = () => {
 
             {/* Marquee stripe */}
             <SectionOneStripe className="d-flex align-items-center" style={{width: '100w', marginTop: '12px', overflow: 'hidden', zIndex: '10100'}}>
-                <Marquee style={{height: '42px', paddingTop: '5px', overflow: 'hidden'}} loop={0} speed={50} gradientColor={'none'}>  
+                <Marquee style={{height: '42px', overflow: 'hidden'}} loop={0} speed={50} gradientColor={'none'}>  
                     {[...Array(5).keys()].map
                         ((x, index, arr) => 
                             (
-                                <div key={x}> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                                    We are currently avaliable at delhi, to know more <strong>Click here</strong> ... {index != (arr.length - 1) && [...Array(10)].map((i, i_index) => (<span key={i_index}>&nbsp;</span>))}
-                                </div>
+                                <HomeMarquee key={x}> 
+                                    <span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        We are currently avaliable at delhi, to know more <strong style={{fontFamily: 'Poppins Bold'}}>Click here</strong> ... {index != (arr.length - 1) && [...Array(10)].map((i, i_index) => (<span key={i_index}>&nbsp;</span>))}
+                                    </span>
+                                </HomeMarquee>
                             )
                         )
                     }
@@ -386,4 +388,10 @@ const SectionFourRectangleText = styled.p`
     {
         font-size: 20px;
     }
+`;
+
+const HomeMarquee = styled.div`
+    font-family: Poppins;
+    font-weight: 200;
+    font-size: 20px;
 `;

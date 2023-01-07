@@ -116,6 +116,8 @@
   height: 3px;
   filter: inherit;
 }
+
+
 .svg-icon-menu
 {
   background-image: url('../../public/svgs/menu.svg');
@@ -227,4 +229,47 @@
 .svg-icon-line
 {
   background-image: url('../../public/svgs/Line\ 81.svg');
+}
+
+/* About */
+.svg-icon-about-s4
+{
+  width: 40px;
+  height: 50px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.svg-icon-star-two
+{
+  background-image: url('../../public/svgs/AboutS4L1.svg');
+}
+.svg-icon-star-three
+{
+  background-image: url('../../public/svgs/AboutS4R1.svg');
+}
+.svg-icon-award-blank
+{
+  background-image: url('../../public/svgs/AboutS4L2.svg');
+}
+.svg-icon-award-checked
+{
+  background-image: url('../../public/svgs/AboutS4R2.svg');
+}
+.svg-icon-apple-blank
+{
+  background-image: url('../../public/svgs/AboutS4L3.svg');
+}
+.svg-icon-apple-heart
+{
+  background-image: url('../../public/svgs/AboutS4R3.svg');
+}
+.svg-icon-can-steam
+{
+  background-image: url('../../public/svgs/AboutS4L4.svg');
+}
+.svg-icon-can-only
+{
+  background-image: url('../../public/svgs/AboutS4R4.svg');
 }

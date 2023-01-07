@@ -193,6 +193,30 @@ const About = () => {
                         </AboutSectionFourBody>
                     </div>
                 </AboutBox>
+
+                <MinDivBorder style={{marginLeft: '0'}} />
+                
+                {/* Section Six */}
+                
+                <AboutBox>
+                    <div className="d-flex justify-content-center">
+                        <AboutSectionSixTitle className="minDiv-text-page">The Partner’s we couldn’t do without</AboutSectionSixTitle>
+                    </div>
+                    <div className="container">
+                        <div className="row" style={{minHeight: '300px', paddingBottom: '50px'}}>
+                            <div className="col-12 col-lg-6">
+                                <div className="d-flex justify-content-center align-items-center mb-5 h-100">
+                                    <img src="images/consultanubhav.png"/>
+                                </div>
+                            </div>
+                            <div className="col-12 col-lg-6">
+                                <div className="d-flex justify-content-center align-items-center mb-5 h-100">
+                                    <img src="images/studiolesworks.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </AboutBox>
                 
                 {/* <div className="minDiv-l-text-0">
                     <div className="row">
@@ -487,6 +511,15 @@ const AboutSectionFourDescription = styled.div`
 const AboutSectionFourIconBox = styled.div`
     position: absolute;
     margin-left: -60px;
+`;
+
+// Section SIx
+
+const AboutSectionSixTitle = styled.div`
+    font-family: Poppins Medium;
+    font-weight: 500;
+    font-size: 32px;
+    padding: 30px 0;
 `;
 
 // 

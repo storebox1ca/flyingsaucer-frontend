@@ -118,27 +118,14 @@ const About = () => {
                 <MinDivBorder style={{marginLeft: '0'}} />
                 
                 {/* Section Four */}
-
-                <AboutBox>
-                    <div className="row m-0">
-                        <div className="col-12 col-lg-6 p-0">
-                            <AboutSectionFourBodyLeft>
-                                <AboutSectionFourHeader>{'Fresh  (~0-12°C)'}</AboutSectionFourHeader>
-                            </AboutSectionFourBodyLeft>
-                        </div>
-                        <div className="col-12 col-lg-6 p-0">
-                            <AboutSectionFourBody>
-                                <AboutSectionFourHeader>{'Flash frozen (-20°C)'}</AboutSectionFourHeader>
-                            </AboutSectionFourBody>
-                        </div>
-                    </div>
-                </AboutBox>
                 
-                <MinDivBorder style={{marginLeft: '0'}} />
+                <MinDivBorder style={{marginLeft: '0', marginTop: '105px'}} />
 
-                <AboutBox>
+                <AboutBox style={{marginTop: '-105px'}}>
                     <div className="row m-0">
                         <AboutSectionFourBodyLeft className="col-12 col-lg-6">
+
+                            <AboutSectionFourHeader>{'Fresh  (~0-12°C)'}</AboutSectionFourHeader>
 
                             <AboutSectionFourTitle>
                                 <AboutSectionFourIconBox className="svg-icon svg-icon-about-s4 svg-icon-star-two"></AboutSectionFourIconBox>
@@ -168,6 +155,15 @@ const About = () => {
                         </AboutSectionFourBodyLeft>
 
                         <AboutSectionFourBody className="col-12 col-lg-6">
+                            <div style={{marginTop: '-2px', marginLeft: '-196px', marginRight: '-50px'}}>
+                                <MinDivBorder style={{marginLeft: '0'}} />
+                                <MinDivBorder style={{marginLeft: '0', marginTop: '105px'}} />
+                                <AboutBox style={{marginTop: '-105px'}}>
+                                    <AboutSectionFourBodyLeft>
+                                        <AboutSectionFourHeader>{'Flash frozen (-20°C)'}</AboutSectionFourHeader>
+                                    </AboutSectionFourBodyLeft>
+                                </AboutBox>
+                            </div>
 
                             <AboutSectionFourTitle>
                                 <AboutSectionFourIconBox className="svg-icon svg-icon-about-s4 svg-icon-star-three"></AboutSectionFourIconBox>

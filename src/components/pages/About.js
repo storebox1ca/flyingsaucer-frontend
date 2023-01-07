@@ -195,6 +195,72 @@ const About = () => {
                 </AboutBox>
 
                 <MinDivBorder style={{marginLeft: '0'}} />
+
+                {/* Section Five */}
+
+                <AboutBox>
+                    <div className="minDiv-Text-page text-center">
+                        <AboutSectionFiveTitle>“ insufficient facts always invite danger “</AboutSectionFiveTitle>
+                        <AboutSectionFiveSubTitle>{'Captain Spock (1967)'}</AboutSectionFiveSubTitle>
+                        <AboutSectionFiveDescription>
+                            So we’ll happily tell you how we check, taste, curate and deliver at great value.
+                            <br/>
+                            <br/>
+                            Whether it’s food quality, privacy, emissions or how we sell. 
+                            <br/>
+                            Stay tuned for more!
+                        </AboutSectionFiveDescription>
+                    </div>
+                </AboutBox>
+                
+                <MinDivBorder style={{marginLeft: '0'}} />
+                
+                <MinDivBorder style={{marginLeft: '0', marginTop: '96px'}} />
+
+                <AboutBox style={{marginTop: '-97px', paddingBottom: '100px', paddingTop: '96px'}}>
+                
+                    <MinDivBorder style={{marginLeft: '0'}} />
+
+                    <div className="row m-0">
+                        <AboutSectionFourBody className="col-12 col-lg-4">
+                            <AboutSectionFourFirstCrew className="h-100" style={{marginTop: '1px', marginLeft: '-126px', marginRight: '-50px'}}>
+                            </AboutSectionFourFirstCrew>
+
+                        </AboutSectionFourBody>
+
+                        <AboutSectionFourBody className="col-12 col-lg-4">
+                            <div className="h-100" style={{marginTop: '-1px', marginLeft: '-196px', marginRight: '-50px'}}>
+                                <MinDivBorder style={{marginLeft: '0'}} />
+                                <MinDivBorder style={{marginLeft: '0', marginTop: '96px'}} />
+                                <AboutBox style={{marginTop: '-97px', height: 'calc(100%)'}}>
+                                    <AboutSectionFourBody className="h-100">
+
+                                        <div style={{minHeight: '101px'}}></div>
+                                        {/* <img /> */}
+
+                                    </AboutSectionFourBody>
+                                </AboutBox>
+                            </div>
+                        </AboutSectionFourBody>
+
+                        <AboutSectionFourBody className="col-12 col-lg-4">
+                            <div className="h-100" style={{marginTop: '-1px', marginLeft: '-196px', marginRight: '-50px'}}>
+                                <MinDivBorder style={{marginLeft: '0'}} />
+                                <MinDivBorder style={{marginLeft: '0', marginTop: '96px'}} />
+                                <AboutBox style={{marginTop: '-97px', height: 'calc(100%)'}}>
+                                    <AboutSectionFourBody className="h-100">
+
+                                        <div style={{minHeight: '101px'}}></div>
+                                        {/* <img /> */}
+                                        
+                                    </AboutSectionFourBody>
+                                </AboutBox>
+                            </div>
+                        </AboutSectionFourBody>
+                    </div>
+                </AboutBox>
+
+                <MinDivBorder style={{marginLeft: '0'}} />
                 
                 {/* Section Six */}
                 
@@ -513,7 +579,38 @@ const AboutSectionFourIconBox = styled.div`
     margin-left: -60px;
 `;
 
-// Section SIx
+// Section Five
+
+const AboutSectionFive = styled.div`
+    font-family: Poppins Medium Italic;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+`;
+
+const AboutSectionFiveTitle = styled(AboutSectionFive)`
+    color: #111111;
+    padding-top: 101px;
+`;
+
+const AboutSectionFiveSubTitle = styled(AboutSectionFive)`
+    color: #838282;
+    padding-bottom: 48px;
+`;
+
+const AboutSectionFiveDescription = styled.div`
+    font-family: Poppins Medium;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 150%;
+    padding-bottom: 101px;
+`;
+
+const AboutSectionFourFirstCrew = styled.div`
+ border-bottom: 1px solid ${light_theme_border_color};
+`;
+
+// Section Six
 
 const AboutSectionSixTitle = styled.div`
     font-family: Poppins Medium;

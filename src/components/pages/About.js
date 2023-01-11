@@ -215,6 +215,51 @@ const About = () => {
                 
                 <MinDivBorder style={{marginLeft: '0'}} />
                 
+                {/* <MinDivBorder style={{marginLeft: '0', marginTop: '96px'}} /> */}
+
+                <AboutBox style={{paddingBottom: '100px', paddingTop: '96px'}}>
+                
+                    <MinDivBorder style={{marginLeft: '0'}} />
+
+                    <div className="row m-0">
+                        <AboutSectionFourBody className="col-12 col-lg-4">
+                            <AboutSectionFourFirstCrew className="h-100">
+                            </AboutSectionFourFirstCrew>
+
+                        </AboutSectionFourBody>
+
+                        <AboutSectionFourBody className="col-12 col-lg-4">
+                            <div className="h-100">
+                                <MinDivBorder style={{marginLeft: '0'}} />
+                                <MinDivBorder style={{marginLeft: '0', marginTop: '96px'}} />
+                                <AboutBox>
+                                    <AboutSectionFourBody className="h-100">
+
+                                        <div style={{minHeight: '101px'}}></div>
+                                        {/* <img /> */}
+
+                                    </AboutSectionFourBody>
+                                </AboutBox>
+                            </div>
+                        </AboutSectionFourBody>
+
+                        <AboutSectionFourBody className="col-12 col-lg-4">
+                            <div className="h-100">
+                                <MinDivBorder style={{marginLeft: '0'}} />
+                                <MinDivBorder style={{marginLeft: '0', marginTop: '96px'}} />
+                                <AboutBox>
+                                    <AboutSectionFourBody className="h-100">
+
+                                        <div style={{minHeight: '101px'}}></div>
+                                        {/* <img /> */}
+                                        
+                                    </AboutSectionFourBody>
+                                </AboutBox>
+                            </div>
+                        </AboutSectionFourBody>
+                    </div>
+                </AboutBox>
+                
                 <MinDivBorder style={{marginLeft: '0', marginTop: '96px'}} />
 
                 <AboutBox style={{marginTop: '-97px', paddingBottom: '100px', paddingTop: '96px'}}>
@@ -223,7 +268,7 @@ const About = () => {
 
                     <div className="row m-0">
                         <AboutSectionFourBody className="col-12 col-lg-4">
-                            <AboutSectionFourFirstCrew className="h-100" style={{marginTop: '1px', marginLeft: '-126px', marginRight: '-50px'}}>
+                            <AboutSectionFourFirstCrew className="h-100" style={{height: '97px', marginLeft: '-126px', marginRight: '-50px'}}>
                             </AboutSectionFourFirstCrew>
 
                         </AboutSectionFourBody>
